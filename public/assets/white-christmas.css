@@ -2200,3 +2200,6 @@
 .wc-city-card:hover h3,.wc-city-card:focus-visible h3{color:#74181d!important}
 @media(max-width:980px){.wc-support .grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.wc-city-index{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.wc-support .grid,.wc-city-index{grid-template-columns:1fr!important}.wc-city-card{min-height:auto}}
+
+/* Result state visibility guard v12 — author display rules must never override HTML hidden. */
+#result-loading[hidden],#result-error[hidden],#result-content[hidden]{display:none!important}
