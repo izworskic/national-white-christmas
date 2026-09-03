@@ -9,7 +9,7 @@ const css=fs.readFileSync(path.join(root,"public/assets/white-christmas.css"),"u
 
 test("Christmas masthead and scenic hero are explicit",()=>{
   assert.match(html,/wc-masthead/);
-  assert.match(html,/Weather Intelligence/);
+  assert.match(html,/class="wc-tool-mark"/);\n  assert.match(html,/>White Christmas<\\/strong>/);
   assert.match(html,/wc-header-share/);
   assert.match(css,/white-christmas-village\.svg/);
   assert.match(css,/white-christmas-hero\.webp/);
