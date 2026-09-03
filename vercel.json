@@ -41,6 +41,22 @@
     {
       "source": "/national-tools/white-christmas/regions/:slug/",
       "destination": "/national-tools/white-christmas/regions/:slug/index.html"
+    },
+    {
+      "source": "/national-tools/white-christmas/cities",
+      "destination": "/national-tools/white-christmas/cities/index.html"
+    },
+    {
+      "source": "/national-tools/white-christmas/cities/",
+      "destination": "/national-tools/white-christmas/cities/index.html"
+    },
+    {
+      "source": "/national-tools/white-christmas/cities/:slug",
+      "destination": "/national-tools/white-christmas/cities/:slug/index.html"
+    },
+    {
+      "source": "/national-tools/white-christmas/cities/:slug/",
+      "destination": "/national-tools/white-christmas/cities/:slug/index.html"
     }
   ]
 }

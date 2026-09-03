@@ -2186,3 +2186,17 @@
 }
 .wc-support-hero .eyebrow{color:#f0ca7a!important;opacity:1!important}
 .wc-support-hero p{color:#f6efe5!important;opacity:1!important}
+
+/* City/metro search network v11 */
+.wc-support .grid{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+.wc-city-group{margin:1.5rem 0 2rem}
+.wc-city-group>h2{margin-bottom:.72rem!important}
+.wc-city-index{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.72rem}
+.wc-city-card{display:block;min-height:175px;padding:1rem;background:#fffaf1;border:1px solid rgba(13,59,46,.14);color:#1d2923!important;text-decoration:none}
+.wc-city-card span{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:#7a1b20;font-weight:800}
+.wc-city-card h3{margin:.25rem 0 .45rem;color:#0b3b2e!important;font-family:Georgia,"Times New Roman",serif;font-size:1.18rem;font-weight:400}
+.wc-city-card p{margin:0;color:#4b514d!important;font-size:.88rem;line-height:1.48}
+.wc-city-card:hover,.wc-city-card:focus-visible{background:#fffdf8;border-color:#b98d3f;box-shadow:0 7px 18px rgba(18,61,59,.09)}
+.wc-city-card:hover h3,.wc-city-card:focus-visible h3{color:#74181d!important}
+@media(max-width:980px){.wc-support .grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.wc-city-index{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.wc-support .grid,.wc-city-index{grid-template-columns:1fr!important}.wc-city-card{min-height:auto}}

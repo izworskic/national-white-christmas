@@ -37,7 +37,7 @@ test("main funnel promotes national regional discovery",()=>{
   assert.match(main,/White Christmas Across America/);
   assert.match(main,/Explore U\.S\. snow regions/);
   assert.match(main,/\/national-tools\/white-christmas\/regions\//);
-  assert.match(main,/white-christmas\.css\?v=20260903-national9/);
+  assert.match(main,/white-christmas\.css\?v=20260903-city11/);
 });
 
 test("national hub covers every major U.S. snow-region family",()=>{
@@ -62,7 +62,7 @@ test("regional pages exist, are indexable, and drive back to the live tool",()=>
     assert.match(html,/meta name="robots" content="index,follow,max-image-preview:large"/);
     assert.match(html,/href="\/national-tools\/white-christmas\//);
     assert.match(html,/Check local 2026 odds/);
-    assert.match(html,/white-christmas\.css\?v=20260903-national9/);
+    assert.match(html,/white-christmas\.css\?v=20260903-(?:national9|city11)/);
   }
 });
 

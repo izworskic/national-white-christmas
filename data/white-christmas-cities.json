@@ -1,0 +1,1127 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-09-03",
+  "purpose": "Phase-one White Christmas city/metro network. Each city page must contain materially distinct local climate context and route back to the national live estimator.",
+  "cities": [
+    {
+      "slug": "buffalo-ny",
+      "city": "Buffalo",
+      "state": "NY",
+      "regionSlug": "great-lakes-ohio-valley",
+      "region": "Great Lakes & Ohio Valley",
+      "summary": "Buffalo sits beside a major lake-effect snow source, so Christmas snow can be abundant while nearby places see much less. Wind direction, lake temperature, existing snowpack and December thaws all matter.",
+      "factors": [
+        [
+          "Lake-effect placement",
+          "Cold west or southwest flow across Lake Erie can focus heavy snow into narrow bands that create large differences across the metro."
+        ],
+        [
+          "Snowpack durability",
+          "Once a deeper pack is established, persistent cold can carry it toward Christmas even if no storm falls on December 25."
+        ],
+        [
+          "Thaw risk",
+          "A mild southwest flow or rain event can rapidly reduce snow depth, especially closer to the lake and in the urban core."
+        ]
+      ],
+      "thisYear": "The live estimate becomes much more informative once Buffalo has an established December snowpack and the forecast can show whether that pack survives the final pre-Christmas warm-ups or gets reinforced by another lake-effect event.",
+      "nearby": [
+        [
+          "Ellicottville, NY",
+          "Ellicottville, NY",
+          "Higher terrain south of Buffalo can retain snow better."
+        ],
+        [
+          "Jamestown, NY",
+          "Jamestown, NY",
+          "Southern-tier elevation can improve snow retention."
+        ],
+        [
+          "Erie, PA",
+          "Erie, PA",
+          "Another Lake Erie snow-belt city with its own band placement."
+        ]
+      ]
+    },
+    {
+      "slug": "syracuse-ny",
+      "city": "Syracuse",
+      "state": "NY",
+      "regionSlug": "northeast-new-england",
+      "region": "Northeast & New England",
+      "summary": "Syracuse is one of the snowier major cities in the eastern U.S., with Lake Ontario influence and an inland climate that often supports persistent December snow.",
+      "factors": [
+        [
+          "Lake Ontario snow",
+          "West and northwest flow can produce repeated lake-effect snow into central New York."
+        ],
+        [
+          "Inland cold",
+          "Distance from the immediate Atlantic coast reduces marine moderation and helps existing snow survive."
+        ],
+        [
+          "Warm intrusions",
+          "Strong southerly flow ahead of eastern storms can still bring rain or a quick thaw before Christmas."
+        ]
+      ],
+      "thisYear": "For Syracuse, watch whether December establishes a base early. A modest pack plus repeated cold is often more important for Christmas morning than whether one large storm occurs on the holiday itself.",
+      "nearby": [
+        [
+          "Oswego, NY",
+          "Oswego, NY",
+          "Closer to Lake Ontario and strongly exposed to lake-effect snow."
+        ],
+        [
+          "Watertown, NY",
+          "Watertown, NY",
+          "North-country cold and Lake Ontario snow can raise snow-cover persistence."
+        ],
+        [
+          "Utica, NY",
+          "Utica, NY",
+          "Interior elevation and cold can support durable snowpack."
+        ]
+      ]
+    },
+    {
+      "slug": "burlington-vt",
+      "city": "Burlington",
+      "state": "VT",
+      "regionSlug": "northeast-new-england",
+      "region": "Northeast & New England",
+      "summary": "Burlington has a cold northern climate, but Lake Champlain and local elevation differences make Christmas snow less uniform than a statewide Vermont average suggests.",
+      "factors": [
+        [
+          "Northern latitude",
+          "Long December nights and frequent subfreezing weather help preserve existing snow."
+        ],
+        [
+          "Lake Champlain influence",
+          "The lake can locally moderate temperatures and affect where snow bands or mixed precipitation develop."
+        ],
+        [
+          "Green Mountain elevation",
+          "Nearby higher terrain often holds snow more reliably than the lower Champlain Valley."
+        ]
+      ],
+      "thisYear": "The biggest question is often whether the Champlain Valley has a lasting base, not whether the surrounding Green Mountains are snowy. The live city estimate should therefore be checked separately from nearby ski-country conditions.",
+      "nearby": [
+        [
+          "Stowe, VT",
+          "Stowe, VT",
+          "Higher terrain east of Burlington is generally more snow-favorable."
+        ],
+        [
+          "Montpelier, VT",
+          "Montpelier, VT",
+          "Inland and higher than the Champlain Valley."
+        ],
+        [
+          "Lake Placid, NY",
+          "Lake Placid, NY",
+          "Adirondack elevation and cold can preserve snow strongly."
+        ]
+      ]
+    },
+    {
+      "slug": "portland-me",
+      "city": "Portland",
+      "state": "ME",
+      "regionSlug": "northeast-new-england",
+      "region": "Northeast & New England",
+      "summary": "Portland is far enough north for meaningful Christmas snow potential, but its immediate Atlantic location leaves it more exposed to rain, mixed precipitation and coastal thaws than inland Maine.",
+      "factors": [
+        [
+          "Atlantic moderation",
+          "Ocean influence can keep coastal temperatures closer to freezing during storms."
+        ],
+        [
+          "Nor'easter track",
+          "A storm passing in the right position can deliver heavy snow; a small track shift can turn that into rain or mix."
+        ],
+        [
+          "Inland gradient",
+          "Snow retention usually improves quickly away from the immediate coast and at higher terrain."
+        ]
+      ],
+      "thisYear": "For Portland, the final-week temperature profile can matter as much as precipitation. A snowpack can look promising and then be reduced sharply by one warm coastal storm.",
+      "nearby": [
+        [
+          "Augusta, ME",
+          "Augusta, ME",
+          "Farther inland and less marine-moderated."
+        ],
+        [
+          "Bangor, ME",
+          "Bangor, ME",
+          "Colder interior Maine climate."
+        ],
+        [
+          "North Conway, NH",
+          "North Conway, NH",
+          "Mountain-valley setting with more durable snow potential."
+        ]
+      ]
+    },
+    {
+      "slug": "boston-ma",
+      "city": "Boston",
+      "state": "MA",
+      "regionSlug": "northeast-new-england",
+      "region": "Northeast & New England",
+      "summary": "Boston sits near the southern and coastal edge of dependable New England snow cover. White Christmases are possible, but the city is much more vulnerable to marine warmth and December thaws than inland New England.",
+      "factors": [
+        [
+          "Coastal temperatures",
+          "Ocean influence often keeps Boston warmer than inland Massachusetts during marginal winter events."
+        ],
+        [
+          "Storm track",
+          "The exact path of a coastal low can determine snow versus rain in the metro."
+        ],
+        [
+          "Urban snow loss",
+          "Roads, buildings and warmer surfaces can accelerate melt compared with colder inland towns."
+        ]
+      ],
+      "thisYear": "Boston is a place where the live estimate can change quickly late in December. One well-timed snowstorm can create a White Christmas, while one rain event can erase the pack just as quickly.",
+      "nearby": [
+        [
+          "Worcester, MA",
+          "Worcester, MA",
+          "Higher and farther inland than Boston."
+        ],
+        [
+          "Concord, NH",
+          "Concord, NH",
+          "Colder interior New England setting."
+        ],
+        [
+          "Pittsfield, MA",
+          "Pittsfield, MA",
+          "Berkshire elevation improves snow retention."
+        ]
+      ]
+    },
+    {
+      "slug": "marquette-mi",
+      "city": "Marquette",
+      "state": "MI",
+      "regionSlug": "great-lakes-ohio-valley",
+      "region": "Great Lakes & Ohio Valley",
+      "summary": "Marquette combines northern latitude, Lake Superior snow and a cold Upper Peninsula climate, making it one of the stronger U.S. city settings for persistent Christmas snow.",
+      "factors": [
+        [
+          "Lake Superior snow",
+          "Cold northwest flow over Lake Superior can add frequent early-winter snow."
+        ],
+        [
+          "Persistent cold",
+          "Upper Peninsula temperatures often allow snowpack to survive for long stretches."
+        ],
+        [
+          "Local exposure",
+          "Wind direction and immediate shoreline versus inland elevation still create meaningful differences."
+        ]
+      ],
+      "thisYear": "The key question is usually not whether snow has fallen somewhere around Marquette, but how deep and durable the city snowpack is after any pre-Christmas warm spells.",
+      "nearby": [
+        [
+          "Negaunee, MI",
+          "Negaunee, MI",
+          "Higher inland terrain west of Marquette."
+        ],
+        [
+          "Munising, MI",
+          "Munising, MI",
+          "Lake Superior snow-belt exposure."
+        ],
+        [
+          "Houghton, MI",
+          "Houghton, MI",
+          "Keweenaw snow climate and persistent cold."
+        ]
+      ]
+    },
+    {
+      "slug": "traverse-city-mi",
+      "city": "Traverse City",
+      "state": "MI",
+      "regionSlug": "great-lakes-ohio-valley",
+      "region": "Great Lakes & Ohio Valley",
+      "summary": "Traverse City gets northern Lower Michigan cold and lake-effect snow, but Grand Traverse Bay and local wind direction produce major differences between downtown, inland hills and nearby snow belts.",
+      "factors": [
+        [
+          "Lake Michigan influence",
+          "West and northwest flow can generate lake-effect snow across northwest Lower Michigan."
+        ],
+        [
+          "Bay moderation",
+          "Immediate shoreline areas can be milder than inland higher terrain."
+        ],
+        [
+          "Terrain and belts",
+          "Small changes in location can move a community into or out of a persistent lake-effect band."
+        ]
+      ],
+      "thisYear": "A city-level check matters here because snow at nearby ski hills or inland communities does not automatically mean the downtown bayfront has the same depth on Christmas morning.",
+      "nearby": [
+        [
+          "Kalkaska, MI",
+          "Kalkaska, MI",
+          "Inland and colder with stronger snow retention."
+        ],
+        [
+          "Gaylord, MI",
+          "Gaylord, MI",
+          "Higher interior northern Lower Michigan snow climate."
+        ],
+        [
+          "Petoskey, MI",
+          "Petoskey, MI",
+          "Another northern lake-influenced city with local snow belts."
+        ]
+      ]
+    },
+    {
+      "slug": "grand-rapids-mi",
+      "city": "Grand Rapids",
+      "state": "MI",
+      "regionSlug": "great-lakes-ohio-valley",
+      "region": "Great Lakes & Ohio Valley",
+      "summary": "Grand Rapids is close enough to Lake Michigan for frequent lake-effect snow, yet far enough south that December thaws can periodically remove a promising snowpack.",
+      "factors": [
+        [
+          "Lake-effect reach",
+          "West flow can carry snow bands inland from Lake Michigan into the metro."
+        ],
+        [
+          "Southern Lower thaws",
+          "Warm southwest flow can push temperatures above freezing for extended periods."
+        ],
+        [
+          "Band variability",
+          "Western suburbs, downtown and communities farther east can see different snow depth after the same event."
+        ]
+      ],
+      "thisYear": "Grand Rapids often lives on the boundary between a durable northern-style pack and a more volatile southern Great Lakes winter. The live estimate should react strongly to late-December thaw signals.",
+      "nearby": [
+        [
+          "Muskegon, MI",
+          "Muskegon, MI",
+          "Immediate Lake Michigan snow-belt exposure."
+        ],
+        [
+          "Big Rapids, MI",
+          "Big Rapids, MI",
+          "Farther north and inland."
+        ],
+        [
+          "Cadillac, MI",
+          "Cadillac, MI",
+          "Higher, colder interior terrain."
+        ]
+      ]
+    },
+    {
+      "slug": "chicago-il",
+      "city": "Chicago",
+      "state": "IL",
+      "regionSlug": "great-lakes-ohio-valley",
+      "region": "Great Lakes & Ohio Valley",
+      "summary": "Chicago can have a snowy Christmas, but its position on the southwest shore of Lake Michigan does not favor classic lake-effect snow as often as cities east of the Great Lakes.",
+      "factors": [
+        [
+          "Storm-track dependence",
+          "Chicago relies heavily on organized Midwest winter storms rather than persistent local lake-effect."
+        ],
+        [
+          "Urban and lake moderation",
+          "The lake and dense urban core can keep near-shore temperatures slightly milder."
+        ],
+        [
+          "Cold-air durability",
+          "When Arctic air locks in after snow, an existing pack can survive well through Christmas."
+        ]
+      ],
+      "thisYear": "Chicago's odds can swing sharply based on whether a pre-Christmas storm is followed by sustained cold or by a mild, windy thaw.",
+      "nearby": [
+        [
+          "Rockford, IL",
+          "Rockford, IL",
+          "Farther inland and less lake-moderated."
+        ],
+        [
+          "Madison, WI",
+          "Madison, WI",
+          "Colder Upper Midwest setting."
+        ],
+        [
+          "Milwaukee, WI",
+          "Milwaukee, WI",
+          "Farther north with its own lake influence."
+        ]
+      ]
+    },
+    {
+      "slug": "minneapolis-mn",
+      "city": "Minneapolis",
+      "state": "MN",
+      "regionSlug": "upper-midwest-northern-plains",
+      "region": "Upper Midwest & Northern Plains",
+      "summary": "Minneapolis benefits from a cold continental climate that can preserve snow for long periods once a December base becomes established.",
+      "factors": [
+        [
+          "Persistent cold",
+          "Long stretches below freezing reduce melt and help even modest snow depth last."
+        ],
+        [
+          "Storm supply",
+          "Cold alone is not enough; a dry early winter can still leave limited cover."
+        ],
+        [
+          "Wind and compaction",
+          "Open exposure and urban surfaces can redistribute or reduce shallow snow."
+        ]
+      ],
+      "thisYear": "For Minneapolis, the most useful December signal is whether an established snowpack is paired with continued cold. A single warm spell matters less when the pack is deep, but more when it is marginal.",
+      "nearby": [
+        [
+          "St. Cloud, MN",
+          "St. Cloud, MN",
+          "Colder central Minnesota setting."
+        ],
+        [
+          "Duluth, MN",
+          "Duluth, MN",
+          "Farther north with Lake Superior influence."
+        ],
+        [
+          "Brainerd, MN",
+          "Brainerd, MN",
+          "Central-northern Minnesota snow climate."
+        ]
+      ]
+    },
+    {
+      "slug": "duluth-mn",
+      "city": "Duluth",
+      "state": "MN",
+      "regionSlug": "upper-midwest-northern-plains",
+      "region": "Upper Midwest & Northern Plains",
+      "summary": "Duluth combines northern latitude, Lake Superior influence and steep local elevation changes, producing strong but highly variable Christmas snow conditions across the city.",
+      "factors": [
+        [
+          "Lake Superior",
+          "The lake can enhance snowfall in favorable wind regimes while moderating shoreline temperatures."
+        ],
+        [
+          "Elevation climb",
+          "The hill above downtown can be notably snowier and colder than the immediate lakeshore."
+        ],
+        [
+          "Northern cold",
+          "Persistent December cold often helps established snow survive."
+        ]
+      ],
+      "thisYear": "A downtown lakefront observation can understate conditions on the hill. The local estimator should be checked for the exact place you plan to spend Christmas.",
+      "nearby": [
+        [
+          "Two Harbors, MN",
+          "Two Harbors, MN",
+          "North Shore snow climate."
+        ],
+        [
+          "Cloquet, MN",
+          "Cloquet, MN",
+          "Inland and colder than the immediate lakeshore."
+        ],
+        [
+          "Grand Marais, MN",
+          "Grand Marais, MN",
+          "Farther north on the Lake Superior shore."
+        ]
+      ]
+    },
+    {
+      "slug": "fargo-nd",
+      "city": "Fargo",
+      "state": "ND",
+      "regionSlug": "upper-midwest-northern-plains",
+      "region": "Upper Midwest & Northern Plains",
+      "summary": "Fargo's Christmas snow story is driven by continental cold and open Plains exposure. Snowfall totals can vary, but once a pack forms, cold often favors long retention.",
+      "factors": [
+        [
+          "Continental cold",
+          "Arctic air can keep temperatures below freezing for extended periods."
+        ],
+        [
+          "Open Plains wind",
+          "Strong wind can scour exposed areas and create deep drifts elsewhere."
+        ],
+        [
+          "Dry-winter risk",
+          "Very cold weather does not guarantee deep snow if storm activity remains limited."
+        ]
+      ],
+      "thisYear": "The live estimate should pay close attention to actual measured snow depth, because temperature alone can make Fargo look more snow-secure than a dry early winter really is.",
+      "nearby": [
+        [
+          "Grand Forks, ND",
+          "Grand Forks, ND",
+          "Farther north with similar continental cold."
+        ],
+        [
+          "Bemidji, MN",
+          "Bemidji, MN",
+          "Forest-and-lake region with generally stronger snow retention."
+        ],
+        [
+          "Bismarck, ND",
+          "Bismarck, ND",
+          "Northern Plains alternative with different storm exposure."
+        ]
+      ]
+    },
+    {
+      "slug": "denver-co",
+      "city": "Denver",
+      "state": "CO",
+      "regionSlug": "rockies-mountain-west",
+      "region": "Rockies & Mountain West",
+      "summary": "Denver can be snowy in December, but its Front Range setting also produces rapid warm-ups and Chinook-style downslope winds that can erase snow surprisingly fast.",
+      "factors": [
+        [
+          "Front Range storms",
+          "Upslope events can deliver substantial snow when cold air is banked against the mountains."
+        ],
+        [
+          "Downslope warming",
+          "Dry west winds can rapidly raise temperatures and accelerate melt."
+        ],
+        [
+          "Elevation contrast",
+          "Nearby foothills and mountain towns can remain snow-covered while Denver returns to bare ground."
+        ]
+      ],
+      "thisYear": "For Denver, the timing of the last storm matters less than whether cold weather follows it. A deep-looking snowpack can shrink rapidly under sun and downslope warmth.",
+      "nearby": [
+        [
+          "Boulder, CO",
+          "Boulder, CO",
+          "Foothill influence and slightly higher elevation."
+        ],
+        [
+          "Evergreen, CO",
+          "Evergreen, CO",
+          "Higher foothill community with better snow retention."
+        ],
+        [
+          "Breckenridge, CO",
+          "Breckenridge, CO",
+          "High-country snow climate far more reliable than the metro."
+        ]
+      ]
+    },
+    {
+      "slug": "bozeman-mt",
+      "city": "Bozeman",
+      "state": "MT",
+      "regionSlug": "rockies-mountain-west",
+      "region": "Rockies & Mountain West",
+      "summary": "Bozeman sits in a high northern valley surrounded by mountains, giving it a much colder and snow-friendlier December climate than many lower-elevation western cities.",
+      "factors": [
+        [
+          "High valley elevation",
+          "Elevation supports colder nights and better snow retention."
+        ],
+        [
+          "Mountain storm influence",
+          "Nearby ranges can enhance snowfall and keep the regional snowpack active."
+        ],
+        [
+          "Valley inversions",
+          "Cold air can settle into the valley and preserve shallow snow even between storms."
+        ]
+      ],
+      "thisYear": "Bozeman's live outlook should emphasize whether the valley itself has established cover, not just whether the surrounding ski terrain is snowy.",
+      "nearby": [
+        [
+          "West Yellowstone, MT",
+          "West Yellowstone, MT",
+          "Higher, colder plateau climate."
+        ],
+        [
+          "Big Sky, MT",
+          "Big Sky, MT",
+          "Mountain elevation strongly favors snow."
+        ],
+        [
+          "Livingston, MT",
+          "Livingston, MT",
+          "Nearby valley with different wind exposure."
+        ]
+      ]
+    },
+    {
+      "slug": "salt-lake-city-ut",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "regionSlug": "rockies-mountain-west",
+      "region": "Rockies & Mountain West",
+      "summary": "Salt Lake City sits beside some of the snowiest mountains in the West, but the valley floor is much warmer and more variable than the Wasatch high country.",
+      "factors": [
+        [
+          "Valley elevation",
+          "The city is high by national standards but much lower than nearby ski terrain."
+        ],
+        [
+          "Great Salt Lake influence",
+          "The lake can enhance snowfall during favorable cold northwest flow."
+        ],
+        [
+          "Strong elevation gradient",
+          "Snow depth can increase dramatically over a short drive into the Wasatch."
+        ]
+      ],
+      "thisYear": "Do not use mountain resort snow as a proxy for Christmas morning in the city. The live estimate should be based on valley snow depth and temperature, then offer the mountains as a nearby higher-confidence alternative.",
+      "nearby": [
+        [
+          "Park City, UT",
+          "Park City, UT",
+          "Higher elevation east of the Wasatch."
+        ],
+        [
+          "Alta, UT",
+          "Alta, UT",
+          "High mountain snow climate."
+        ],
+        [
+          "Heber City, UT",
+          "Heber City, UT",
+          "Elevated basin with colder winter conditions."
+        ]
+      ]
+    },
+    {
+      "slug": "spokane-wa",
+      "city": "Spokane",
+      "state": "WA",
+      "regionSlug": "pacific-northwest-sierra",
+      "region": "Pacific Northwest & Sierra",
+      "summary": "Spokane is much more continental than Seattle or Portland, with colder winters and a meaningful chance of persistent December snow.",
+      "factors": [
+        [
+          "Inland cold",
+          "Distance from the Pacific produces colder winter temperatures than western Washington."
+        ],
+        [
+          "Pacific storm moisture",
+          "Storms crossing the Cascades can still deliver snow when the inland air mass is cold enough."
+        ],
+        [
+          "Chinook and warm-sector risk",
+          "Periodic warm southwest flow can cause melt or mixed precipitation."
+        ]
+      ],
+      "thisYear": "Spokane often sits near a temperature threshold where a few degrees determine whether a December system adds snow or removes it. The live forecast becomes increasingly important in the final week.",
+      "nearby": [
+        [
+          "Coeur d'Alene, ID",
+          "Coeur d'Alene, ID",
+          "Similar inland climate with local lake effects."
+        ],
+        [
+          "Sandpoint, ID",
+          "Sandpoint, ID",
+          "Farther north and near mountain terrain."
+        ],
+        [
+          "Leavenworth, WA",
+          "Leavenworth, WA",
+          "Cascade east-slope mountain-valley setting."
+        ]
+      ]
+    },
+    {
+      "slug": "bend-or",
+      "city": "Bend",
+      "state": "OR",
+      "regionSlug": "pacific-northwest-sierra",
+      "region": "Pacific Northwest & Sierra",
+      "summary": "Bend's high-desert elevation and position east of the Cascades make it far more snow-favorable than Oregon's major west-side cities, though dry sunny spells can reduce shallow snow quickly.",
+      "factors": [
+        [
+          "High elevation",
+          "Bend sits around 3,600 feet, supporting colder temperatures and more snow than Oregon lowlands."
+        ],
+        [
+          "Cascade rain shadow",
+          "The area is drier than the west side, so cold does not always coincide with frequent snow."
+        ],
+        [
+          "Dry sun and sublimation",
+          "Low humidity and winter sun can gradually reduce snowpack even when temperatures stay cool."
+        ]
+      ],
+      "thisYear": "For Bend, actual observed depth is essential. Nearby mountains can be buried while town remains only lightly covered after a dry stretch.",
+      "nearby": [
+        [
+          "Sisters, OR",
+          "Sisters, OR",
+          "Higher and closer to the Cascades."
+        ],
+        [
+          "Sunriver, OR",
+          "Sunriver, OR",
+          "Higher basin south of Bend with colder nights."
+        ],
+        [
+          "Government Camp, OR",
+          "Government Camp, OR",
+          "High Cascade community with much stronger snow persistence."
+        ]
+      ]
+    },
+    {
+      "slug": "south-lake-tahoe-ca",
+      "city": "South Lake Tahoe",
+      "state": "CA",
+      "regionSlug": "pacific-northwest-sierra",
+      "region": "Pacific Northwest & Sierra",
+      "summary": "South Lake Tahoe is a high-elevation Sierra community where mountain storms can build deep December snow, but rain-snow lines and warm Pacific systems still matter.",
+      "factors": [
+        [
+          "Sierra elevation",
+          "The city sits above 6,000 feet, placing it in a true mountain winter climate."
+        ],
+        [
+          "Pacific storm cycles",
+          "Atmospheric rivers and Sierra storms can rapidly build snowpack when the freezing level stays low."
+        ],
+        [
+          "Rain-snow line",
+          "Warm Pacific systems can bring heavy wet snow or even rain at lake level while higher passes stay snowy."
+        ]
+      ],
+      "thisYear": "A good Tahoe Christmas outlook depends on both accumulated pack and the freezing level of incoming storms. Resort summit depth alone does not fully describe conditions at lake level.",
+      "nearby": [
+        [
+          "Truckee, CA",
+          "Truckee, CA",
+          "Cold Sierra basin with strong snow retention."
+        ],
+        [
+          "Tahoe City, CA",
+          "Tahoe City, CA",
+          "North Lake Tahoe snow climate."
+        ],
+        [
+          "Kirkwood, CA",
+          "Kirkwood, CA",
+          "Higher Sierra location with deeper snow potential."
+        ]
+      ]
+    },
+    {
+      "slug": "flagstaff-az",
+      "city": "Flagstaff",
+      "state": "AZ",
+      "regionSlug": "southwest-high-country",
+      "region": "Southwest High Country",
+      "summary": "Flagstaff is one of the clearest examples of elevation overpowering latitude. At roughly 7,000 feet, it has a genuine mountain winter despite being in Arizona.",
+      "factors": [
+        [
+          "High elevation",
+          "Cold nights and mountain temperatures allow snow to persist far better than in Arizona's desert cities."
+        ],
+        [
+          "Episodic storms",
+          "Southwest winter storms can be infrequent, so one or two systems can dominate the December snow story."
+        ],
+        [
+          "Strong sun",
+          "Bright, dry weather can melt exposed snow quickly between storms."
+        ]
+      ],
+      "thisYear": "Flagstaff's Christmas odds can rise quickly after a well-timed storm and fall quickly during a dry sunny stretch. Actual snow depth is more informative than assumptions about Arizona as a whole.",
+      "nearby": [
+        [
+          "Arizona Snowbowl, AZ",
+          "Arizona Snowbowl, AZ",
+          "Higher mountain terrain above Flagstaff."
+        ],
+        [
+          "Williams, AZ",
+          "Williams, AZ",
+          "High-elevation community west of Flagstaff."
+        ],
+        [
+          "Show Low, AZ",
+          "Show Low, AZ",
+          "Another elevated Arizona winter climate."
+        ]
+      ]
+    },
+    {
+      "slug": "santa-fe-nm",
+      "city": "Santa Fe",
+      "state": "NM",
+      "regionSlug": "southwest-high-country",
+      "region": "Southwest High Country",
+      "summary": "Santa Fe's elevation above 7,000 feet gives it real winter cold and snow potential, but the dry Southwest climate makes persistent cover less automatic than elevation alone suggests.",
+      "factors": [
+        [
+          "High elevation",
+          "Santa Fe is one of the highest state capitals and can remain cold enough for snow retention."
+        ],
+        [
+          "Dry climate",
+          "Long gaps between storms can leave only patchy cover despite cold nights."
+        ],
+        [
+          "Mountain proximity",
+          "The Sangre de Cristo foothills and ski basin become snowier rapidly with elevation."
+        ]
+      ],
+      "thisYear": "The live city estimate should separate Santa Fe proper from the much snowier high terrain above town, especially when the city has had a dry December.",
+      "nearby": [
+        [
+          "Los Alamos, NM",
+          "Los Alamos, NM",
+          "Higher plateau setting."
+        ],
+        [
+          "Taos, NM",
+          "Taos, NM",
+          "Northern New Mexico high-country climate."
+        ],
+        [
+          "Santa Fe Ski Basin, NM",
+          "Santa Fe Ski Basin, NM",
+          "Much higher mountain snow environment."
+        ]
+      ]
+    },
+    {
+      "slug": "pittsburgh-pa",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "regionSlug": "mid-atlantic-appalachians",
+      "region": "Mid-Atlantic & Appalachians",
+      "summary": "Pittsburgh lies near the transition between reliably cold northern winters and the more volatile Mid-Atlantic, so Christmas snow is possible but strongly dependent on late-December storm and thaw timing.",
+      "factors": [
+        [
+          "Interior position",
+          "Pittsburgh is less marine-moderated than eastern Pennsylvania and the coast."
+        ],
+        [
+          "Appalachian terrain",
+          "Nearby higher terrain can be colder and snowier than the city."
+        ],
+        [
+          "Warm-sector risk",
+          "Strong southerly flow ahead of winter systems can rapidly melt an existing shallow pack."
+        ]
+      ],
+      "thisYear": "Pittsburgh is a classic city where the final 7–10 days matter greatly. A modest snowpack can survive a cold pattern or disappear quickly under rain and temperatures in the 40s.",
+      "nearby": [
+        [
+          "Morgantown, WV",
+          "Morgantown, WV",
+          "Appalachian setting with nearby higher terrain."
+        ],
+        [
+          "Johnstown, PA",
+          "Johnstown, PA",
+          "Higher elevation east of Pittsburgh."
+        ],
+        [
+          "Erie, PA",
+          "Erie, PA",
+          "Lake Erie influence can produce much more snow."
+        ]
+      ]
+    },
+    {
+      "slug": "asheville-nc",
+      "city": "Asheville",
+      "state": "NC",
+      "regionSlug": "mid-atlantic-appalachians",
+      "region": "Mid-Atlantic & Appalachians",
+      "summary": "Asheville is far south, but Appalachian elevation gives it a real—though still relatively uncommon—path to Christmas snow compared with surrounding lower-elevation Southern cities.",
+      "factors": [
+        [
+          "Mountain elevation",
+          "Asheville sits around 2,100 feet and is surrounded by much higher terrain."
+        ],
+        [
+          "Cold-air timing",
+          "Snow usually requires Arctic or continental cold to arrive with the right storm track."
+        ],
+        [
+          "Fast melt",
+          "Southern sun and frequent mild spells can remove snow quickly after a storm."
+        ]
+      ],
+      "thisYear": "For Asheville, a low historical background can change quickly if a cold pre-Christmas storm appears. The final-week forecast carries much more weight here than it does in places with persistent winter snowpack.",
+      "nearby": [
+        [
+          "Boone, NC",
+          "Boone, NC",
+          "Higher and colder Blue Ridge climate."
+        ],
+        [
+          "Beech Mountain, NC",
+          "Beech Mountain, NC",
+          "Very high elevation for the Southeast."
+        ],
+        [
+          "Roanoke, VA",
+          "Roanoke, VA",
+          "Appalachian valley farther north."
+        ]
+      ]
+    },
+    {
+      "slug": "anchorage-ak",
+      "city": "Anchorage",
+      "state": "AK",
+      "regionSlug": "alaska",
+      "region": "Alaska",
+      "summary": "Anchorage has a cold, snowy Southcentral Alaska climate, but coastal influence and occasional warm storms mean Christmas snow should still be checked rather than assumed.",
+      "factors": [
+        [
+          "Southcentral cold",
+          "Long winter nights and generally cold December temperatures favor persistent snow."
+        ],
+        [
+          "Cook Inlet moderation",
+          "Maritime influence can raise temperatures and introduce mixed precipitation during strong warm storms."
+        ],
+        [
+          "Terrain effects",
+          "Chugach Mountains strongly influence snowfall and create sharp local differences around the metro."
+        ]
+      ],
+      "thisYear": "The main question for Anchorage is usually snowpack depth and whether any unusual warm event is expected, not whether winter has begun.",
+      "nearby": [
+        [
+          "Eagle River, AK",
+          "Eagle River, AK",
+          "Colder and closer to Chugach terrain."
+        ],
+        [
+          "Palmer, AK",
+          "Palmer, AK",
+          "Matanuska Valley alternative with different wind exposure."
+        ],
+        [
+          "Girdwood, AK",
+          "Girdwood, AK",
+          "Mountain/coastal location with heavy snow potential."
+        ]
+      ]
+    },
+    {
+      "slug": "fairbanks-ak",
+      "city": "Fairbanks",
+      "state": "AK",
+      "regionSlug": "alaska",
+      "region": "Alaska",
+      "summary": "Fairbanks has a deeply continental subarctic winter. Once snow cover is established, extremely cold December temperatures make meaningful melt unlikely.",
+      "factors": [
+        [
+          "Subarctic cold",
+          "Persistent deep cold strongly favors snow retention."
+        ],
+        [
+          "Low winter moisture",
+          "The Interior is relatively dry, so snow depth may be modest despite extreme cold."
+        ],
+        [
+          "Inversions",
+          "Strong valley inversions trap cold air and reinforce snowpack durability."
+        ]
+      ],
+      "thisYear": "For Fairbanks, measured depth is the most useful variable. The pack may not be exceptionally deep, but December warmth is much less likely to remove it than in most U.S. cities.",
+      "nearby": [
+        [
+          "North Pole, AK",
+          "North Pole, AK",
+          "Nearby Interior community with the same subarctic regime."
+        ],
+        [
+          "Nenana, AK",
+          "Nenana, AK",
+          "Interior Alaska alternative south of Fairbanks."
+        ],
+        [
+          "Denali Park, AK",
+          "Denali Park, AK",
+          "Higher, snowier mountain environment."
+        ]
+      ]
+    },
+    {
+      "slug": "amarillo-tx",
+      "city": "Amarillo",
+      "state": "TX",
+      "regionSlug": "southern-plains-rare-snow",
+      "region": "Southern Plains & Rare-Snow South",
+      "summary": "Amarillo is one of the better Southern Plains candidates for an occasional White Christmas because its high elevation and exposure to Arctic air make it much colder than most of Texas.",
+      "factors": [
+        [
+          "High Plains elevation",
+          "Amarillo sits around 3,600 feet, supporting colder winter temperatures."
+        ],
+        [
+          "Arctic fronts",
+          "Strong cold surges can arrive quickly and create a window for snow and snow retention."
+        ],
+        [
+          "Rapid rebound",
+          "Dry sun and strong temperature swings can melt shallow snow soon after a storm."
+        ]
+      ],
+      "thisYear": "Amarillo is highly timing-dependent. A snowstorm several days before Christmas may vanish, while a cold storm on December 23–24 can create a rare but genuine White Christmas.",
+      "nearby": [
+        [
+          "Dalhart, TX",
+          "Dalhart, TX",
+          "Farther northwest and generally colder."
+        ],
+        [
+          "Raton, NM",
+          "Raton, NM",
+          "Higher terrain near the Colorado border."
+        ],
+        [
+          "Tucumcari, NM",
+          "Tucumcari, NM",
+          "High Plains alternative west of Amarillo."
+        ]
+      ]
+    },
+    {
+      "slug": "oklahoma-city-ok",
+      "city": "Oklahoma City",
+      "state": "OK",
+      "regionSlug": "southern-plains-rare-snow",
+      "region": "Southern Plains & Rare-Snow South",
+      "summary": "Oklahoma City sits near the rare-snow edge of the national White Christmas map. Snow can occur, but lasting Christmas cover usually requires unusually well-timed Arctic cold.",
+      "factors": [
+        [
+          "Arctic surges",
+          "Very cold Plains air can reach Oklahoma rapidly and create short winter windows."
+        ],
+        [
+          "Storm timing",
+          "Snow or ice must arrive close enough to Christmas that the usual warming does not remove it."
+        ],
+        [
+          "Warm rebounds",
+          "Southern Plains temperatures can recover quickly after a cold outbreak."
+        ]
+      ],
+      "thisYear": "The long-range background is less useful here than the actual final-week pattern. A rare-snow city can move from near-zero practical expectation to a meaningful chance if a cold storm appears at exactly the right time.",
+      "nearby": [
+        [
+          "Tulsa, OK",
+          "Tulsa, OK",
+          "Farther northeast with slightly colder winter climate."
+        ],
+        [
+          "Wichita, KS",
+          "Wichita, KS",
+          "Farther north on the Plains."
+        ],
+        [
+          "Amarillo, TX",
+          "Amarillo, TX",
+          "Higher elevation and stronger cold exposure."
+        ]
+      ]
+    },
+    {
+      "slug": "boise-id",
+      "city": "Boise",
+      "state": "ID",
+      "regionSlug": "rockies-mountain-west",
+      "region": "Rockies & Mountain West",
+      "summary": "Boise sits in a lower Snake River Plain valley surrounded by much snowier mountains. Christmas snow in the city is possible but far less reliable than nearby high country.",
+      "factors": [
+        [
+          "Valley setting",
+          "Boise is lower and milder than surrounding mountain terrain."
+        ],
+        [
+          "Inversions",
+          "Cold-air inversions can sometimes preserve valley snow for days after a storm."
+        ],
+        [
+          "Pacific storm variability",
+          "Incoming systems may produce valley rain, mixed precipitation or snow depending on the cold-air depth."
+        ]
+      ],
+      "thisYear": "For Boise, an inversion following a snow event can be more important than the storm itself because it can lock cold air into the valley and preserve the pack.",
+      "nearby": [
+        [
+          "McCall, ID",
+          "McCall, ID",
+          "Higher mountain-lake setting with much stronger snow retention."
+        ],
+        [
+          "Idaho City, ID",
+          "Idaho City, ID",
+          "Higher terrain northeast of Boise."
+        ],
+        [
+          "Sun Valley, ID",
+          "Sun Valley, ID",
+          "High-elevation resort community."
+        ]
+      ]
+    },
+    {
+      "slug": "reno-nv",
+      "city": "Reno",
+      "state": "NV",
+      "regionSlug": "pacific-northwest-sierra",
+      "region": "Pacific Northwest & Sierra",
+      "summary": "Reno is a high desert city in the rain shadow of the Sierra. It can receive winter snow, but Christmas cover is much less dependable than nearby Tahoe and Sierra communities.",
+      "factors": [
+        [
+          "High desert",
+          "Cold nights support snow, but low precipitation means storms are less frequent."
+        ],
+        [
+          "Sierra rain shadow",
+          "Many Pacific storms lose moisture before reaching Reno."
+        ],
+        [
+          "Strong sun",
+          "Dry air and sun can remove shallow city snow quickly after a storm."
+        ]
+      ],
+      "thisYear": "Reno is another place where nearby mountain snow is a poor proxy for the city. The live estimate should use the valley's actual snow depth, then point travelers west if they want more dependable snow.",
+      "nearby": [
+        [
+          "Truckee, CA",
+          "Truckee, CA",
+          "Higher Sierra basin with strong snow retention."
+        ],
+        [
+          "South Lake Tahoe, CA",
+          "South Lake Tahoe, CA",
+          "High-elevation lake community."
+        ],
+        [
+          "Incline Village, NV",
+          "Incline Village, NV",
+          "Higher Tahoe Basin location."
+        ]
+      ]
+    }
+  ]
+}
