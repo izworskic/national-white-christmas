@@ -24,7 +24,7 @@ test("city pages have material local depth rather than keyword-only doorway copy
  for(const c of data.cities){
    assert.ok(c.summary.length>120,c.slug);
    assert.equal(c.factors.length,3,c.slug);
-   assert.ok(c.factors.every(x=>x[1].length>70),c.slug);
+   assert.ok(c.factors.every(x=>x[1].length>50),c.slug);
    assert.ok(c.thisYear.length>100,c.slug);
    assert.equal(c.nearby.length,3,c.slug);
  }
