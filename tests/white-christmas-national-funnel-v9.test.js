@@ -37,7 +37,7 @@ test("main funnel promotes national regional discovery",()=>{
   assert.match(main,/White Christmas Across America/);
   assert.match(main,/Explore U\.S\. snow regions/);
   assert.match(main,/\/national-tools\/white-christmas\/regions\//);
-  assert.match(main,/white-christmas\.css\?v=20260903-city11/);
+  assert.match(main,/white-christmas\.css\?v=20260903-state12/);
 });
 
 test("national hub covers every major U.S. snow-region family",()=>{
