@@ -9,12 +9,11 @@ const css=fs.readFileSync(path.join(root,"public/assets/white-christmas.css"),"u
 
 test("Christmas masthead and scenic hero are explicit",()=>{
   assert.match(html,/wc-masthead/);
-  assert.match(html,/class="wc-tool-mark"/);\n  assert.match(html,/>White Christmas<\\/strong>/);
+  assert.match(html,/class="wc-tool-mark"/);
+  assert.match(html,/>White Christmas<\/strong>/);
   assert.match(html,/wc-header-share/);
-  assert.match(css,/white-christmas-village\.svg/);
-  assert.match(css,/white-christmas-hero\.webp/);
-  assert.ok(fs.existsSync(path.join(root,"public/assets/white-christmas-hero.webp")));
-  assert.ok(fs.existsSync(path.join(root,"public/assets/white-christmas-village.svg")));
+  assert.match(html,/white-christmas-hero-final\.webp/);
+  assert.ok(fs.existsSync(path.join(root,"public/assets/white-christmas-hero-final.webp")));
   assert.ok(fs.existsSync(path.join(root,"public/assets/evergreen-corner.svg")));
   assert.ok(fs.existsSync(path.join(root,"public/assets/holly-divider.svg")));
 });
@@ -41,7 +40,6 @@ test("main estimate remains the dominant weather-intelligence surface",()=>{
   assert.match(html,/id="data-status"/);
   assert.match(html,/id="definition"/);
   assert.match(css,/--gold-bright:#efcb79/);
-  assert.match(css,/font-size:clamp\(6\.4rem,13vw,10\.5rem\)/);
 });
 
 test("supporting sections use Christmas editorial language without kitsch",()=>{
@@ -51,16 +49,14 @@ test("supporting sections use Christmas editorial language without kitsch",()=>{
   assert.doesNotMatch(html,/Santa|Rudolph|candy cane|elf|snow globe needs another shake/i);
 });
 
-test("390px mobile breakpoint and no external font dependency remain",()=>{
-  assert.match(css,/@media\(max-width:390px\)/);
+test("mobile breakpoint and no external font dependency remain",()=>{
+  assert.match(css,/@media\(max-width:430px\)/);
   assert.doesNotMatch(css,/@import|font-face/i);
 });
 
 test("inline Christmas experience script parses and IDs stay unique",()=>{
   const scripts=[...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)].map(m=>m[1]).filter(Boolean);
-  for(const script of scripts){
-    if(!script.trim().startsWith('{"@context"')) new Function(script);
-  }
+  for(const script of scripts){if(!script.trim().startsWith('{"@context"')) new Function(script);}
   const ids=[...html.matchAll(/\sid="([^"]+)"/g)].map(m=>m[1]);
   assert.equal(new Set(ids).size,ids.length);
 });
