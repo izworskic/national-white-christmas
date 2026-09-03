@@ -11,8 +11,8 @@ const hero=path.join(root,"public/assets/white-christmas-hero-final.webp");
 test("final photographic hero asset is present and wired into the page",()=>{
   assert.ok(fs.existsSync(hero));
   assert.ok(fs.statSync(hero).size>20000);
-  assert.match(css,/white-christmas-hero-final\.webp/);
-  assert.match(html,/white-christmas\.css\?v=20260903-finalhero6/);
+  assert.match(html,/src="\/assets\/white-christmas-hero-final\.webp"/);
+  assert.match(html,/white-christmas\.css\?v=20260903-product8/);
 });
 
 test("hero palette matches the photographic night scene",()=>{
@@ -23,11 +23,11 @@ test("hero palette matches the photographic night scene",()=>{
 });
 
 test("hero remains readable over the final image on desktop and mobile",()=>{
-  assert.match(css,/rgba\(6,26,45,\.99\) 0%/);
-  assert.match(css,/rgba\(6,26,45,\.98\) 28%/);
+  assert.match(css,/rgba\(5,20,35,\.99\) 0%/);
+  assert.match(css,/rgba\(5,20,35,\.96\) 25%/);
   assert.match(css,/@media\(max-width:820px\)/);
-  assert.match(css,/height:292px!important/);
-  assert.match(css,/var\(--wc-night\) 49%/);
+  assert.match(css,/\.wc-hero-media\{height:205px!important/);
+  assert.match(css,/#061a2d 57%/);
 });
 
 test("social cards use the same final hero artwork",()=>{
