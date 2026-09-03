@@ -5,7 +5,7 @@
 <link rel="canonical" href="https://chrisizworski.com/national-tools/white-christmas/"><meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="website"><meta property="og:title" content="Will I Have a White Christmas?"><meta property="og:description" content="See the evolving chance of at least 1 inch of snow on the ground on December 25 for your location."><meta property="og:url" content="https://chrisizworski.com/national-tools/white-christmas/">
 <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Will I Have a White Christmas?"><meta name="twitter:description" content="A place-specific White Christmas estimate that evolves from climatology toward snowpack and the Christmas-week forecast.">
-<link rel="stylesheet" href="/assets/national-tools.css?v=20260902-placebar1"><link rel="stylesheet" href="/assets/white-christmas.css?v=20260903-christmas3">
+<link rel="stylesheet" href="/assets/national-tools.css?v=20260902-placebar1"><link rel="stylesheet" href="/assets/white-christmas.css?v=20260903-christmas4">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://chrisizworski.com/#person","name":"Chris Izworski","url":"https://chrisizworski.com/"},{"@type":"WebSite","@id":"https://chrisizworski.com/#website","url":"https://chrisizworski.com/","name":"Chris Izworski","author":{"@id":"https://chrisizworski.com/#person"}},{"@type":"SoftwareApplication","@id":"https://chrisizworski.com/national-tools/white-christmas/#page","url":"https://chrisizworski.com/national-tools/white-christmas/","name":"Will I Have a White Christmas?","description":"A U.S. White Christmas probability tool blending station history, CPC outlooks, current snowpack and short-range NWS forecasts.","dateModified":"2026-09-03","author":{"@id":"https://chrisizworski.com/#person"},"isPartOf":{"@id":"https://chrisizworski.com/#website"}}]}</script></head>
 <body class="white-christmas-page"><header class="site-head wc-masthead"><div class="wc-masthead-evergreen" aria-hidden="true"></div><div class="wrap head-in"><a class="brand wc-brand" href="/"><strong>Chris Izworski</strong><span>Weather Intelligence</span></a><nav class="nav" aria-label="Primary"><a href="/national-tools/">U.S. Outdoor Tools</a><a href="/tools/">Michigan Tools</a><button type="button" class="wc-header-share" id="header-share" aria-label="Share White Christmas tool"><span aria-hidden="true">↥</span> Share</button></nav></div></header>
 <main>
@@ -14,21 +14,24 @@
   <div class="wrap wc-hero-inner"><div class="wc-hero-copy"><div class="eyebrow">Christmas weather outlook</div><h1>Will you have a White Christmas?</h1><p class="lede">Your local odds of waking up to at least an inch of snow on Christmas morning.</p><p class="wc-definition-line"><span aria-hidden="true">❄</span><strong>White Christmas:</strong> snow on the ground, not necessarily snow falling that day.</p></div></div>
 </section>
 <section class="section wc-search-stage"><div class="wrap">
-<div class="wc-search-row"><div class="wc-locator"><form id="loc"><label class="wc-sr-only" for="wc-location">U.S. city, state or ZIP</label><div class="wc-input-wrap"><span class="wc-location-icon" aria-hidden="true">⌖</span><input id="wc-location" autocomplete="postal-code" inputmode="search" aria-label="U.S. city, state or ZIP" placeholder="City, state or ZIP" required></div><button class="btn" type="submit">See my odds <span aria-hidden="true">→</span></button><button type="button" class="secondary-btn geo-btn" data-use-location>Use my location</button></form><div class="wc-locator-meta"><p>The percentage is a transparent site estimate, not an official NOAA Christmas forecast. It is built from climatology and weather evidence and rounded to 5-point increments to avoid fake precision.</p><p class="location-privacy">Device location is rounded before lookup and is not included in analytics.</p></div><div class="status" role="status" aria-live="polite"></div></div><aside class="wc-countdown-card" aria-label="Countdown to Christmas"><span class="wc-holly-mark" aria-hidden="true"></span><strong id="hero-countdown-days">—</strong><span id="hero-countdown-label">Days to Christmas</span><small id="hero-countdown-updated">Christmas 2026</small></aside></div>
+<div class="wc-search-row"><div class="wc-locator"><form id="loc"><label class="wc-sr-only" for="wc-location">U.S. city, state or ZIP</label><div class="wc-input-wrap"><span class="wc-location-icon" aria-hidden="true"></span><input id="wc-location" autocomplete="postal-code" inputmode="search" aria-label="U.S. city, state or ZIP" placeholder="Enter city, state or ZIP code" required></div><button class="btn" type="submit">See my odds <span aria-hidden="true">→</span></button></form><div class="wc-locator-utility"><button type="button" class="geo-btn wc-geo-link" data-use-location>Use my current location</button><span aria-hidden="true">·</span><span>Location is rounded before lookup.</span></div><div class="wc-locator-meta"><p>The percentage is a transparent site estimate, not an official NOAA Christmas forecast. It is built from climatology and weather evidence and rounded to 5-point increments to avoid fake precision.</p></div><div class="status" role="status" aria-live="polite"></div></div><aside class="wc-countdown-card" aria-label="Countdown to Christmas"><span class="wc-holly-mark" aria-hidden="true"></span><strong id="hero-countdown-days">—</strong><span id="hero-countdown-label">Days to Christmas</span><small id="hero-countdown-updated">Christmas 2026</small></aside></div>
 
 <section id="result" class="wc-result" aria-live="polite" aria-busy="false" hidden>
   <div id="result-loading" class="wc-state-card" role="status"><span class="wc-state-dot" aria-hidden="true"></span><div><strong>Building your Christmas snow outlook…</strong><span>Checking history and the signals that are meaningful this far from December 25.</span></div></div>
   <div id="result-error" class="wc-state-card wc-state-error" role="alert" hidden><div><strong>We couldn't refresh this White Christmas estimate.</strong><span>The weather sources did not return a usable result. Your location is still saved; try again shortly.</span></div></div>
   <div id="result-content" hidden>
+    <div class="wc-result-card">
     <div class="wc-result-topline"><div><span id="phase" class="wc-phase">—</span><h2 id="result-location" class="wc-location-heading">—</h2></div><div class="wc-result-meta"><strong id="countdown">—</strong><span id="updated">—</span></div></div>
 
     <div class="wc-answer-grid">
-      <div class="wc-answer-main">
+      <div class="wc-probability-pane">
         <div class="wc-probability-row"><div><strong id="probability" class="wc-probability">—</strong><span class="wc-probability-caption">Chance of a White Christmas</span></div><span id="band" class="wc-band">—</span></div>
+        <div class="wc-watch"><span>What we're watching next</span><strong id="watch-next">—</strong></div>
+      </div>
+      <div class="wc-story-pane">
         <p id="answer" class="wc-headline">—</p>
         <p id="trend-summary" class="wc-trend-summary">—</p>
         <p id="detail" class="wc-answer-copy">—</p>
-        <div class="wc-watch"><span>What we're watching next</span><strong id="watch-next">—</strong></div>
         <div class="wc-answer-actions"><button type="button" class="btn" id="share-result">Share this result</button><span id="share-status" class="small" role="status" aria-live="polite"></span></div>
       </div>
       <aside class="wc-trust-rail" aria-label="Result confidence and definition">
@@ -37,20 +40,27 @@
         <div><span>What counts</span><strong>1 inch or more</strong><small id="definition">At least 1 inch of snow on the ground on December 25.</small></div>
       </aside>
     </div>
+    </div>
 
+    <div class="wc-analysis-grid">
     <section class="wc-comparison" aria-labelledby="comparison-title"><div class="wc-section-heading"><span class="tool-kicker">Historical vs. this year</span><h3 id="comparison-title">A normal Christmas compared with this one</h3></div><div class="wc-comparison-grid"><div class="wc-comparison-card"><span>Historical chance</span><strong id="history-pct">—</strong><small>1991–2020 Christmas snow-depth baseline</small></div><div class="wc-comparison-card wc-comparison-current"><span>Current 2026 estimate</span><strong id="current-pct">—</strong><small id="comparison-copy">—</small></div></div></section>
 
-    <section class="wc-drivers" aria-labelledby="drivers-title"><div class="wc-section-heading"><span class="tool-kicker">Why this number</span><h3 id="drivers-title">Why the odds look this way</h3></div><div id="driver-grid" class="wc-driver-grid"></div></section>
+    <section class="wc-drivers" aria-labelledby="drivers-title"><div class="wc-section-heading"><span class="tool-kicker">The signals</span><h3 id="drivers-title">Why the odds look this way</h3></div><div id="driver-grid" class="wc-driver-grid"></div></section>
 
+    </div>
+
+    <div class="wc-lower-grid">
     <section class="wc-trend-panel" aria-labelledby="trend-title"><div class="wc-section-heading wc-heading-split"><div><span class="tool-kicker">Trend</span><h3 id="trend-title">Your White Christmas odds over time</h3></div><small>Saved only on this device.</small></div><div id="trend-empty" class="wc-trend-empty">This is your first saved check for this location. Come back later and the movement will appear here.</div><div id="trend-chart-wrap" hidden><svg id="trend-chart" class="wc-trend-chart" viewBox="0 0 640 150" role="img" aria-labelledby="trend-chart-title trend-chart-desc"><title id="trend-chart-title">White Christmas probability trend</title><desc id="trend-chart-desc">Probability history for this location on this device.</desc><line x1="42" y1="75" x2="620" y2="75" class="wc-chart-midline"></line><polyline id="trend-line" points="" class="wc-chart-line"></polyline><g id="trend-points"></g></svg><ol id="trend-list" class="wc-trend-list"></ol></div></section>
 
-    <section class="wc-evidence" aria-labelledby="evidence-title"><div class="wc-section-heading"><span class="tool-kicker">Evidence</span><h3 id="evidence-title">Behind the Christmas forecast</h3></div>
+    <section class="wc-evidence" aria-labelledby="evidence-title"><div class="wc-section-heading"><span class="tool-kicker">Forecast evidence</span><h3 id="evidence-title">Behind the Christmas forecast</h3></div>
       <details class="wc-disclosure" open><summary><span>Historical snow-depth baseline</span><strong id="history-summary">—</strong></summary><div class="wc-disclosure-body"><p id="history-copy">—</p><small id="history-station">—</small></div></details>
       <details class="wc-disclosure"><summary><span>Seasonal climate signal</span><strong id="cpc-summary">—</strong></summary><div class="wc-disclosure-body"><p id="cpc-copy">—</p><small>Broad CPC outlooks are context, never a Christmas Day forecast.</small></div></details>
       <details class="wc-disclosure"><summary><span>Current snowpack</span><strong id="pack-summary">—</strong></summary><div class="wc-disclosure-body"><p id="pack-copy">—</p><small id="pack-station">Snowpack begins influencing the estimate inside 45 days.</small><p><a class="secondary-btn" id="snow-map-link" href="https://www.nohrsc.noaa.gov/nsa/?region=National&amp;units=e&amp;var=snowdepth" target="_blank" rel="noopener">Open current NOAA snow analysis</a></p></div></details>
       <details class="wc-disclosure"><summary><span>Christmas-week forecast</span><strong id="forecast-summary">—</strong></summary><div class="wc-disclosure-body"><p id="forecast-copy">The short-range forecast becomes a major factor only once December 25 enters the normal NWS forecast window.</p><small id="forecast-meta"></small></div></details>
       <details class="wc-disclosure"><summary><span>Full factor math</span><strong>See model adjustments</strong></summary><div class="wc-disclosure-body"><div id="factors"></div></div></details>
     </section>
+
+    </div>
 
     <details class="wc-map-disclosure" id="history-map-details"><summary><span><strong>Historical probability map</strong><small>NOAA 1991–2020 climatology · supporting context</small></span><span aria-hidden="true">View map</span></summary><div class="wc-frame"><div class="wc-frame-copy"><p>The map shows the historical chance of at least 1 inch of snow on December 25. It is climatology, not this year's forecast.</p></div><iframe id="history-map-frame" title="NOAA historical White Christmas probability map" loading="lazy" referrerpolicy="no-referrer" data-src="https://www.arcgis.com/apps/mapviewer/index.html?layers=f0ad5d4bb3fa4176ad2134cafbbf8cfd" src="about:blank"></iframe></div></details>
 
