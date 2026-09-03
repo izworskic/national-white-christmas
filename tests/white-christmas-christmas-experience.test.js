@@ -12,7 +12,7 @@ test("Christmas masthead and scenic hero are explicit",()=>{
   assert.match(html,/Weather Intelligence/);
   assert.match(html,/wc-header-share/);
   assert.match(css,/white-christmas-village\.svg/);
-  assert.ok(fs.existsSync(path.join(root,"public/assets/white-christmas-village.svg")));
+  assert.match(css,/white-christmas-hero\\.webp/);\n  assert.ok(fs.existsSync(path.join(root,"public/assets/white-christmas-hero.webp")));\n  assert.ok(fs.existsSync(path.join(root,"public/assets/white-christmas-village.svg")));
   assert.ok(fs.existsSync(path.join(root,"public/assets/evergreen-corner.svg")));
   assert.ok(fs.existsSync(path.join(root,"public/assets/holly-divider.svg")));
 });
