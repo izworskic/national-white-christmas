@@ -12,7 +12,9 @@ test("Christmas masthead and scenic hero are explicit",()=>{
   assert.match(html,/Weather Intelligence/);
   assert.match(html,/wc-header-share/);
   assert.match(css,/white-christmas-village\.svg/);
-  assert.match(css,/white-christmas-hero\\.webp/);\n  assert.ok(fs.existsSync(path.join(root,"public/assets/white-christmas-hero.webp")));\n  assert.ok(fs.existsSync(path.join(root,"public/assets/white-christmas-village.svg")));
+  assert.match(css,/white-christmas-hero\.webp/);
+  assert.ok(fs.existsSync(path.join(root,"public/assets/white-christmas-hero.webp")));
+  assert.ok(fs.existsSync(path.join(root,"public/assets/white-christmas-village.svg")));
   assert.ok(fs.existsSync(path.join(root,"public/assets/evergreen-corner.svg")));
   assert.ok(fs.existsSync(path.join(root,"public/assets/holly-divider.svg")));
 });
@@ -56,7 +58,9 @@ test("390px mobile breakpoint and no external font dependency remain",()=>{
 
 test("inline Christmas experience script parses and IDs stay unique",()=>{
   const scripts=[...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)].map(m=>m[1]).filter(Boolean);
-  for(const script of scripts){ if(!script.trim().startsWith("{\"@context\"")) new Function(script); }
+  for(const script of scripts){
+    if(!script.trim().startsWith('{"@context"')) new Function(script);
+  }
   const ids=[...html.matchAll(/\sid="([^"]+)"/g)].map(m=>m[1]);
   assert.equal(new Set(ids).size,ids.length);
 });
