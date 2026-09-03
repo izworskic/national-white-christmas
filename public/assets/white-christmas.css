@@ -1500,3 +1500,7 @@
   .wc-driver-grid{grid-template-columns:1fr!important}
   .wc-driver+.wc-driver{border-left:0!important;border-top:1px solid rgba(185,141,63,.25)!important}
 }
+
+.wc-share-icon{display:inline-block;width:18px;height:18px;margin-right:.42rem;background:url("/assets/wc-icon-share.svg") center/contain no-repeat;vertical-align:-4px}
+.wc-arrow-icon{display:inline-block;width:20px;height:20px;margin-left:.7rem;background:url("/assets/wc-icon-arrow.svg") center/contain no-repeat;vertical-align:-5px}
+.wc-definition-icon{display:inline-block!important;flex:0 0 20px;width:20px;height:20px;background:url("/assets/wc-icon-seasonal.svg") center/contain no-repeat}
