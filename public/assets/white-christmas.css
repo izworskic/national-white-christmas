@@ -1504,3 +1504,204 @@
 .wc-share-icon{display:inline-block;width:18px;height:18px;margin-right:.42rem;background:url("/assets/wc-icon-share.svg") center/contain no-repeat;vertical-align:-4px}
 .wc-arrow-icon{display:inline-block;width:20px;height:20px;margin-left:.7rem;background:url("/assets/wc-icon-arrow.svg") center/contain no-repeat;vertical-align:-5px}
 .wc-definition-icon{display:inline-block!important;flex:0 0 20px;width:20px;height:20px;background:url("/assets/wc-icon-seasonal.svg") center/contain no-repeat}
+
+
+/* =========================================================
+   Contrast + composition correction v5
+   Text never sits directly on uncontrolled bright imagery.
+   ========================================================= */
+.white-christmas-page .wc-hero{
+  position:relative;
+  isolation:isolate;
+  background:var(--pine-dark)!important;
+  min-height:470px!important;
+}
+.white-christmas-page .wc-hero:before{
+  content:"";
+  position:absolute;
+  z-index:0;
+  inset:0 0 0 auto;
+  width:72%;
+  background:
+    linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.12)),
+    url("/assets/white-christmas-hero.webp") center/cover no-repeat,
+    url("/assets/white-christmas-village.svg") center/cover no-repeat!important;
+  pointer-events:none;
+}
+.white-christmas-page .wc-hero:after{
+  content:"";
+  position:absolute;
+  z-index:1;
+  inset:0;
+  height:auto!important;
+  background:
+    linear-gradient(90deg,
+      var(--pine-dark) 0%,
+      var(--pine-dark) 30%,
+      rgba(6,42,34,.99) 36%,
+      rgba(6,42,34,.92) 43%,
+      rgba(6,42,34,.60) 51%,
+      rgba(6,42,34,.20) 61%,
+      rgba(6,42,34,0) 72%),
+    linear-gradient(180deg,rgba(6,42,34,0) 72%,rgba(6,42,34,.26) 100%)!important;
+  pointer-events:none;
+}
+.wc-hero-inner{position:relative;z-index:3!important}
+.wc-hero-copy{
+  max-width:520px!important;
+  padding:1rem 0 .7rem;
+}
+.white-christmas-page .wc-hero .eyebrow,
+.white-christmas-page .wc-hero h1,
+.white-christmas-page .wc-hero .lede,
+.white-christmas-page .wc-hero .wc-definition-line,
+.white-christmas-page .wc-hero .wc-definition-line strong{
+  color:#fffaf0!important;
+}
+.white-christmas-page .wc-hero .eyebrow{color:var(--gold-bright)!important}
+.white-christmas-page .wc-hero h1{
+  text-shadow:0 3px 14px rgba(0,0,0,.34)!important;
+}
+.white-christmas-page .wc-hero .lede,
+.white-christmas-page .wc-hero .wc-definition-line{
+  text-shadow:0 2px 8px rgba(0,0,0,.28)!important;
+}
+
+/* Cream surfaces always use dark ink, never inherited white result text. */
+.wc-search-stage,
+.wc-locator,
+.wc-countdown-card,
+.wc-analysis-grid,
+.wc-lower-grid,
+.wc-comparison,
+.wc-drivers,
+.wc-trend-panel,
+.wc-evidence,
+.wc-map-disclosure,
+.wc-methodology,
+.wc-support,
+.wc-season-story{
+  color:var(--ink)!important;
+}
+.wc-locator p,
+.wc-locator span:not(.wc-arrow-icon),
+.wc-countdown-card small,
+.wc-analysis-grid p,
+.wc-analysis-grid small,
+.wc-analysis-grid span,
+.wc-lower-grid p,
+.wc-lower-grid small,
+.wc-lower-grid span,
+.wc-support p,
+.wc-season-story p{
+  color:#4d514d!important;
+}
+.wc-countdown-card>span:not(.wc-holly-mark){color:#56382f!important}
+.wc-countdown-card strong{color:var(--christmas-red)!important}
+.wc-analysis-grid h3,
+.wc-lower-grid h3,
+.wc-support h2,
+.wc-support h3,
+.wc-season-story h2,
+.wc-season-story h3{
+  color:var(--pine)!important;
+}
+.wc-analysis-grid .wc-section-heading h3,
+.wc-lower-grid .wc-section-heading h3{
+  color:var(--christmas-red)!important;
+}
+.wc-comparison-card strong{color:var(--pine)!important}
+.wc-driver strong{color:var(--pine)!important}
+.wc-driver span{color:#68463e!important}
+.wc-driver p{color:#4a4e49!important}
+
+/* Result panel uses fixed dark surfaces and fixed light text. */
+.wc-result-card,
+.wc-result-topline,
+.wc-answer-grid{
+  background:
+    radial-gradient(circle at 78% 24%,rgba(239,203,121,.04),transparent 20rem),
+    linear-gradient(145deg,#0b3b2e,#06281f)!important;
+}
+.wc-result-card,
+.wc-result-card p,
+.wc-result-card small,
+.wc-result-card span{
+  color:rgba(255,250,240,.82);
+}
+.wc-location-heading,
+.wc-headline,
+.wc-trust-rail strong,
+.wc-watch strong{color:#fffaf0!important}
+.wc-phase,
+.wc-band,
+.wc-trend-summary,
+.wc-result-meta strong,
+.wc-trust-rail span,
+.wc-watch span{color:var(--gold-bright)!important}
+.wc-probability{color:var(--gold-bright)!important}
+.wc-probability-caption{color:#fff4d9!important}
+
+/* Search/countdown bridge gets a clean visual edge; no overlapping text. */
+.wc-search-row{
+  align-items:stretch!important;
+}
+.wc-locator,
+.wc-countdown-card{
+  background:#fbf5e9!important;
+}
+.wc-locator form input{
+  color:#2b302c!important;
+  background:#fffdf8!important;
+}
+.wc-locator form input::placeholder{color:#77746f!important;opacity:1}
+.wc-geo-link{color:var(--christmas-red)!important}
+
+/* Mobile: photography becomes a separate upper band; copy sits on solid pine. */
+@media(max-width:820px){
+  .white-christmas-page .wc-hero{
+    min-height:665px!important;
+    background:var(--pine-dark)!important;
+  }
+  .white-christmas-page .wc-hero:before{
+    inset:0 0 auto 0!important;
+    width:100%!important;
+    height:280px!important;
+    background:
+      linear-gradient(180deg,rgba(0,0,0,.02),rgba(6,42,34,.06)),
+      url("/assets/white-christmas-hero.webp") 66% center/cover no-repeat,
+      url("/assets/white-christmas-village.svg") 66% center/cover no-repeat!important;
+  }
+  .white-christmas-page .wc-hero:after{
+    background:
+      linear-gradient(180deg,
+        rgba(6,42,34,0) 0%,
+        rgba(6,42,34,.06) 28%,
+        rgba(6,42,34,.72) 40%,
+        var(--pine-dark) 49%,
+        var(--pine-dark) 100%)!important;
+  }
+  .wc-hero-inner{
+    padding-top:17.2rem!important;
+    padding-bottom:5.9rem!important;
+  }
+  .wc-hero-copy{
+    max-width:100%!important;
+    padding:1rem 0 0!important;
+  }
+  .white-christmas-page .wc-hero h1{
+    max-width:10.5ch!important;
+    text-shadow:none!important;
+  }
+  .white-christmas-page .wc-hero .lede,
+  .white-christmas-page .wc-hero .wc-definition-line{
+    text-shadow:none!important;
+  }
+  .wc-search-row{margin-top:-58px!important}
+}
+@media(max-width:430px){
+  .white-christmas-page .wc-hero{min-height:680px!important}
+  .white-christmas-page .wc-hero:before{height:250px!important}
+  .wc-hero-inner{padding-top:15.7rem!important}
+  .wc-search-row{margin-top:-50px!important}
+}
