@@ -38,5 +38,5 @@ test("result panel keeps light text on fixed evergreen",()=>{
 });
 
 test("contrast build is cache-busted",()=>{
-  assert.match(html,/white-christmas\.css\?v=20260903-product8/);
+  assert.match(html,/white-christmas\.css\?v=20260903-national9/);
 });
