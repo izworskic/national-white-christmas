@@ -16,5 +16,31 @@
     "api/national-white-christmas.js": {
       "maxDuration": 30
     }
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/national-tools/white-christmas/forecast",
+      "destination": "/national-tools/white-christmas/forecast/index.html"
+    },
+    {
+      "source": "/national-tools/white-christmas/forecast/",
+      "destination": "/national-tools/white-christmas/forecast/index.html"
+    },
+    {
+      "source": "/national-tools/white-christmas/regions",
+      "destination": "/national-tools/white-christmas/regions/index.html"
+    },
+    {
+      "source": "/national-tools/white-christmas/regions/",
+      "destination": "/national-tools/white-christmas/regions/index.html"
+    },
+    {
+      "source": "/national-tools/white-christmas/regions/:slug",
+      "destination": "/national-tools/white-christmas/regions/:slug/index.html"
+    },
+    {
+      "source": "/national-tools/white-christmas/regions/:slug/",
+      "destination": "/national-tools/white-christmas/regions/:slug/index.html"
+    }
+  ]
 }
