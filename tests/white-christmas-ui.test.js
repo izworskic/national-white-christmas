@@ -16,7 +16,7 @@ test('answer architecture is persona-first and preserves canonical search intent
 });
 test('return visits, shareability and confidence have dedicated UI',()=>{
   assert.match(html,/ci-white-christmas-trend-v1/);
-  assert.match(html,/How your White Christmas chance has changed/);
+  assert.match(html,/Your odds over time/);
   assert.match(html,/Saved only on this device/);
   assert.match(html,/id="share-result"/);
   assert.match(html,/White Christmas Shared/);
