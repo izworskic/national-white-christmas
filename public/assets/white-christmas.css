@@ -706,9 +706,10 @@
   background-image:
     linear-gradient(90deg,rgba(4,31,26,.99) 0%,rgba(4,31,26,.95) 24%,rgba(4,31,26,.73) 42%,rgba(4,31,26,.25) 63%,rgba(4,31,26,.04) 100%),
     linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,.08)),
+    url("/assets/white-christmas-hero.webp"),
     url("/assets/white-christmas-village.svg");
-  background-size:cover,cover,cover;
-  background-position:center,center,center right;
+  background-size:cover,cover,cover,cover;
+  background-position:center,center,center right,center right;
   border-bottom:1px solid rgba(215,173,88,.4);
 }
 .wc-hero:before{
@@ -1042,9 +1043,10 @@
     min-height:610px;
     background-image:
       linear-gradient(180deg,rgba(4,31,26,.45) 0%,rgba(4,31,26,.62) 36%,rgba(4,31,26,.96) 71%,rgba(4,31,26,.99) 100%),
+      url("/assets/white-christmas-hero.webp"),
       url("/assets/white-christmas-village.svg");
-    background-size:cover,auto 61%;
-    background-position:center,67% top;
+    background-size:cover,auto 61%,auto 61%;
+    background-position:center,67% top,67% top;
     background-repeat:no-repeat
   }
   .wc-hero-inner{padding-top:14rem!important;padding-bottom:6.2rem!important}
