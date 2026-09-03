@@ -16,7 +16,7 @@ test('answer architecture is persona-first and preserves canonical search intent
 });
 test('return visits, shareability and confidence have dedicated UI',()=>{
   assert.match(html,/ci-white-christmas-trend-v1/);
-  assert.match(html,/Your odds over time/);
+  assert.match(html,/Your White Christmas odds over time/);
   assert.match(html,/Saved only on this device/);
   assert.match(html,/id="share-result"/);
   assert.match(html,/White Christmas Shared/);
@@ -27,7 +27,7 @@ test('evidence is progressively disclosed and maps are deferred',()=>{
   assert.match(html,/<details class="wc-disclosure"/);
   assert.match(html,/id="history-map-frame"[^>]*loading="lazy"[^>]*data-src=/);
   assert.match(html,/src="about:blank"/);
-  assert.match(html,/How this estimate is built/);
+  assert.match(html,/Sources &amp; methodology/);
   assert.match(html,/Source status/);
 });
 test('error states do not expose transport jargon',()=>{

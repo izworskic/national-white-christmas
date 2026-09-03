@@ -627,3 +627,465 @@
   .white-christmas-page *{scroll-behavior:auto!important;transition:none!important;animation:none!important}
 }
 .wc-render-fallback .wc-comparison,.wc-render-fallback .wc-drivers,.wc-render-fallback .wc-trend-panel,.wc-render-fallback .wc-evidence,.wc-render-fallback .wc-map-disclosure,.wc-render-fallback .wc-methodology{display:none!important}
+
+
+/* =========================================================
+   Christmas Experience v3 — 2026-09-03
+   Warm, festive, premium Christmas weather intelligence.
+   ========================================================= */
+:root{
+  --christmas-red:#7b171b;
+  --christmas-red-deep:#5d1014;
+  --pine:#0d3b2e;
+  --pine-dark:#062a22;
+  --pine-soft:#174a3b;
+  --gold:#d7ad58;
+  --gold-bright:#efcb79;
+  --gold-muted:#b98d3f;
+  --cream:#f8f1e5;
+  --cream-soft:#fcf8f1;
+  --parchment:#eee2ce;
+  --snow:#fffdf8;
+  --winter-blue:#768e9d;
+  --ink:#1d2923;
+  --muted:#68736c;
+  --warm-glow:rgba(255,193,92,.22);
+  --gold-line:rgba(215,173,88,.55);
+  --pine-line:rgba(13,59,46,.18);
+}
+.white-christmas-page{
+  background:
+    radial-gradient(circle at 80% 10%,rgba(215,173,88,.07),transparent 20rem),
+    linear-gradient(180deg,#f8f1e5 0,#fbf7ef 70%,#f2e7d7 100%);
+  color:var(--ink);
+}
+.white-christmas-page .wrap{max-width:1180px}
+.white-christmas-page .wc-masthead{
+  position:relative;
+  z-index:30;
+  background:
+    radial-gradient(circle at 24% -30%,rgba(255,255,255,.11),transparent 32%),
+    linear-gradient(135deg,var(--christmas-red),var(--christmas-red-deep));
+  border-bottom:1px solid rgba(239,203,121,.52);
+  box-shadow:0 5px 20px rgba(49,8,10,.18);
+}
+.wc-masthead:after{
+  content:"";
+  position:absolute;left:0;right:0;bottom:-3px;height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  opacity:.72;
+}
+.wc-masthead-evergreen{
+  position:absolute;left:0;top:0;width:210px;height:128px;
+  background:url("/assets/evergreen-corner.svg") left top/contain no-repeat;
+  transform:scaleX(-1) rotate(-3deg) translate(16px,-12px);
+  transform-origin:left top;
+  pointer-events:none;
+  filter:drop-shadow(0 7px 9px rgba(0,0,0,.2));
+}
+.white-christmas-page .head-in{min-height:72px;position:relative;z-index:2}
+.wc-brand{display:grid!important;gap:0;text-decoration:none!important;color:var(--cream-soft)!important;padding-left:64px}
+.wc-brand strong{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:1.55rem;line-height:1;font-weight:400;letter-spacing:-.02em
+}
+.wc-brand span{color:var(--gold-bright);font-size:.76rem;letter-spacing:.06em;margin-top:.2rem}
+.white-christmas-page .wc-masthead .nav{display:flex;gap:.95rem;align-items:center}
+.white-christmas-page .wc-masthead .nav a{color:#fff7ec!important;font-weight:700;font-size:.88rem}
+.white-christmas-page .wc-masthead .nav a+a{padding-left:.95rem;border-left:1px solid rgba(239,203,121,.32)}
+.wc-header-share{
+  min-height:44px;padding:.5rem .9rem;border:1px solid rgba(239,203,121,.72);border-radius:7px;
+  background:rgba(60,5,8,.2);color:#fff7ec;font-weight:800;letter-spacing:.02em;
+  box-shadow:inset 0 1px rgba(255,255,255,.08);
+}
+.wc-header-share:hover{background:rgba(255,255,255,.09);transform:translateY(-1px)}
+
+.white-christmas-page .wc-hero{
+  position:relative;min-height:510px;overflow:hidden;
+  display:flex;align-items:center;
+  background-image:
+    linear-gradient(90deg,rgba(4,31,26,.99) 0%,rgba(4,31,26,.95) 24%,rgba(4,31,26,.73) 42%,rgba(4,31,26,.25) 63%,rgba(4,31,26,.04) 100%),
+    linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,.08)),
+    url("/assets/white-christmas-hero.webp"),
+    url("/assets/white-christmas-village.svg");
+  background-size:cover,cover,cover,cover;
+  background-position:center,center,center right,center right;
+  border-bottom:1px solid rgba(215,173,88,.4);
+}
+.wc-hero:before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 17% 50%,rgba(14,71,54,.22),transparent 21rem),
+    linear-gradient(180deg,transparent 68%,rgba(6,42,34,.5));
+  pointer-events:none
+}
+.wc-hero:after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:80px;
+  background:linear-gradient(180deg,transparent,rgba(6,42,34,.5));
+  pointer-events:none
+}
+.wc-hero-inner{position:relative;z-index:3;width:100%;padding-top:2.2rem;padding-bottom:5.2rem}
+.wc-hero-copy{max-width:610px}
+.white-christmas-page .wc-hero .eyebrow{
+  color:var(--gold-bright);font-size:.78rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;
+  text-shadow:0 2px 8px rgba(0,0,0,.2)
+}
+.white-christmas-page .wc-hero h1{
+  max-width:9.8ch;margin:.55rem 0 1.1rem;color:#fffaf0;
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:400;font-size:clamp(3.7rem,6.8vw,6.8rem);line-height:.9;letter-spacing:-.05em;
+  text-shadow:0 5px 24px rgba(0,0,0,.42)
+}
+.white-christmas-page .wc-hero .lede{
+  max-width:560px;color:#fff6e9;font-size:clamp(1.05rem,2vw,1.26rem);line-height:1.5;
+  text-shadow:0 2px 12px rgba(0,0,0,.35)
+}
+.wc-definition-line{
+  display:flex;gap:.55rem;align-items:flex-start;max-width:600px;margin-top:1rem!important;
+  color:rgba(255,250,241,.84)!important;font-size:.86rem!important;
+}
+.wc-definition-line>span{color:#fff;font-size:1.25rem;line-height:1}
+.wc-definition-line strong{color:#fff9ee!important}
+
+/* Lightweight snowfall in hero only */
+.wc-snow{position:absolute;inset:0;z-index:2;overflow:hidden;pointer-events:none}
+.wc-snow span{
+  position:absolute;top:-18px;border-radius:50%;background:#fff;
+  box-shadow:0 0 6px rgba(255,255,255,.4);
+  animation:wc-snowfall 13s linear infinite;
+}
+.wc-snow span:nth-child(1){left:1.5%;animation-delay:-0.00s;animation-duration:10.00s;width:4px;height:4px;opacity:0.28}
+.wc-snow span:nth-child(2){left:6.9%;animation-delay:-0.71s;animation-duration:11.35s;width:6px;height:6px;opacity:0.38}
+.wc-snow span:nth-child(3){left:12.2%;animation-delay:-1.42s;animation-duration:12.70s;width:8px;height:8px;opacity:0.48}
+.wc-snow span:nth-child(4){left:17.6%;animation-delay:-2.13s;animation-duration:14.05s;width:10px;height:10px;opacity:0.58}
+.wc-snow span:nth-child(5){left:23.0%;animation-delay:-2.84s;animation-duration:15.40s;width:4px;height:4px;opacity:0.68}
+.wc-snow span:nth-child(6){left:28.4%;animation-delay:-3.55s;animation-duration:16.75s;width:6px;height:6px;opacity:0.28}
+.wc-snow span:nth-child(7){left:33.7%;animation-delay:-4.26s;animation-duration:18.10s;width:8px;height:8px;opacity:0.38}
+.wc-snow span:nth-child(8){left:39.1%;animation-delay:-4.97s;animation-duration:10.00s;width:10px;height:10px;opacity:0.48}
+.wc-snow span:nth-child(9){left:44.5%;animation-delay:-5.68s;animation-duration:11.35s;width:4px;height:4px;opacity:0.58}
+.wc-snow span:nth-child(10){left:49.8%;animation-delay:-6.39s;animation-duration:12.70s;width:6px;height:6px;opacity:0.68}
+.wc-snow span:nth-child(11){left:55.2%;animation-delay:-7.10s;animation-duration:14.05s;width:8px;height:8px;opacity:0.28}
+.wc-snow span:nth-child(12){left:60.6%;animation-delay:-7.81s;animation-duration:15.40s;width:10px;height:10px;opacity:0.38}
+.wc-snow span:nth-child(13){left:65.9%;animation-delay:-8.52s;animation-duration:16.75s;width:4px;height:4px;opacity:0.48}
+.wc-snow span:nth-child(14){left:71.3%;animation-delay:-9.23s;animation-duration:18.10s;width:6px;height:6px;opacity:0.58}
+.wc-snow span:nth-child(15){left:76.7%;animation-delay:-9.94s;animation-duration:10.00s;width:8px;height:8px;opacity:0.68}
+.wc-snow span:nth-child(16){left:82.0%;animation-delay:-10.65s;animation-duration:11.35s;width:10px;height:10px;opacity:0.28}
+.wc-snow span:nth-child(17){left:87.4%;animation-delay:-11.36s;animation-duration:12.70s;width:4px;height:4px;opacity:0.38}
+.wc-snow span:nth-child(18){left:92.8%;animation-delay:-12.07s;animation-duration:14.05s;width:6px;height:6px;opacity:0.48}
+@keyframes wc-snowfall{
+  from{transform:translate3d(-8px,-20px,0) rotate(0deg)}
+  55%{transform:translate3d(20px,280px,0) rotate(120deg)}
+  to{transform:translate3d(-10px,570px,0) rotate(220deg)}
+}
+
+/* Search + countdown */
+.white-christmas-page .wc-search-stage{position:relative;z-index:10;padding-top:0;background:transparent}
+.wc-search-row{
+  display:grid;grid-template-columns:minmax(0,1fr) 210px;gap:.8rem;
+  align-items:stretch;margin-top:-58px;
+}
+.white-christmas-page .wc-locator{
+  padding:.8rem .9rem .65rem!important;
+  background:rgba(255,250,241,.97)!important;
+  border:1px solid rgba(215,173,88,.58)!important;border-radius:11px!important;
+  box-shadow:0 14px 40px rgba(14,35,28,.23)!important;
+  backdrop-filter:blur(8px)
+}
+.wc-locator form{
+  display:grid!important;grid-template-columns:minmax(0,1fr) auto auto!important;gap:.55rem!important;
+  max-width:none!important;padding-bottom:.65rem!important;border-bottom:1px solid rgba(13,59,46,.14)!important
+}
+.wc-input-wrap{position:relative}
+.wc-location-icon{
+  position:absolute;left:1rem;top:50%;transform:translateY(-50%);z-index:2;
+  color:var(--christmas-red);font-size:1.15rem;font-weight:900
+}
+.wc-locator form input{
+  min-height:58px!important;padding-left:2.7rem!important;
+  border:1px solid rgba(60,61,51,.2)!important;border-radius:6px!important;
+  background:#fffdf8!important;box-shadow:inset 0 1px 2px rgba(37,30,21,.04)!important
+}
+.wc-locator form .btn{
+  min-height:58px!important;border:1px solid rgba(118,15,19,.82)!important;border-radius:6px!important;
+  background:linear-gradient(180deg,#8a1f22,#681316)!important;color:white!important;
+  box-shadow:0 5px 13px rgba(71,10,12,.22),inset 0 1px rgba(255,255,255,.14)!important;
+  padding:0 1.35rem!important;font-weight:900!important;letter-spacing:.015em
+}
+.wc-locator form .btn:hover{transform:translateY(-1px);filter:brightness(1.04)}
+.wc-locator form .secondary-btn{
+  min-height:58px!important;border-radius:6px!important;background:transparent!important;
+  border:1px solid rgba(13,59,46,.2)!important;color:var(--pine)!important
+}
+.wc-locator-meta{padding:.55rem .15rem 0!important;color:#736f67!important}
+.wc-countdown-card{
+  position:relative;overflow:hidden;display:grid;place-items:center;align-content:center;
+  min-height:132px;padding:1rem .8rem;
+  background:linear-gradient(160deg,#fffaf0,#f3e6d2);
+  border:1px solid rgba(215,173,88,.62);border-radius:11px;
+  box-shadow:0 14px 40px rgba(14,35,28,.2),inset 0 0 30px rgba(255,255,255,.55);
+  text-align:center
+}
+.wc-countdown-card:before{
+  content:"";position:absolute;right:-16px;top:-9px;width:90px;height:65px;
+  background:url("/assets/evergreen-corner.svg") center/contain no-repeat;
+  transform:rotate(3deg);opacity:.95
+}
+.wc-countdown-card strong{
+  position:relative;z-index:1;font-family:Georgia,"Times New Roman",serif;
+  font-size:3.35rem;line-height:.85;color:var(--christmas-red);font-weight:400
+}
+.wc-countdown-card>span:not(.wc-holly-mark){
+  position:relative;z-index:1;margin-top:.55rem;color:#4f352b;font-size:.68rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase
+}
+.wc-countdown-card small{position:relative;z-index:1;color:#746f65;font-size:.72rem;margin-top:.25rem}
+
+/* Result — signature holiday card */
+.white-christmas-page .wc-result{margin-top:1.15rem!important;padding:0!important}
+.wc-state-card{
+  min-height:150px!important;padding:1.4rem!important;
+  background:linear-gradient(145deg,#0c3b2e,#08271f)!important;
+  color:#fff9ee!important;border:1px solid var(--gold-line)!important;border-radius:11px!important
+}
+.wc-state-card span{color:rgba(255,249,238,.72)!important}
+.wc-state-dot{background:var(--gold-bright)!important;box-shadow:0 0 0 6px rgba(239,203,121,.12)!important}
+.wc-state-error strong{color:#fff6e9!important}
+#result-content{position:relative}
+.wc-result-topline{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(circle at 18% 0%,rgba(255,255,255,.055),transparent 22rem),
+    linear-gradient(145deg,#0c3d2f,#07271f)!important;
+  border:1px solid var(--gold-line)!important;border-bottom:0!important;
+  border-radius:12px 12px 0 0!important;padding:1.55rem 2rem 1rem!important;
+  box-shadow:0 22px 46px rgba(9,33,25,.22)!important
+}
+.wc-result-topline:after{
+  content:"";position:absolute;right:-30px;top:-20px;width:210px;height:125px;
+  background:url("/assets/evergreen-corner.svg") right top/contain no-repeat;
+  transform:rotate(9deg);opacity:.9;pointer-events:none
+}
+.wc-phase{color:var(--gold-bright)!important;letter-spacing:.15em!important;font-size:.72rem!important}
+.wc-phase:before{content:"✦ ";color:var(--gold-bright)}
+.wc-location-heading{
+  position:relative;z-index:1;color:#fffaf1!important;
+  font-size:clamp(2.3rem,5vw,4.15rem)!important;line-height:.95!important;
+  text-shadow:0 2px 12px rgba(0,0,0,.18)
+}
+.wc-result-meta{position:relative;z-index:1}
+.wc-result-meta strong{color:var(--gold-bright)!important}
+.wc-answer-grid{
+  position:relative;overflow:hidden;
+  grid-template-columns:minmax(0,1.35fr) minmax(245px,.65fr)!important;gap:2.5rem!important;
+  padding:1.2rem 2rem 2rem!important;
+  background:
+    radial-gradient(circle at 75% 45%,rgba(239,203,121,.04),transparent 18rem),
+    linear-gradient(145deg,#0c3d2f,#07271f)!important;
+  border:1px solid var(--gold-line)!important;border-top:0!important;
+  border-radius:0 0 12px 12px!important;
+  box-shadow:0 24px 45px rgba(9,33,25,.24)!important
+}
+.wc-answer-grid:before{
+  content:"";position:absolute;left:-34px;bottom:-34px;width:170px;height:105px;
+  background:url("/assets/evergreen-corner.svg") left bottom/contain no-repeat;
+  transform:rotate(15deg) scaleX(-1);opacity:.75;pointer-events:none
+}
+.wc-probability-row{gap:1.35rem!important}
+.wc-probability{
+  color:var(--gold-bright)!important;
+  font-size:clamp(6.4rem,13vw,10.5rem)!important;
+  line-height:.73!important;text-shadow:0 4px 22px rgba(0,0,0,.2)
+}
+.wc-probability-caption{color:#f2d79a!important;font-size:.7rem!important;letter-spacing:.12em!important}
+.wc-band{
+  color:#f4cf79!important;font-size:1.45rem!important;font-family:Georgia,"Times New Roman",serif!important;
+  padding-bottom:.35rem!important
+}
+.wc-headline{
+  max-width:22ch!important;color:#fff9ef!important;
+  font-size:clamp(2rem,4vw,3.15rem)!important;line-height:1.02!important;
+  margin-top:1.55rem!important
+}
+.wc-trend-summary{color:var(--gold-bright)!important;font-size:1rem!important}
+.wc-answer-copy{color:rgba(255,249,238,.78)!important;font-size:1rem!important;line-height:1.55!important}
+.wc-watch{border-left:2px solid var(--gold)!important}
+.wc-watch span{color:rgba(239,203,121,.72)!important}
+.wc-watch strong{color:#fff8e9!important}
+.wc-answer-actions .btn{
+  background:rgba(123,23,27,.68)!important;border-color:rgba(239,203,121,.55)!important;
+  border-radius:6px!important
+}
+.wc-trust-rail{border-left:1px solid rgba(215,173,88,.45)!important;padding-left:1.6rem!important}
+.wc-trust-rail>div{border-bottom:1px solid rgba(215,173,88,.22)!important;padding:1rem 0!important}
+.wc-trust-rail>div:first-child:before{content:"♢";color:var(--gold);font-size:1.2rem}
+.wc-trust-rail>div:nth-child(2):before{content:"◉";color:var(--gold);font-size:1.1rem}
+.wc-trust-rail>div:nth-child(3):before{content:"❄";color:var(--gold);font-size:1.05rem}
+.wc-trust-rail span{color:rgba(239,203,121,.72)!important}
+.wc-trust-rail strong{color:#fff9ef!important}
+.wc-trust-rail small{color:rgba(255,249,238,.68)!important}
+
+/* Editorial Christmas sections */
+.wc-comparison,.wc-drivers,.wc-trend-panel,.wc-evidence{padding:3rem 0!important}
+.wc-section-heading{text-align:center;margin-bottom:1.25rem!important}
+.wc-heading-split{text-align:left}
+.wc-section-heading h3{
+  display:inline-flex;align-items:center;justify-content:center;gap:.8rem;
+  color:var(--pine)!important;font-size:clamp(1.75rem,3.3vw,2.5rem)!important
+}
+.wc-section-heading:not(.wc-heading-split) h3:before,
+.wc-section-heading:not(.wc-heading-split) h3:after{
+  content:"";width:44px;height:24px;background:url("/assets/holly-divider.svg") center/contain no-repeat;
+}
+.wc-heading-split h3{display:block}
+.wc-comparison-grid{
+  background:rgba(255,252,246,.72);border:1px solid rgba(13,59,46,.14)!important;border-radius:10px;
+  box-shadow:0 8px 24px rgba(37,38,32,.04);overflow:hidden
+}
+.wc-comparison-card{padding:1.45rem 1.5rem!important}
+.wc-comparison-card+.wc-comparison-card{padding-left:1.5rem!important}
+.wc-comparison-card span{color:#75534a!important}
+.wc-comparison-card strong{color:var(--pine)!important;font-size:clamp(3.6rem,7vw,5.3rem)!important}
+.wc-comparison-current:before{
+  content:"✦";display:block;color:var(--gold);font-size:1.15rem;margin-bottom:.2rem
+}
+
+/* Factor cards now feel like holiday information cards, not SaaS tiles */
+.wc-driver-grid{
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:.75rem!important;border-top:0!important
+}
+.wc-driver{
+  position:relative;padding:1.25rem 1rem 1.1rem!important;
+  background:rgba(255,252,246,.88)!important;border:1px solid rgba(13,59,46,.13)!important;
+  border-radius:9px!important;box-shadow:0 5px 18px rgba(35,38,32,.045)!important;
+}
+.wc-driver:nth-child(even){padding-left:1rem!important;border-left:1px solid rgba(13,59,46,.13)!important}
+.wc-driver:before{
+  display:grid;place-items:center;width:44px;height:44px;margin:0 0 .8rem;border-radius:50%;
+  background:linear-gradient(145deg,#d9ad59,#b38337);color:#fffaf0;font-size:1.25rem;
+  box-shadow:0 4px 10px rgba(124,85,32,.15)
+}
+.wc-driver:nth-child(1):before{content:"▥"}
+.wc-driver:nth-child(2):before{content:"❄"}
+.wc-driver:nth-child(3):before{content:"▲"}
+.wc-driver:nth-child(4):before{content:"▣"}
+.wc-driver span{color:#74584e!important}
+.wc-driver strong{color:var(--pine)!important;font-size:1.28rem!important}
+.wc-driver p{color:#6e746d!important}
+
+/* Trend */
+.wc-trend-panel{
+  margin-top:.6rem;padding-left:1.3rem!important;padding-right:1.3rem!important;
+  background:rgba(255,252,246,.55);border:1px solid rgba(13,59,46,.1);border-radius:10px
+}
+.wc-chart-line{stroke:var(--christmas-red)!important}
+.wc-trend-chart circle{fill:var(--cream-soft)!important;stroke:var(--gold-muted)!important}
+.wc-trend-list strong{color:var(--christmas-red)!important}
+
+/* Evidence + methodology */
+.wc-disclosure,.wc-map-disclosure,.wc-methodology{
+  background:rgba(255,252,246,.58)!important;border-color:rgba(13,59,46,.15)!important
+}
+.wc-disclosure summary,.wc-map-disclosure summary,.wc-methodology summary{padding:.95rem .2rem!important}
+.wc-disclosure summary span:before{content:"❄";color:var(--gold-muted);font-size:.78rem;margin-right:.55rem}
+.wc-evidence .wc-section-heading h3{color:var(--christmas-red)!important}
+.wc-methodology{margin-top:1.7rem!important;padding:0 .15rem}
+.wc-methodology-grid{background:rgba(255,252,246,.66)!important;padding:1.4rem!important;border-radius:0 0 8px 8px}
+.wc-source-list li{border-color:rgba(13,59,46,.12)!important}
+
+/* Lower supporting areas */
+.wc-support{
+  background:
+    linear-gradient(rgba(112,23,26,.045),rgba(112,23,26,.045)),
+    #f1e4d2!important;
+  border-color:rgba(123,23,27,.12)!important
+}
+.wc-support .section-head h2,.wc-season-story .section-head h2{
+  color:var(--pine)!important;font-size:clamp(2rem,4vw,3rem)!important
+}
+.wc-support .section-head h2:after,.wc-season-story .section-head h2:after{
+  content:"";display:block;width:96px;height:28px;margin:.6rem auto 0;background:url("/assets/holly-divider.svg") center/contain no-repeat
+}
+.wc-support .grid{border-top-color:rgba(13,59,46,.13)!important}
+.wc-support .card{transition:transform .18s ease,background .18s ease}
+.wc-support .card:hover{transform:translateY(-2px)!important;background:rgba(255,252,246,.42)!important}
+.wc-season-story{background:#f8f1e5!important}
+.wc-season-grid>div{position:relative}
+.wc-season-grid>div:before{content:"✦";display:block;color:var(--gold-muted);margin-bottom:.3rem}
+.footer{background:var(--pine-dark)!important;color:rgba(255,249,238,.72)!important;border-top:1px solid rgba(215,173,88,.28)!important}
+.footer a{color:var(--gold-bright)!important}
+
+/* Place toolbar integration */
+.white-christmas-page .place-toolbar{
+  margin:.75rem 0 0!important;padding:.65rem 0!important;border-color:rgba(123,23,27,.13)!important
+}
+.white-christmas-page .place-chip{border-color:rgba(123,23,27,.18)!important;background:#fffaf1!important}
+
+/* Loading/result micro-motion */
+#result-content:not([hidden]){animation:wc-result-in .34s ease both}
+@keyframes wc-result-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+@media(max-width:980px){
+  .wc-masthead-evergreen{width:160px;height:105px}
+  .wc-brand{padding-left:48px}
+  .wc-search-row{grid-template-columns:minmax(0,1fr) 180px}
+  .wc-driver-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .wc-answer-grid{grid-template-columns:minmax(0,1fr) 230px!important}
+}
+@media(max-width:760px){
+  .white-christmas-page .head-in{min-height:64px}
+  .wc-masthead-evergreen{width:118px;height:82px;opacity:.86}
+  .wc-brand{padding-left:34px}
+  .wc-brand strong{font-size:1.2rem}.wc-brand span{font-size:.62rem}
+  .white-christmas-page .wc-masthead .nav{gap:.55rem}
+  .white-christmas-page .wc-masthead .nav a{font-size:.76rem}
+  .white-christmas-page .wc-masthead .nav a+a{display:none}
+  .wc-header-share{min-height:42px;padding:.4rem .65rem;font-size:.78rem}
+  .white-christmas-page .wc-hero{
+    min-height:610px;
+    background-image:
+      linear-gradient(180deg,rgba(4,31,26,.45) 0%,rgba(4,31,26,.62) 36%,rgba(4,31,26,.96) 71%,rgba(4,31,26,.99) 100%),
+      url("/assets/white-christmas-hero.webp"),
+      url("/assets/white-christmas-village.svg");
+    background-size:cover,auto 61%,auto 61%;
+    background-position:center,67% top,67% top;
+    background-repeat:no-repeat
+  }
+  .wc-hero-inner{padding-top:14rem!important;padding-bottom:6.2rem!important}
+  .white-christmas-page .wc-hero h1{font-size:clamp(3.15rem,15vw,4.8rem)!important;max-width:10ch}
+  .wc-search-row{grid-template-columns:1fr;margin-top:-56px}
+  .wc-countdown-card{min-height:116px;grid-template-columns:auto 1fr;column-gap:.7rem;text-align:left;justify-content:center;padding:1rem 1.35rem}
+  .wc-countdown-card strong{grid-row:1/3;font-size:3.1rem}
+  .wc-countdown-card>span:not(.wc-holly-mark){margin-top:0;align-self:end}
+  .wc-countdown-card small{align-self:start;margin-top:.05rem}
+  .wc-locator form{grid-template-columns:1fr!important}
+  .wc-locator form .btn,.wc-locator form .secondary-btn{min-height:54px!important}
+  .wc-result-topline{padding:1.3rem 1.15rem .85rem!important}
+  .wc-result-topline:after{width:135px;height:85px;opacity:.6}
+  .wc-answer-grid{grid-template-columns:1fr!important;padding:1rem 1.15rem 1.5rem!important;gap:1.3rem!important}
+  .wc-probability{font-size:clamp(6.5rem,31vw,9rem)!important}
+  .wc-headline{font-size:clamp(2rem,9vw,2.75rem)!important}
+  .wc-trust-rail{padding-left:0!important;border-left:0!important;border-top:1px solid rgba(215,173,88,.35)!important}
+  .wc-driver-grid{grid-template-columns:1fr!important}
+  .wc-driver:nth-child(even){padding-left:1rem!important}
+  .wc-section-heading:not(.wc-heading-split) h3:before,
+  .wc-section-heading:not(.wc-heading-split) h3:after{width:30px}
+  .wc-heading-split{display:grid!important}
+  .wc-comparison-grid{grid-template-columns:1fr!important}
+  .wc-comparison-card+.wc-comparison-card{border-left:0!important;border-top:1px solid rgba(13,59,46,.14)!important}
+}
+@media(max-width:390px){
+  .white-christmas-page .wc-hero{min-height:625px}
+  .wc-hero-inner{padding-top:13.5rem!important}
+  .white-christmas-page .wc-hero h1{font-size:3.25rem!important}
+  .wc-search-row{margin-top:-50px}
+  .wc-locator{padding:.65rem!important}
+  .wc-countdown-card{padding:.9rem 1rem}
+  .wc-countdown-card strong{font-size:2.7rem}
+  .wc-result-topline,.wc-answer-grid{border-radius:0!important}
+  .wc-probability{font-size:7rem!important}
+  .wc-section-heading h3{font-size:1.7rem!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .wc-snow{display:none!important}
+  #result-content:not([hidden]){animation:none!important}
+  .wc-header-share,.wc-locator form .btn,.wc-support .card{transition:none!important;transform:none!important}
+}
