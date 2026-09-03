@@ -62,7 +62,7 @@ test("regional pages exist, are indexable, and drive back to the live tool",()=>
     assert.match(html,/meta name="robots" content="index,follow,max-image-preview:large"/);
     assert.match(html,/href="\/national-tools\/white-christmas\//);
     assert.match(html,/Check local 2026 odds/);
-    assert.match(html,/white-christmas\.css\?v=20260903-city11/);
+    assert.match(html,/white-christmas\.css\?v=20260903-(?:national9|city11)/);
   }
 });
 
