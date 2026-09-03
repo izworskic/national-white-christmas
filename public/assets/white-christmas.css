@@ -2064,3 +2064,125 @@
   .white-christmas-page .wc-hero h1{font-size:2.85rem!important}
   .wc-search-row{margin-top:-38px!important}
 }
+
+
+/* =========================================================
+   National funnel v9 — high-contrast discovery cards + U.S. region network.
+   ========================================================= */
+.wc-support .card,
+.wc-support .card:link,
+.wc-support .card:visited{
+  color:#1d2923!important;
+  background:#fffaf1!important;
+  text-decoration:none!important;
+}
+.wc-support .card h3,
+.wc-support .card:link h3,
+.wc-support .card:visited h3{
+  color:#0b3b2e!important;
+  text-shadow:none!important;
+  opacity:1!important;
+}
+.wc-support .card p,
+.wc-support .card:link p,
+.wc-support .card:visited p{
+  color:#454b47!important;
+  opacity:1!important;
+}
+.wc-support .card .tool-kicker{
+  color:#7a1b20!important;
+  opacity:1!important;
+}
+.wc-support .card:hover,
+.wc-support .card:focus-visible{
+  background:#fffdf8!important;
+  border-color:#b98d3f!important;
+  box-shadow:0 8px 20px rgba(18,61,59,.10)!important;
+}
+.wc-support .card:hover h3,
+.wc-support .card:focus-visible h3{color:#74181d!important}
+
+.wc-national-bridge{
+  margin:0 0 .8rem;
+  padding:1rem 1.1rem;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  background:linear-gradient(135deg,#0a332b,#0a2a3d);
+  border:1px solid rgba(230,173,85,.62);
+  color:#fff8ec;
+}
+.wc-national-bridge strong{
+  display:block;margin-bottom:.18rem;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:1.2rem;font-weight:400;color:#fff8ec;
+}
+.wc-national-bridge span{font-size:.82rem;color:#f1e6d4}
+.wc-national-bridge a{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:42px;padding:.5rem .85rem;border-radius:4px;
+  background:#74181d;color:white!important;text-decoration:none;font-weight:700;font-size:.78rem;
+}
+.wc-national-bridge a:hover,.wc-national-bridge a:focus-visible{background:#8a2026}
+
+.wc-region-index{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.72rem;margin:1rem 0 1.4rem;
+}
+.wc-region-card{
+  display:block;padding:1rem;background:#fffaf1;border:1px solid rgba(13,59,46,.14);
+  text-decoration:none;color:#1d2923!important;min-height:165px;
+}
+.wc-region-card:hover,.wc-region-card:focus-visible{border-color:#b98d3f;box-shadow:0 7px 18px rgba(18,61,59,.09)}
+.wc-region-card span{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:#7a1b20;font-weight:800}
+.wc-region-card h2,.wc-region-card h3{
+  margin:.25rem 0 .45rem;color:#0b3b2e!important;
+  font-family:Georgia,"Times New Roman",serif;font-weight:400;
+}
+.wc-region-card h3{font-size:1.18rem}
+.wc-region-card p{margin:0;color:#4b514d!important;font-size:.9rem;line-height:1.5}
+
+.wc-city-links{
+  display:flex;flex-wrap:wrap;gap:.42rem;margin:.75rem 0 1.2rem;
+}
+.wc-city-links a{
+  display:inline-flex;align-items:center;min-height:36px;
+  padding:.35rem .58rem;border:1px solid rgba(13,59,46,.18);border-radius:999px;
+  background:#fffaf1;color:#123d3b!important;text-decoration:none;font-size:.76rem;font-weight:700;
+}
+.wc-city-links a:hover,.wc-city-links a:focus-visible{border-color:#b98d3f;background:#fffdf8;color:#74181d!important}
+
+.wc-region-facts{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.72rem;margin:1rem 0 1.3rem;
+}
+.wc-region-fact{
+  padding:1rem;background:#fffaf1;border-top:3px solid #b98d3f;
+}
+.wc-region-fact strong{
+  display:block;margin-bottom:.3rem;color:#0b3b2e;
+  font-family:Georgia,"Times New Roman",serif;font-size:1.06rem;font-weight:400;
+}
+.wc-region-fact p{margin:0;color:#4b514d;line-height:1.52;font-size:.88rem}
+
+.wc-region-nav{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem;margin-top:1.2rem;
+}
+.wc-region-nav a{
+  padding:.8rem;background:#f1e5d4;border:1px solid rgba(13,59,46,.12);
+  color:#123d3b!important;text-decoration:none;font-weight:700;
+}
+.wc-region-nav a:hover,.wc-region-nav a:focus-visible{background:#fffaf1;border-color:#b98d3f}
+
+@media(max-width:900px){
+  .wc-region-index{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .wc-region-facts{grid-template-columns:1fr}
+}
+@media(max-width:620px){
+  .wc-region-index,.wc-region-nav{grid-template-columns:1fr}
+  .wc-region-card{min-height:auto}
+}
+
+.wc-support-hero h1{
+  color:#fff8ec!important;
+  text-shadow:0 3px 18px rgba(0,0,0,.46)!important;
+  opacity:1!important;
+}
+.wc-support-hero .eyebrow{color:#f0ca7a!important;opacity:1!important}
+.wc-support-hero p{color:#f6efe5!important;opacity:1!important}
