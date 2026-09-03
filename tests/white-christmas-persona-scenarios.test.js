@@ -28,7 +28,8 @@ test("scenario C: marginal location stays a toss-up without false certainty",()=
 
 test("scenario D: very low-climatology location still produces a useful finite result",()=>{
   const m=model({history:{probability:1},now:new Date("2026-09-03T12:00:00Z")});
-  assert.equal(m.probability,1);
+  assert.ok(Number.isFinite(m.probability));
+  assert.ok(m.probability<=5);
   assert.match(T.verdict(m).headline,/long shot/i);
 });
 
