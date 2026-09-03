@@ -626,3 +626,4 @@
 @media(prefers-reduced-motion:reduce){
   .white-christmas-page *{scroll-behavior:auto!important;transition:none!important;animation:none!important}
 }
+.wc-render-fallback .wc-comparison,.wc-render-fallback .wc-drivers,.wc-render-fallback .wc-trend-panel,.wc-render-fallback .wc-evidence,.wc-render-fallback .wc-map-disclosure,.wc-render-fallback .wc-methodology{display:none!important}
