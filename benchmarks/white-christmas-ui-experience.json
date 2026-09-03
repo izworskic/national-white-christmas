@@ -1,0 +1,60 @@
+{
+  "name": "White Christmas persona-driven UI experience",
+  "version": "2026-09-03",
+  "release_thresholds": {
+    "value_score_min": 90,
+    "target": 93,
+    "composite_min": 90,
+    "hard_vetoes_allowed": 0,
+    "scorecard_average_min": 9,
+    "scorecard_floor": 8
+  },
+  "scenarios": [
+    {
+      "id": "A",
+      "description": "Historically high probability with substantial snowpack",
+      "pass": "Probability dominates, likely/very-likely language is clear, snowpack appears as a positive driver, confidence is visible."
+    },
+    {
+      "id": "B",
+      "description": "Historically snowy location under a major warm spell",
+      "pass": "Historical and current estimates are separate; current can sit below climatology and negative forecast/temperature drivers are explicit."
+    },
+    {
+      "id": "C",
+      "description": "Marginal location near 50 percent",
+      "pass": "Toss-up language and confidence avoid certainty; what-can-change remains prominent."
+    },
+    {
+      "id": "D",
+      "description": "Southern location with essentially no meaningful chance",
+      "pass": "Very-unlikely result remains polished; historical context and definition remain available."
+    },
+    {
+      "id": "E",
+      "description": "Location with incomplete data",
+      "pass": "Reduced coverage is named, confidence/source status stays visible, remaining evidence renders without raw transport errors."
+    }
+  ],
+  "value_weights": {
+    "immediate_answer_clarity": 18,
+    "persona_usefulness": 14,
+    "trust_explainability": 13,
+    "seasonal_emotional_appeal": 10,
+    "repeat_visit_value": 10,
+    "mobile_usability": 10,
+    "data_storytelling": 8,
+    "accessibility": 6,
+    "performance": 5,
+    "seo_preservation": 4,
+    "shareability": 2
+  },
+  "protected_contracts": [
+    "probability engine unchanged",
+    "location API unchanged",
+    "canonical URL unchanged",
+    "analytics retained",
+    "source provenance retained",
+    "below-fold map lazy/deferred"
+  ]
+}
