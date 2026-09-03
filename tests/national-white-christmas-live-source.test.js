@@ -12,15 +12,22 @@ test("LIVE ACIS establishes a bounded 1991-2020 White Christmas history near Det
   console.log("LIVE_ACIS_DETROIT",JSON.stringify({ms:Date.now()-start,station:x.station.name,distance:x.station.distance_miles,probability:x.history.probability,years:x.history.valid_years}));
 });
 
-test("LIVE CPC returns a December-relevant broad outlook near Detroit",async()=>{
+test("LIVE CPC preserves valid December outlook semantics and may fail soft when none is published",async()=>{
   const x=await T.cpcPair(42.3314,-83.0458);
-  assert.ok(x.temperature||x.precipitation,"CPC returned no December-relevant outlook");
-  for(const item of [x.temperature,x.precipitation].filter(Boolean)){
+  assert.ok(x&&typeof x==="object");
+  const items=[x.temperature,x.precipitation].filter(Boolean);
+  for(const item of items){
     assert.ok(Number.isFinite(item.probability));
     assert.ok(item.probability>=0&&item.probability<=100);
     assert.ok(T.containsDecember(item.valid_period),item.valid_period);
   }
-  console.log("LIVE_CPC_DETROIT",JSON.stringify(x));
+  if(!items.length){
+    assert.equal(x.temperature,null);
+    assert.equal(x.precipitation,null);
+    console.log("LIVE_CPC_DETROIT_NO_DECEMBER_OUTLOOK");
+  }else{
+    console.log("LIVE_CPC_DETROIT",JSON.stringify(x));
+  }
 });
 
 test("LIVE ACIS preserves Michigan north-south climatology direction",async()=>{
