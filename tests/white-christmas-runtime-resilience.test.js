@@ -15,6 +15,7 @@ test("White Christmas API has enough execution time for bounded source retries",
 test("data failures and client render failures are not conflated",()=>{
   assert.match(html,/White Christmas Data Error/);
   assert.match(html,/White Christmas Render Error/);
+  assert.match(html,/We couldn't reach the White Christmas data service/);
   assert.match(html,/showRenderFallback/);
   assert.match(html,/Your estimate was returned, but some supporting details could not be displayed/);
   assert.match(css,/\.wc-render-fallback/);
