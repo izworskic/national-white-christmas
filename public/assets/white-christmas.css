@@ -2178,3 +2178,11 @@
   .wc-region-index,.wc-region-nav{grid-template-columns:1fr}
   .wc-region-card{min-height:auto}
 }
+
+.wc-support-hero h1{
+  color:#fff8ec!important;
+  text-shadow:0 3px 18px rgba(0,0,0,.46)!important;
+  opacity:1!important;
+}
+.wc-support-hero .eyebrow{color:#f0ca7a!important;opacity:1!important}
+.wc-support-hero p{color:#f6efe5!important;opacity:1!important}
