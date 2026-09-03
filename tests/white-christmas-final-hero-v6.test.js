@@ -12,7 +12,7 @@ test("final photographic hero asset is present and wired into the page",()=>{
   assert.ok(fs.existsSync(hero));
   assert.ok(fs.statSync(hero).size>20000);
   assert.match(html,/src="\/assets\/white-christmas-hero-final\.webp"/);
-  assert.match(html,/white-christmas\.css\?v=20260903-national9/);
+  assert.match(html,/white-christmas\.css\?v=20260903-city11/);
 });
 
 test("hero palette matches the photographic night scene",()=>{
