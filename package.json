@@ -4,7 +4,8 @@
   "private": false,
   "scripts": {
     "test": "node --test tests/*.test.js",
-    "test:live": "node --test tests/live/*.test.js"
+    "test:live": "node --test tests/live/*.test.js",
+    "generate:cities": "node scripts/generate-white-christmas-city-pages.mjs"
   },
   "engines": {
     "node": "22.x"
