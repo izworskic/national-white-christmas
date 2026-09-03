@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": false,
   "scripts": {
-    "test": "node --test tests/*.test.js"
+    "test": "node --test tests/*.test.js",
+    "test:live": "node --test tests/live/*.test.js"
   },
   "engines": {
     "node": "22.x"
