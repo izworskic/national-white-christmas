@@ -1833,3 +1833,234 @@
   .white-christmas-page .wc-hero:before{height:258px!important}
   .wc-hero-inner{padding-top:16.1rem!important}
 }
+
+
+/* =========================================================
+   Product-first v8 — tool starts above the fold.
+   Hero is a real img element; technical explanation is buried.
+   ========================================================= */
+.white-christmas-page .wc-masthead{
+  min-height:46px!important;
+  background:linear-gradient(90deg,#621317,#78191d 48%,#551014)!important;
+  box-shadow:0 2px 9px rgba(40,5,8,.16)!important;
+}
+.white-christmas-page .head-in{
+  min-height:46px!important;
+  justify-content:space-between!important;
+}
+.wc-tool-mark{
+  display:flex;align-items:center;gap:.48rem;
+  color:#fff8ec;text-decoration:none;
+  font-family:Georgia,"Times New Roman",serif;
+}
+.wc-tool-mark-icon{
+  width:24px;height:24px;display:block;
+  background:url("/assets/wc-icon-seasonal.svg") center/20px 20px no-repeat;
+}
+.wc-tool-mark strong{font-size:.98rem;font-weight:400;letter-spacing:.01em}
+.white-christmas-page .wc-masthead .nav{gap:.72rem!important}
+.white-christmas-page .wc-masthead .nav a{font-size:.75rem!important}
+.wc-header-share{min-height:34px!important;padding:.25rem .62rem!important;font-size:.72rem!important}
+
+/* Real image element so the canonical shell cannot silently lose the hero. */
+.white-christmas-page .wc-hero{
+  min-height:320px!important;
+  background:#061a2d!important;
+}
+.white-christmas-page .wc-hero:before{display:none!important}
+.wc-hero-media{
+  position:absolute;inset:0;z-index:0;display:block;overflow:hidden;
+}
+.wc-hero-media img{
+  width:100%;height:100%;display:block;object-fit:cover;object-position:center;
+}
+.white-christmas-page .wc-hero:after{
+  z-index:1!important;
+  inset:0!important;
+  background:
+    linear-gradient(90deg,
+      rgba(5,20,35,.99) 0%,
+      rgba(5,20,35,.96) 25%,
+      rgba(5,20,35,.82) 37%,
+      rgba(5,20,35,.48) 49%,
+      rgba(5,20,35,.09) 64%,
+      rgba(5,20,35,0) 76%),
+    linear-gradient(180deg,rgba(5,20,35,.03) 64%,rgba(5,20,35,.22) 100%)!important;
+}
+.wc-hero-inner{
+  padding-top:2rem!important;
+  padding-bottom:4.7rem!important;
+}
+.wc-hero-copy{max-width:490px!important}
+.white-christmas-page .wc-hero .eyebrow{font-size:.72rem!important}
+.white-christmas-page .wc-hero h1{
+  margin:.35rem 0 .7rem!important;
+  font-size:clamp(2.9rem,5.2vw,5rem)!important;
+  line-height:.91!important;
+}
+.white-christmas-page .wc-hero .lede{
+  max-width:455px!important;
+  font-size:1rem!important;
+  line-height:1.38!important;
+}
+
+/* Search is visible immediately instead of starting after a giant hero. */
+.wc-search-row{
+  margin-top:-48px!important;
+  grid-template-columns:minmax(0,1fr) 185px!important;
+}
+.white-christmas-page .wc-locator{
+  padding:.58rem .68rem .45rem!important;
+}
+.wc-locator form{
+  grid-template-columns:minmax(0,1fr) 205px!important;
+  padding-bottom:.4rem!important;
+}
+.wc-locator form input,.wc-locator form .btn{min-height:50px!important}
+.wc-locator-meta{font-size:.64rem!important}
+.wc-countdown-card{
+  min-height:108px!important;
+  padding:.72rem!important;
+}
+.wc-countdown-card strong{font-size:2.65rem!important}
+.wc-countdown-card:before{width:70px!important;height:50px!important}
+
+/* Main tool content is compact; explanation lives in a single opt-in disclosure. */
+.wc-trend-standalone{
+  margin:1rem 0 0!important;
+  padding:1rem 1.15rem!important;
+  border:1px solid rgba(185,141,63,.25)!important;
+  border-radius:7px!important;
+  background:rgba(247,239,226,.68)!important;
+}
+.wc-deep-dive{
+  margin:1rem 0 0;
+  border:1px solid rgba(13,59,46,.15);
+  border-radius:7px;
+  background:rgba(255,252,246,.65);
+  overflow:hidden;
+}
+.wc-deep-dive>summary{
+  min-height:58px;padding:.8rem 1rem;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  cursor:pointer;list-style:none;color:#123d3b;
+}
+.wc-deep-dive>summary::-webkit-details-marker{display:none}
+.wc-deep-dive>summary>span:first-child{display:grid;gap:.12rem}
+.wc-deep-dive>summary strong{
+  font-family:Georgia,"Times New Roman",serif;font-size:1rem;font-weight:400;color:#6f181c;
+}
+.wc-deep-dive>summary small{font-size:.72rem;color:#626a64}
+.wc-deep-dive>summary>span:last-child{font-size:.72rem;color:#6f181c;font-weight:700}
+.wc-deep-dive-body{padding:0 1rem 1rem}
+.wc-deep-dive .wc-evidence{padding:1rem 0!important}
+.wc-deep-dive .wc-map-disclosure,.wc-deep-dive .wc-methodology{
+  margin-top:.7rem!important;background:transparent!important;
+}
+.wc-deep-dive .wc-section-heading{text-align:left!important}
+.wc-deep-dive .wc-section-heading h3{font-size:1.25rem!important}
+.wc-deep-dive .wc-section-heading h3:before,
+.wc-deep-dive .wc-section-heading h3:after{display:none!important}
+
+/* Support pages are now the growth/navigation layer. */
+.wc-support{padding-top:2.2rem!important;padding-bottom:2.2rem!important}
+.wc-support .section-head{margin-bottom:.8rem!important}
+.wc-support .section-head h2{font-size:clamp(1.8rem,3vw,2.5rem)!important}
+.wc-support .grid{gap:.55rem!important;border-top:0!important}
+.wc-support .card{
+  border:1px solid rgba(13,59,46,.13)!important;
+  padding:1rem!important;
+  background:rgba(255,252,246,.58)!important;
+  min-height:140px;
+}
+.wc-support .card+.card{border-left:1px solid rgba(13,59,46,.13)!important}
+.wc-support .card h3{font-size:1.1rem!important;margin:.25rem 0 .35rem!important}
+
+/* Support-page shared shell. */
+.wc-support-page{background:#f7efe2;color:#1d2923}
+.wc-support-page .wc-masthead{min-height:46px}
+.wc-support-hero{
+  position:relative;overflow:hidden;background:#061a2d;color:#fff8ec;
+  min-height:260px;display:flex;align-items:flex-end;
+}
+.wc-support-hero .wc-hero-media{position:absolute;inset:0}
+.wc-support-hero:after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(5,20,35,.96),rgba(5,20,35,.76) 42%,rgba(5,20,35,.18) 74%,transparent);
+}
+.wc-support-hero .wrap{position:relative;z-index:2;padding-top:2rem;padding-bottom:2rem}
+.wc-support-hero h1{
+  max-width:14ch;margin:.35rem 0 .55rem;
+  font-family:Georgia,"Times New Roman",serif;font-size:clamp(2.3rem,5vw,4.4rem);line-height:.95;font-weight:400;
+}
+.wc-support-hero p{max-width:650px;margin:0;color:#f6efe5}
+.wc-support-main{padding:1.7rem 0 3rem}
+.wc-support-main h2{
+  font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.6rem,3vw,2.25rem);font-weight:400;color:#123d3b;
+}
+.wc-support-main h3{color:#6f181c}
+.wc-support-main p,.wc-support-main li{line-height:1.62;color:#454b47}
+.wc-support-callout{
+  padding:1rem 1.1rem;margin:1rem 0;border-left:3px solid #b98d3f;background:#fffaf1;
+}
+.wc-support-cta{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  padding:1rem 1.1rem;margin:1.2rem 0;background:#0a332b;color:#fff8ec;border:1px solid rgba(230,173,85,.6);
+}
+.wc-support-cta strong{font-family:Georgia,"Times New Roman",serif;font-size:1.18rem;font-weight:400}
+.wc-support-cta .btn{background:#74181d;color:white;border-radius:4px}
+.wc-support-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;margin:1rem 0;
+}
+.wc-support-panel{padding:1rem;background:#fffaf1;border:1px solid rgba(13,59,46,.12)}
+.wc-support-panel h3{margin-top:0}
+.wc-map-large iframe{width:100%;height:620px;border:1px solid rgba(13,59,46,.18);background:white}
+.wc-region-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem;padding:0;list-style:none}
+.wc-region-list li{padding:.8rem;background:#fffaf1;border-left:3px solid #b98d3f}
+.wc-faq details{border-top:1px solid rgba(13,59,46,.15)}
+.wc-faq details:last-child{border-bottom:1px solid rgba(13,59,46,.15)}
+.wc-faq summary{padding:.8rem 0;cursor:pointer;font-weight:700;color:#123d3b}
+
+@media(max-width:820px){
+  .white-christmas-page .wc-masthead{min-height:42px!important}
+  .white-christmas-page .head-in{min-height:42px!important}
+  .wc-tool-mark strong{font-size:.88rem}
+  .white-christmas-page .wc-masthead .nav a{display:none!important}
+  .white-christmas-page .wc-hero{
+    min-height:385px!important;
+    background:#061a2d!important;
+  }
+  .wc-hero-media{height:205px!important;bottom:auto!important}
+  .wc-hero-media img{object-position:68% center}
+  .white-christmas-page .wc-hero:after{
+    background:
+      linear-gradient(180deg,transparent 0%,rgba(6,26,45,.08) 34%,rgba(6,26,45,.80) 49%,#061a2d 57%,#061a2d 100%)!important;
+  }
+  .wc-hero-inner{
+    padding-top:12rem!important;
+    padding-bottom:4.3rem!important;
+  }
+  .white-christmas-page .wc-hero h1{font-size:3.1rem!important}
+  .white-christmas-page .wc-hero .lede{font-size:.95rem!important}
+  .wc-search-row{
+    margin-top:-42px!important;
+    grid-template-columns:1fr!important;
+  }
+  .wc-locator form{grid-template-columns:1fr!important}
+  .wc-countdown-card{
+    min-height:82px!important;
+    grid-template-columns:auto 1fr!important;
+  }
+  .wc-analysis-grid{grid-template-columns:1fr!important}
+  .wc-support .grid{grid-template-columns:1fr!important}
+  .wc-support .card+.card{border-left:1px solid rgba(13,59,46,.13)!important}
+  .wc-support-grid,.wc-region-list{grid-template-columns:1fr}
+  .wc-map-large iframe{height:480px}
+}
+@media(max-width:430px){
+  .white-christmas-page .wc-hero{min-height:365px!important}
+  .wc-hero-media{height:184px!important}
+  .wc-hero-inner{padding-top:10.8rem!important}
+  .white-christmas-page .wc-hero h1{font-size:2.85rem!important}
+  .wc-search-row{margin-top:-38px!important}
+}
