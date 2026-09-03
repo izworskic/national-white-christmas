@@ -53,3 +53,10 @@ test("390px mobile breakpoint and no external font dependency remain",()=>{
   assert.match(css,/@media\(max-width:390px\)/);
   assert.doesNotMatch(css,/@import|font-face/i);
 });
+
+test("inline Christmas experience script parses and IDs stay unique",()=>{
+  const scripts=[...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)].map(m=>m[1]).filter(Boolean);
+  for(const script of scripts){ if(!script.trim().startsWith("{\"@context\"")) new Function(script); }
+  const ids=[...html.matchAll(/\sid="([^"]+)"/g)].map(m=>m[1]);
+  assert.equal(new Set(ids).size,ids.length);
+});
