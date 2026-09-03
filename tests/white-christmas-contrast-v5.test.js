@@ -17,18 +17,18 @@ function ratio(a,b){
 }
 
 test("hero copy has a deterministic dark contrast zone",()=>{
-  assert.match(css,/width:72%/);
-  assert.match(css,/var\(--pine-dark\) 30%/);
-  assert.match(css,/rgba\(6,42,34,\.99\) 36%/);
-  assert.match(css,/color:#fffaf0!important/);
-  assert.ok(ratio("#fffaf0","#062a22")>7);
+  assert.match(html,/<picture class="wc-hero-media"/);
+  assert.match(css,/rgba\(5,20,35,\.99\) 0%/);
+  assert.match(css,/rgba\(5,20,35,\.96\) 25%/);
+  assert.match(css,/color:var\(--wc-ivory\)!important/);
+  assert.ok(ratio("#fff8ec","#061a2d")>7);
 });
 
 test("mobile hero separates photography from copy",()=>{
   assert.match(css,/@media\(max-width:820px\)/);
-  assert.match(css,/height:280px!important/);
-  assert.match(css,/var\(--pine-dark\) 49%/);
-  assert.match(css,/padding-top:17\.2rem!important/);
+  assert.match(css,/\.wc-hero-media\{height:205px!important/);
+  assert.match(css,/#061a2d 57%/);
+  assert.match(css,/padding-top:12rem!important/);
 });
 
 test("cream surfaces force dark text rather than inheriting result white",()=>{
@@ -44,5 +44,5 @@ test("result panel keeps light text on fixed evergreen",()=>{
 });
 
 test("contrast build is cache-busted",()=>{
-  assert.match(html,/white-christmas\.css\?v=20260903-finalhero6/);
+  assert.match(html,/white-christmas\.css\?v=20260903-product8/);
 });
