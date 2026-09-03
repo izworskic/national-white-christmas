@@ -12,7 +12,7 @@ test("approved composition is structural, not just recoloring",()=>{
   assert.match(html,/wc-probability-pane/);
   assert.match(html,/wc-story-pane/);
   assert.match(html,/wc-analysis-grid/);
-  assert.match(html,/wc-lower-grid/);
+  assert.match(html,/wc-trend-standalone/);\n  assert.match(html,/wc-deep-dive/);
   assert.match(css,/grid-template-columns:minmax\(0,1\.05fr\) minmax\(0,\.82fr\) minmax\(260px,\.83fr\)/);
 });
 
