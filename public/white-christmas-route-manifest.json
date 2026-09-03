@@ -1,0 +1,222 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-09-03",
+  "rule": "A route may not enter the public sitemap until its backing file exists, its owner route is explicit when nested, owner tests pass, and the canonical site shell has an explicit route family before the wildcard fallback.",
+  "routes": [
+    {
+      "route": "/national-tools/white-christmas/",
+      "file": "public/national-tools/white-christmas/index.html",
+      "kind": "flagship"
+    },
+    {
+      "route": "/national-tools/white-christmas/forecast/",
+      "file": "public/national-tools/white-christmas/forecast/index.html",
+      "kind": "support"
+    },
+    {
+      "route": "/national-tools/white-christmas/regions/",
+      "file": "public/national-tools/white-christmas/regions/index.html",
+      "kind": "hub"
+    },
+    {
+      "route": "/national-tools/white-christmas/regions/northeast-new-england/",
+      "file": "public/national-tools/white-christmas/regions/northeast-new-england/index.html",
+      "kind": "region"
+    },
+    {
+      "route": "/national-tools/white-christmas/regions/great-lakes-ohio-valley/",
+      "file": "public/national-tools/white-christmas/regions/great-lakes-ohio-valley/index.html",
+      "kind": "region"
+    },
+    {
+      "route": "/national-tools/white-christmas/regions/upper-midwest-northern-plains/",
+      "file": "public/national-tools/white-christmas/regions/upper-midwest-northern-plains/index.html",
+      "kind": "region"
+    },
+    {
+      "route": "/national-tools/white-christmas/regions/rockies-mountain-west/",
+      "file": "public/national-tools/white-christmas/regions/rockies-mountain-west/index.html",
+      "kind": "region"
+    },
+    {
+      "route": "/national-tools/white-christmas/regions/pacific-northwest-sierra/",
+      "file": "public/national-tools/white-christmas/regions/pacific-northwest-sierra/index.html",
+      "kind": "region"
+    },
+    {
+      "route": "/national-tools/white-christmas/regions/southwest-high-country/",
+      "file": "public/national-tools/white-christmas/regions/southwest-high-country/index.html",
+      "kind": "region"
+    },
+    {
+      "route": "/national-tools/white-christmas/regions/mid-atlantic-appalachians/",
+      "file": "public/national-tools/white-christmas/regions/mid-atlantic-appalachians/index.html",
+      "kind": "region"
+    },
+    {
+      "route": "/national-tools/white-christmas/regions/alaska/",
+      "file": "public/national-tools/white-christmas/regions/alaska/index.html",
+      "kind": "region"
+    },
+    {
+      "route": "/national-tools/white-christmas/regions/southern-plains-rare-snow/",
+      "file": "public/national-tools/white-christmas/regions/southern-plains-rare-snow/index.html",
+      "kind": "region"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/",
+      "file": "public/national-tools/white-christmas/cities/index.html",
+      "kind": "hub"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/buffalo-ny/",
+      "file": "public/national-tools/white-christmas/cities/buffalo-ny/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/syracuse-ny/",
+      "file": "public/national-tools/white-christmas/cities/syracuse-ny/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/burlington-vt/",
+      "file": "public/national-tools/white-christmas/cities/burlington-vt/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/portland-me/",
+      "file": "public/national-tools/white-christmas/cities/portland-me/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/boston-ma/",
+      "file": "public/national-tools/white-christmas/cities/boston-ma/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/marquette-mi/",
+      "file": "public/national-tools/white-christmas/cities/marquette-mi/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/traverse-city-mi/",
+      "file": "public/national-tools/white-christmas/cities/traverse-city-mi/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/grand-rapids-mi/",
+      "file": "public/national-tools/white-christmas/cities/grand-rapids-mi/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/chicago-il/",
+      "file": "public/national-tools/white-christmas/cities/chicago-il/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/minneapolis-mn/",
+      "file": "public/national-tools/white-christmas/cities/minneapolis-mn/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/duluth-mn/",
+      "file": "public/national-tools/white-christmas/cities/duluth-mn/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/fargo-nd/",
+      "file": "public/national-tools/white-christmas/cities/fargo-nd/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/denver-co/",
+      "file": "public/national-tools/white-christmas/cities/denver-co/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/bozeman-mt/",
+      "file": "public/national-tools/white-christmas/cities/bozeman-mt/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/salt-lake-city-ut/",
+      "file": "public/national-tools/white-christmas/cities/salt-lake-city-ut/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/spokane-wa/",
+      "file": "public/national-tools/white-christmas/cities/spokane-wa/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/bend-or/",
+      "file": "public/national-tools/white-christmas/cities/bend-or/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/south-lake-tahoe-ca/",
+      "file": "public/national-tools/white-christmas/cities/south-lake-tahoe-ca/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/flagstaff-az/",
+      "file": "public/national-tools/white-christmas/cities/flagstaff-az/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/santa-fe-nm/",
+      "file": "public/national-tools/white-christmas/cities/santa-fe-nm/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/pittsburgh-pa/",
+      "file": "public/national-tools/white-christmas/cities/pittsburgh-pa/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/asheville-nc/",
+      "file": "public/national-tools/white-christmas/cities/asheville-nc/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/anchorage-ak/",
+      "file": "public/national-tools/white-christmas/cities/anchorage-ak/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/fairbanks-ak/",
+      "file": "public/national-tools/white-christmas/cities/fairbanks-ak/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/amarillo-tx/",
+      "file": "public/national-tools/white-christmas/cities/amarillo-tx/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/oklahoma-city-ok/",
+      "file": "public/national-tools/white-christmas/cities/oklahoma-city-ok/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/boise-id/",
+      "file": "public/national-tools/white-christmas/cities/boise-id/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/reno-nv/",
+      "file": "public/national-tools/white-christmas/cities/reno-nv/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/white-christmas-probability-map/",
+      "file": "public/white-christmas-probability-map/index.html",
+      "kind": "support"
+    },
+    {
+      "route": "/white-christmas-michigan/",
+      "file": "public/white-christmas-michigan/index.html",
+      "kind": "support"
+    }
+  ]
+}

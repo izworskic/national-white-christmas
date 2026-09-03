@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+import { readFile, mkdir, writeFile } from "node:fs/promises";
+import path from "node:path";
+const root=path.resolve(import.meta.dirname,"..");
+const data=JSON.parse(await readFile(path.join(root,"data/white-christmas-cities.json"),"utf8"));
+const esc=s=>String(s).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;");
+const q=s=>encodeURIComponent(s);
+const titleFor=c=>{const t=`White Christmas ${c.city} 2026 | Chris Izworski`;return t.length<=60?t:`White Christmas ${c.city} 2026`;};
+function cityPage(c){
+ const canonical=`https://chrisizworski.com/national-tools/white-christmas/cities/${c.slug}/`;
+ const live=`/national-tools/white-christmas/?q=${q(c.city+", "+c.state)}`;
+ const factors=c.factors.map(([h,p])=>`<article class="wc-region-fact"><strong>${esc(h)}</strong><p>${esc(p)}</p></article>`).join("");
+ const nearby=c.nearby.map(([label,query,reason])=>`<article class="wc-support-panel"><h3><a href="/national-tools/white-christmas/?q=${q(query)}">${esc(label)}</a></h3><p>${esc(reason)}</p></article>`).join("");
+ return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(titleFor(c))}</title><meta name="description" content="Will ${esc(c.city)} have a White Christmas in 2026? See local snow-climate drivers, nearby snowier options, and check the live city estimate."><link rel="canonical" href="${canonical}"><meta name="robots" content="index,follow,max-image-preview:large"><meta property="og:image" content="https://chrisizworski.com/assets/white-christmas-hero-final.webp"><meta name="twitter:card" content="summary_large_image"><link rel="stylesheet" href="/assets/national-tools.css?v=20260902-placebar1"><link rel="stylesheet" href="/assets/white-christmas.css?v=20260903-city11"></head><body class="white-christmas-page wc-support-page"><header class="site-head wc-masthead"><div class="wrap head-in"><a class="wc-tool-mark" href="/national-tools/white-christmas/"><span class="wc-tool-mark-icon" aria-hidden="true"></span><strong>White Christmas</strong></a></div></header><main><section class="wc-support-hero"><picture class="wc-hero-media" aria-hidden="true"><img src="/assets/white-christmas-hero-final.webp" alt=""></picture><div class="wrap"><div class="eyebrow">${esc(c.city)}, ${esc(c.state)}</div><h1>Will ${esc(c.city)} have a White Christmas?</h1><p>${esc(c.summary)}</p></div></section><section class="wc-support-main"><div class="wrap"><div class="wc-support-cta"><div><strong>Check ${esc(c.city)}'s live 2026 odds.</strong></div><a class="btn" href="${live}">Check ${esc(c.city)}</a></div><h2>What drives Christmas snow in ${esc(c.city)}?</h2><div class="wc-region-facts">${factors}</div><h2>What matters most this year?</h2><div class="wc-support-callout">${esc(c.thisYear)}</div><h2>If ${esc(c.city)} is marginal, where nearby may be snowier?</h2><div class="wc-support-grid">${nearby}</div><div class="wc-region-nav"><a href="/national-tools/white-christmas/cities/">← All city guides</a><a href="${live}">Check ${esc(c.city)} live →</a></div></div></section></main><footer class="footer"><div class="wrap">© 2026 <a href="/">Chris Izworski</a></div></footer></body></html>`;
+}
+for(const c of data.cities){const dir=path.join(root,"public/national-tools/white-christmas/cities",c.slug);await mkdir(dir,{recursive:true});await writeFile(path.join(dir,"index.html"),cityPage(c));}
+console.log(JSON.stringify({generated:data.cities.length}));
