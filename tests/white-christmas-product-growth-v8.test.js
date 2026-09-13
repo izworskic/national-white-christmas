@@ -36,7 +36,7 @@ test("growth pages exist for data explorer, Michigan and forecast-planning perso
   assert.match(map,/wc-support-hero/);
   assert.match(mi,/Will Michigan have a White Christmas\?/);
   assert.match(mi,/wc-support-hero/);
-  assert.match(forecast,/Will it snow on Christmas\?/i);
+  assert.match(forecast,/Will it snow on Christmas(?: 2026)?\?/i);
   assert.match(forecast,/December 19–24/);
 });
 
