@@ -1,0 +1,45 @@
+name: Diagnose White Christmas search intent
+
+on:
+  push:
+    branches:
+      - search-intent-2026-09-13
+
+permissions:
+  contents: write
+
+jobs:
+  diagnose:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: search-intent-2026-09-13
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Capture tests
+        shell: bash
+        run: |
+          npm install --ignore-scripts --no-audit --no-fund
+          set +e
+          npm test > test.log 2>&1
+          echo $? > test.exit
+          set -e
+      - uses: actions/upload-artifact@v4
+        with:
+          name: white-christmas-search-intent-test-log
+          path: |
+            test.log
+            test.exit
+      - name: Remove diagnostic workflow
+        if: always()
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/diagnose-search-intent.yml
+          git commit -m "chore: remove White Christmas diagnostic workflow"
+          git push origin HEAD:search-intent-2026-09-13
