@@ -7,6 +7,7 @@ const root=path.join(__dirname,"..");
 const main=fs.readFileSync(path.join(root,"public/national-tools/white-christmas/index.html"),"utf8");
 const css=fs.readFileSync(path.join(root,"public/assets/white-christmas.css"),"utf8");
 const hub=fs.readFileSync(path.join(root,"public/national-tools/white-christmas/regions/index.html"),"utf8");
+const forecast=fs.readFileSync(path.join(root,"public/national-tools/white-christmas/forecast/index.html"),"utf8");
 const re=s=>s.replace(/[.*+?^$()|[\]\\]/g,"\\$&");
 
 const regionSlugs=[
@@ -80,4 +81,15 @@ test("titles remain within SERP length target",()=>{
     assert.ok(m);
     assert.ok(m[1].length<=60,m[1]);
   }
+});
+
+
+test("forecast page matches the rising Christmas 2026 intent without doorway expansion",()=>{
+  assert.match(forecast,/<title>Will It Snow on Christmas 2026\? Forecast &amp; Odds<\/title>/);
+  assert.match(forecast,/what can be known now/i);
+  assert.match(forecast,/Check my 2026 odds/);
+  assert.match(forecast,/\/national-tools\/white-christmas\/cities\//);
+  assert.match(forecast,/\/national-tools\/white-christmas\/regions\//);
+  const title=forecast.match(/<title>([^<]+)<\/title>/)?.[1]||"";
+  assert.ok(title.replace("&amp;","&").length<=60,title);
 });
