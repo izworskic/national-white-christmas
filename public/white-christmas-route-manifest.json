@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
-  "updated": "2026-09-03",
+  "version": "1.1.0",
+  "updated": "2026-09-25",
   "rule": "A route may not enter the public sitemap until its backing file exists, its owner route is explicit when nested, owner tests pass, and the canonical site shell has an explicit route family before the wildcard fallback.",
   "routes": [
     {
@@ -206,6 +206,116 @@
     {
       "route": "/national-tools/white-christmas/cities/reno-nv/",
       "file": "public/national-tools/white-christmas/cities/reno-nv/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/rochester-ny/",
+      "file": "public/national-tools/white-christmas/cities/rochester-ny/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/erie-pa/",
+      "file": "public/national-tools/white-christmas/cities/erie-pa/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/cleveland-oh/",
+      "file": "public/national-tools/white-christmas/cities/cleveland-oh/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/milwaukee-wi/",
+      "file": "public/national-tools/white-christmas/cities/milwaukee-wi/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/madison-wi/",
+      "file": "public/national-tools/white-christmas/cities/madison-wi/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/green-bay-wi/",
+      "file": "public/national-tools/white-christmas/cities/green-bay-wi/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/albany-ny/",
+      "file": "public/national-tools/white-christmas/cities/albany-ny/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/worcester-ma/",
+      "file": "public/national-tools/white-christmas/cities/worcester-ma/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/bangor-me/",
+      "file": "public/national-tools/white-christmas/cities/bangor-me/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/concord-nh/",
+      "file": "public/national-tools/white-christmas/cities/concord-nh/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/lake-placid-ny/",
+      "file": "public/national-tools/white-christmas/cities/lake-placid-ny/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/bismarck-nd/",
+      "file": "public/national-tools/white-christmas/cities/bismarck-nd/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/sioux-falls-sd/",
+      "file": "public/national-tools/white-christmas/cities/sioux-falls-sd/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/rapid-city-sd/",
+      "file": "public/national-tools/white-christmas/cities/rapid-city-sd/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/st-cloud-mn/",
+      "file": "public/national-tools/white-christmas/cities/st-cloud-mn/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/missoula-mt/",
+      "file": "public/national-tools/white-christmas/cities/missoula-mt/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/billings-mt/",
+      "file": "public/national-tools/white-christmas/cities/billings-mt/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/jackson-wy/",
+      "file": "public/national-tools/white-christmas/cities/jackson-wy/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/colorado-springs-co/",
+      "file": "public/national-tools/white-christmas/cities/colorado-springs-co/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/steamboat-springs-co/",
+      "file": "public/national-tools/white-christmas/cities/steamboat-springs-co/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/leavenworth-wa/",
+      "file": "public/national-tools/white-christmas/cities/leavenworth-wa/index.html",
+      "kind": "city"
+    },
+    {
+      "route": "/national-tools/white-christmas/cities/mammoth-lakes-ca/",
+      "file": "public/national-tools/white-christmas/cities/mammoth-lakes-ca/index.html",
       "kind": "city"
     },
     {
