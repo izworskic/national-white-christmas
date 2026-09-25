@@ -30,6 +30,16 @@ test("city pages have material local depth rather than keyword-only doorway copy
  }
 });
 
+test("generated city pages directly match White Christmas 2026 search intent",()=>{
+ for(const c of data.cities){
+   const html=fs.readFileSync(path.join(root,"public/national-tools/white-christmas/cities",c.slug,"index.html"),"utf8");
+   assert.match(html,new RegExp(`Will ${c.city.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")} Have a White Christmas in 2026\\?`));
+   assert.match(html,/What counts:<\/strong> at least 1 inch of snow on the ground on December 25/);
+   assert.match(html,/FAQPage/);
+   assert.match(html,new RegExp(`/regions/${c.regionSlug}/`));
+ }
+});
+
 test("city titles and descriptions stay within SERP guardrails",()=>{
  for(const c of data.cities){
    const html=fs.readFileSync(path.join(root,"public/national-tools/white-christmas/cities",c.slug,"index.html"),"utf8");
