@@ -10,7 +10,7 @@
 </head><body class="white-christmas-page wc-support-page"><header class="site-head wc-masthead"><div class="wrap head-in"><a class="wc-tool-mark" href="/national-tools/white-christmas/"><span class="wc-tool-mark-icon" aria-hidden="true"></span><strong>White Christmas</strong></a><nav class="nav" aria-label="Primary"><a href="/national-tools/white-christmas/cities/">City guides</a><a href="/national-tools/white-christmas/regions/">U.S. regions</a><a href="/national-tools/">U.S. Outdoor Tools</a></nav></div></header>
 <main><section class="wc-support-hero"><picture class="wc-hero-media" aria-hidden="true"><img src="/assets/white-christmas-hero-final.webp" alt="" fetchpriority="high" decoding="async"></picture><div class="wrap"><div class="eyebrow">Christmas 2026 snow outlook</div><h1>Will it snow on Christmas 2026 where you live?</h1><p>Start with the answer we can support today for your location, then watch the estimate change as snowpack and the Christmas-week forecast become real signals.</p></div></section>
 <section class="wc-support-main"><div class="wrap">
-<div class="wc-support-callout" id="forecast-stage" role="status" aria-live="polite"><strong>Right now:</strong> local Christmas snow history is the strongest evidence. A specific December 25 storm forecast would be false precision this far out.</div>
+<div class="wc-support-callout wc-season-now" id="forecast-stage" data-wc-season-copy role="status" aria-live="polite"><strong>Current phase:</strong> loading the Christmas 2026 signal hierarchy…</div>
 <div class="wc-locator" aria-labelledby="local-odds-title">
   <h2 id="local-odds-title">Check your local Christmas 2026 snow odds</h2>
   <form action="/national-tools/white-christmas/" method="get">
@@ -55,18 +55,5 @@
 </section>
 <p><a href="/national-tools/white-christmas/cities/">Browse White Christmas city guides</a> · <a href="/national-tools/white-christmas/regions/">Compare U.S. snow regions</a> · <a href="/white-christmas-probability-map/">Historical U.S. probability map</a> · <a href="/white-christmas-michigan/">Michigan White Christmas guide</a></p>
 </div></section></main><footer class="footer"><div class="wrap">© 2026 <a href="/">Chris Izworski</a> · Historical odds, current snowpack and short-range forecasts stay separately labeled.</div></footer>
-<script>
-(function(){
-  const el=document.getElementById("forecast-stage");
-  if(!el)return;
-  const now=new Date(),target=new Date(2026,11,25,12,0,0),days=Math.ceil((target-now)/86400000);
-  let copy="";
-  if(days>45)copy=`${days} days to Christmas: local Christmas snow history is the strongest evidence now. A specific December 25 storm forecast would be false precision this far out.`;
-  else if(days>8)copy=`${days} days to Christmas: current snowpack now matters alongside local history, but Christmas Day is still outside the normal short-range forecast window.`;
-  else if(days>0)copy=`${days} days to Christmas: Christmas is now close enough for the short-range forecast to become a major part of the local answer. Check your city for the latest estimate.`;
-  else if(days===0)copy="Christmas Day: check your city for the latest snow-depth and forecast evidence.";
-  else copy="Christmas 2026 has passed. The local estimator will roll forward to the next Christmas cycle.";
-  el.innerHTML="<strong>Right now:</strong> "+copy;
-})();
-</script>
+<script src="/assets/white-christmas-season.js?v=20260925-growth1"></script>
 </body></html>

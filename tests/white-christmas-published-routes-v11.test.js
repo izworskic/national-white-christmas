@@ -37,5 +37,5 @@ test("every city in the data manifest has an indexable unique page",()=>{
    assert.match(html,/href="\/national-tools\/white-christmas\/\?q=/);
    assert.match(html,new RegExp('/regions/'+c.regionSlug+'/'));
  }
- assert.equal(seen.size,28);
+ assert.equal(seen.size,50);
 });

@@ -8,7 +8,7 @@ const hub=fs.readFileSync(path.join(root,"public/national-tools/white-christmas/
 const main=fs.readFileSync(path.join(root,"public/national-tools/white-christmas/index.html"),"utf8");
 
 test("city network launches with broad national snow coverage",()=>{
- assert.equal(data.cities.length,28);
+ assert.equal(data.cities.length,50);
  for(const region of ["Great Lakes & Ohio Valley","Northeast & New England","Upper Midwest & Northern Plains","Rockies & Mountain West","Pacific Northwest & Sierra","Southwest High Country","Mid-Atlantic & Appalachians","Alaska","Southern Plains & Rare-Snow South"]){
    assert.ok(data.cities.some(c=>c.region===region),region);
  }

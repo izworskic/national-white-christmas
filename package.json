@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "private": false,
   "scripts": {
-    "vercel-build": "node scripts/generate-white-christmas-city-pages.mjs && node scripts/inject-ga4.mjs",
-    "test": "node scripts/generate-white-christmas-city-pages.mjs && node --test tests/*.test.js",
+    "vercel-build": "node scripts/generate-white-christmas-city-pages.mjs && node scripts/enhance-white-christmas-network.mjs && node scripts/inject-ga4.mjs",
+    "test": "node scripts/generate-white-christmas-city-pages.mjs && node scripts/enhance-white-christmas-network.mjs && node --test tests/*.test.js",
     "test:live": "node --test tests/live/*.test.js",
-    "generate:cities": "node scripts/generate-white-christmas-city-pages.mjs"
+    "generate:cities": "node scripts/generate-white-christmas-city-pages.mjs && node scripts/enhance-white-christmas-network.mjs"
   },
   "engines": {
     "node": "22.x"
