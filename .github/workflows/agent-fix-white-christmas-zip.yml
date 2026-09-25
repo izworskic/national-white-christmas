@@ -1,0 +1,58 @@
+name: Fix White Christmas ZIP handoff
+
+on:
+  push:
+    branches:
+      - fix/white-christmas-zip-handoff-2026-09-25
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/white-christmas-zip-handoff-2026-09-25
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Patch location handoff and add regression test
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('public/national-tools/white-christmas/index.html')
+          s = p.read_text()
+          old = 'geo=form.querySelector("[data-use-location]")'
+          new = 'geo=document.querySelector("[data-use-location]")'
+          if old not in s:
+              raise SystemExit('expected broken geo selector not found')
+          s = s.replace(old, new, 1)
+          old_guard = 'if(!navigator.geolocation)geo.hidden=true;else geo.addEventListener("click",async function(){'
+          new_guard = 'if(geo){if(!navigator.geolocation)geo.hidden=true;else geo.addEventListener("click",async function(){'
+          if old_guard not in s:
+              raise SystemExit('expected geolocation guard not found')
+          s = s.replace(old_guard, new_guard, 1)
+          old_end = '}finally{geo.disabled=false}});\n  renderHeroCountdown();'
+          new_end = '}finally{geo.disabled=false}});}\n  renderHeroCountdown();'
+          if old_end not in s:
+              raise SystemExit('expected geolocation handler end not found')
+          s = s.replace(old_end, new_end, 1)
+          p.write_text(s)
+
+          t = Path('tests/white-christmas-zip-handoff-regression.test.js')
+          t.write_text('''import test from "node:test";\nimport assert from "node:assert/strict";\nimport fs from "node:fs";\n\nconst html=fs.readFileSync("public/national-tools/white-christmas/index.html","utf8");\n\ntest("White Christmas ZIP handoff resolves query params without crashing on external geolocation control",()=>{\n  assert.match(html,/geo=document\\.querySelector\\("\\[data-use-location\\]"\\)/);\n  assert.doesNotMatch(html,/geo=form\\.querySelector\\("\\[data-use-location\\]"\\)/);\n  assert.match(html,/if\\(geo\\)\\{if\\(!navigator\\.geolocation\\)geo\\.hidden=true;else geo\\.addEventListener/);\n  assert.match(html,/new URLSearchParams\\(location\\.search\\)\\.get\\("q"\\);if\\(q\\)\\{input\\.value=q;resolveQuery\\(q\\)\\}/);\n});\n''')
+          PY
+          npm test
+      - name: Commit patch
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/agent-fix-white-christmas-zip.yml
+          git add public/national-tools/white-christmas/index.html tests/white-christmas-zip-handoff-regression.test.js
+          git commit -m "Fix White Christmas ZIP handoff"
+          git push origin HEAD:fix/white-christmas-zip-handoff-2026-09-25
