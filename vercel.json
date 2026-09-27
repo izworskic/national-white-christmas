@@ -58,5 +58,6 @@
       "source": "/national-tools/white-christmas/cities/:slug/",
       "destination": "/national-tools/white-christmas/cities/:slug/index.html"
     }
-  ]
+  ],
+  "buildCommand": "npm run vercel-build && node scripts/inject-network-ads.mjs public"
 }
