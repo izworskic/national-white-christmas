@@ -84,7 +84,7 @@ test("titles remain within SERP length target",()=>{
 });
 
 test("forecast page answers the rising Christmas 2026 intent on the page-one landing surface",()=>{
-  assert.match(forecast,/<title>Will It Snow on Christmas 2026\? Forecast &amp; Local Odds<\/title>/);
+  assert.match(forecast,/<title>Will It Snow on Christmas 2026\? U\.S\. Weather Forecast<\/title>/);
   assert.match(forecast,/name="q"/);
   assert.match(forecast,/action="\/national-tools\/white-christmas\/"/);
   assert.match(forecast,/Check my local odds/);
