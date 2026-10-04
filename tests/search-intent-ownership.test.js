@@ -12,10 +12,12 @@ test('White Christmas hub owns calculator/local-odds intent', () => {
   assert.match(hub, /<link rel="canonical" href="https:\/\/chrisizworski\.com\/national-tools\/white-christmas\/">/);
 });
 
-test('White Christmas forecast owns explicit 2026 weather-forecast intent', () => {
-  assert.match(forecast, /<title>Will It Snow on Christmas 2026\? U\.S\. Weather Forecast<\/title>/);
+test('White Christmas forecast answers 2026 snowfall intent without overstating the horizon', () => {
+  assert.match(forecast, /<title>Will It Snow on Christmas 2026\? \| Chris Izworski<\/title>/);
   assert.match(forecast, /Christmas 2026 U\.S\. weather outlook/);
-  assert.match(forecast, /U\.S\. weather outlook and local city or ZIP odds/i);
+  assert.match(forecast, /Check local historical snow odds now/i);
+  assert.match(forecast, /Snow falling on December 25 and snow already on the ground are different questions/);
+  assert.match(forecast, /dependable Christmas Day snowfall forecast becomes useful close to the date/);
   assert.match(forecast, /<link rel="canonical" href="https:\/\/chrisizworski\.com\/national-tools\/white-christmas\/forecast\/">/);
 });
 
