@@ -128,3 +128,13 @@ test('page handles regional blend rather than assuming a single station', () => 
   assert.match(page, /history_reason/);
   assert.doesNotMatch(page, /c\?\(c\.station\.name/);
 });
+
+
+test('total ACIS source outage gets one bounded retry before unavailable', () => {
+  const source = fs.readFileSync(path.join(__dirname, '../api/national-white-christmas.js'), 'utf8');
+  assert.match(source, /if\(lastError&&allCandidates\.size===0\)/);
+  assert.match(source, /retryCandidates/);
+  assert.match(source, /\},2500\)/);
+  assert.match(source, /const cached=getCachedHistory\(lat,lon\)/);
+  assert.ok(source.indexOf('const cached=getCachedHistory(lat,lon);') > source.indexOf('retryCandidates'));
+});
