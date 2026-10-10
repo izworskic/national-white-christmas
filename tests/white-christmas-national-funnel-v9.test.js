@@ -95,3 +95,12 @@ test("forecast page answers the rising Christmas 2026 intent on the page-one lan
   const title=forecast.match(/<title>([^<]+)<\/title>/)?.[1]||"";
   assert.ok(title.replace("&amp;","&").length<=60,title);
 });
+
+test("forecast hands US visitors to distinct city guides without presenting weather as a long-range forecast",()=>{
+  const slugs=["grand-rapids-mi","minneapolis-mn","bend-or","oklahoma-city-ok","flagstaff-az"];
+  for(const slug of slugs) assert.match(forecast,new RegExp('/national-tools/white-christmas/cities/'+slug+'/'));
+  assert.match(forecast,/Check historical local snow-cover odds now/);
+  assert.match(forecast,/none predicts a specific Christmas Day storm months ahead/);
+  assert.match(forecast,/data-wc-season-copy/);
+  assert.match(forecast,/rel="canonical" href="https:\/\/chrisizworski.com\/national-tools\/white-christmas\/forecast\//);
+});
