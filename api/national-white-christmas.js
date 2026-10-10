@@ -169,6 +169,18 @@ async function historicalClimatology(lat,lon){
   if(single){const result={...single,baseline_type:"single_station",search_radius_miles:searchedRadius,candidate_count:combined.length,cache_status:"fresh"};result.confidence=historicalConfidence(result);putCachedHistory(lat,lon,result);return result;}
   const blend=weightedBlend(combined);
   if(blend){const result={...blend,search_radius_miles:searchedRadius,candidate_count:combined.length,cache_status:"fresh"};result.confidence=historicalConfidence(result);putCachedHistory(lat,lon,result);return result;}
+  // Retry a transient upstream outage once with a short deadline before giving up.
+  // Keep total request time bounded by the 30-second serverless function limit.
+  if(lastError&&allCandidates.size===0){
+    try{
+      const payload=await postAcis(ACIS_MULTI,{bbox:bbox(lat,lon,100).join(","),sdate:"1991-12-25",edate:"2025-12-25",meta:["name","state","sids","ll","elev","uid"],elems:[{name:"snwd",interval:[1,0,0],duration:1}]},2500);
+      const retryCandidates=(Array.isArray(payload&&payload.data)?payload.data:[]).map(record=>candidateFromRecord(record,lat,lon,100)).filter(Boolean);
+      const retrySingle=chooseSingleStation(retryCandidates);
+      if(retrySingle){const result={...retrySingle,baseline_type:"single_station",search_radius_miles:100,candidate_count:retryCandidates.length,cache_status:"fresh-retry"};result.confidence=historicalConfidence(result);putCachedHistory(lat,lon,result);return result;}
+      const retryBlend=weightedBlend(retryCandidates);
+      if(retryBlend){const result={...retryBlend,search_radius_miles:100,candidate_count:retryCandidates.length,cache_status:"fresh-retry"};result.confidence=historicalConfidence(result);putCachedHistory(lat,lon,result);return result;}
+    }catch(_retryError){/* preserve original source error and honest unavailable state */}
+  }
   const cached=getCachedHistory(lat,lon);
   if(cached){cached.confidence={...historicalConfidence(cached),reason:"last_known_good_after_source_failure"};return cached;}
   if(lastError)throw lastError;
