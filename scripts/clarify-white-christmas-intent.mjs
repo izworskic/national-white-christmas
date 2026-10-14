@@ -52,48 +52,51 @@ await writeFile(hubPath, hub);
 let forecast = await readFile(forecastPath, 'utf8');
 forecast = replaceRequired(
   forecast,
-  '<title>Will It Snow on Christmas 2026? Forecast &amp; Local Odds</title>',
   '<title>Will It Snow on Christmas 2026? | Chris Izworski</title>',
+  '<title>Will It Snow on Christmas 2026? Local Odds | Chris Izworski</title>',
   'forecast title',
 );
 forecast = replaceRequired(
   forecast,
-  '<meta name="description" content="Will it snow on Christmas 2026? Check your city or ZIP for local White Christmas odds now, then follow snowpack and the Christmas-week forecast.">',
   '<meta name="description" content="Will it snow on Christmas 2026? Check local historical snow odds now, then follow snowpack and the Christmas-week forecast as December 25 approaches.">',
+  '<meta name="description" content="Will it snow on Christmas 2026 where you live? Enter your city or ZIP for historical 1-inch snow-cover odds, then follow the forecast as December 25 nears.">',
   'forecast description',
 );
 forecast = replaceRequired(
   forecast,
-  'content="Will It Snow on Christmas 2026? Forecast &amp; Local Odds"',
   'content="Will It Snow on Christmas 2026? | Chris Izworski"',
+  'content="Will It Snow on Christmas 2026? Check Your City"',
   'forecast OG title',
 );
 forecast = replaceRequired(
   forecast,
-  'content="Check your city or ZIP for local White Christmas odds now, then follow snowpack and the Christmas-week forecast as December 25 gets closer."',
   'content="Check local historical snow odds now. A Christmas Day snowfall forecast becomes useful close to December 25."',
+  'content="Enter your city or ZIP for historical Christmas snow-cover odds. See when real snowpack and Christmas-week weather become useful."',
   'forecast OG description',
 );
 forecast = replaceRequired(
   forecast,
-  'content="Will It Snow on Christmas 2026?"',
   'content="Will It Snow on Christmas 2026? U.S. Forecast"',
+  'content="Will It Snow on Christmas 2026? Local Odds"',
   'forecast Twitter title',
 );
 forecast = replaceRequired(
   forecast,
-  '"name":"Will It Snow on Christmas 2026? Forecast & Local Odds"',
   '"name":"Will It Snow on Christmas 2026? | Chris Izworski"',
+  '"name":"Will It Snow on Christmas 2026? Local Odds | Chris Izworski"',
   'forecast schema name',
 );
-forecast = replaceRequired(forecast, '"dateModified":"2026-09-25"', '"dateModified":"2026-10-01"', 'forecast modified date');
+forecast = replaceRequired(forecast, '"dateModified":"2026-10-01"', '"dateModified":"2026-10-14"', 'forecast modified date');
+forecast = replaceRequired(forecast, 'content="Check local White Christmas odds now and see when the actual Christmas-week forecast becomes useful."', 'content="Check historical Christmas snow-cover odds by city now, then see when a real Christmas-week forecast becomes useful."', 'forecast Twitter description');
 forecast = replaceRequired(
   forecast,
   '<div class="eyebrow">Christmas 2026 snow outlook</div>',
   '<div class="eyebrow">Christmas 2026 U.S. weather outlook</div>',
   'forecast eyebrow',
 );
-forecast = replaceRequired(forecast, '<p>Start with the answer we can support today for your location, then watch the estimate change as snowpack and the Christmas-week forecast become real signals.</p>', '<p>Snow falling on December 25 and snow already on the ground are different questions. Check your city’s historical White Christmas odds now; a dependable Christmas Day snowfall forecast becomes useful close to the date.</p>', 'forecast answer scope');
+forecast = replaceRequired(forecast, '<p>Snow falling on December 25 and snow already on the ground are different questions. Check your city’s historical White Christmas odds now; a dependable Christmas Day snowfall forecast becomes useful close to the date.</p>', '<p>Enter your city or ZIP to see how often Christmas starts with at least 1 inch of snow on the ground. That is a White Christmas—not a claim that snow will fall on December 25. As Christmas approaches, actual snowpack and the short-range forecast add the next signals.</p>', 'forecast answer scope');
+forecast = replaceRequired(forecast, '<h2 id="local-odds-title">Check your local Christmas 2026 snow odds</h2>', '<h2 id="local-odds-title">Check Christmas 2026 snow odds for your city</h2>', 'forecast location headline');
+forecast = replaceRequired(forecast, '<p>This opens the live local estimator with your place filled in. The estimate uses 1991–2020 Christmas snow-depth history first, then adds weather evidence only when it becomes meaningful.</p>', '<p>Your city opens in the live estimator, starting with 1991–2020 Christmas snow-depth history. It adds actual snowpack and short-range weather when those signals become meaningful. It does not invent a months-ahead Christmas Day snowfall forecast.</p>', 'forecast local odds explanation');
 await writeFile(forecastPath, forecast);
 
 console.log(JSON.stringify({ hub: 'calculator-intent', forecast: '2026-weather-intent' }));
