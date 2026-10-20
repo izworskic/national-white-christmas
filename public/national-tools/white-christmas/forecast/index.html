@@ -16,9 +16,41 @@
   gtag('config', 'G-Y5D2V2W7HN');
 </script>
 <meta name="google-adsense-account" content="ca-pub-8222782620788075">
+
+<style>
+.wc-snow-question{background:#f8fbfc;border:1px solid #c8d9e2;border-radius:18px;padding:clamp(18px,3vw,30px);margin:0 0 22px}
+.wc-snow-question h2{margin:0 0 9px}
+.wc-snow-question>p{margin:0 0 13px;max-width:75ch}
+.wc-question-tabs{display:flex;flex-wrap:wrap;gap:9px;margin:17px 0 13px}
+.wc-question-tab{border:1px solid #527588;border-radius:10px;background:#fff;color:#193949;font:inherit;font-weight:700;padding:11px 15px;cursor:pointer;min-height:48px;text-align:left}
+.wc-question-tab[aria-pressed="true"]{color:#fff;background:#18495e;border-color:#18495e}
+.wc-question-tab:focus-visible{outline:3px solid #e3a840;outline-offset:3px}
+.wc-question-answer{background:#fff;border:1px solid #d7e3e7;border-radius:12px;padding:18px}
+.wc-question-answer h3{margin:9px 0 8px}
+.wc-question-answer p{margin:8px 0;max-width:75ch}
+.wc-question-status{display:inline-block;background:#f6e8c9;border-radius:100px;color:#603e12;font-weight:750;font-size:.8rem;padding:5px 10px}
+.wc-question-source{font-size:.88rem;color:#405d67}
+.wc-question-handoff{margin-top:14px!important}
+@media(max-width:580px){.wc-question-tabs{display:grid;grid-template-columns:1fr}.wc-question-tab{width:100%}}
+</style>
 </head><body class="white-christmas-page wc-support-page"><header class="site-head wc-masthead"><div class="wrap head-in"><a class="wc-tool-mark" href="/national-tools/white-christmas/"><span class="wc-tool-mark-icon" aria-hidden="true"></span><strong>White Christmas</strong></a><nav class="nav" aria-label="Primary"><a href="/national-tools/white-christmas/cities/">City guides</a><a href="/national-tools/white-christmas/regions/">U.S. regions</a><a href="/national-tools/">U.S. Outdoor Tools</a></nav></div></header>
 <main><section class="wc-support-hero"><picture class="wc-hero-media" aria-hidden="true"><img src="/assets/white-christmas-hero-final.webp" alt="" fetchpriority="high" decoding="async"></picture><div class="wrap"><div class="eyebrow">Christmas 2026 U.S. weather outlook</div><h1>Will it snow on Christmas 2026 where you live?</h1><p>Enter your city or ZIP to see how often Christmas starts with at least 1 inch of snow on the ground. That is a White Christmas—not a claim that snow will fall on December 25. As Christmas approaches, actual snowpack and the short-range forecast add the next signals.</p></div></section>
 <section class="wc-support-main"><div class="wrap">
+<section class="wc-snow-question" aria-labelledby="wc-snow-question-title">
+  <h2 id="wc-snow-question-title">First, which Christmas snow question do you mean?</h2>
+  <p>These are two different forecasts. Choose one to see what we can establish today before entering your location.</p>
+  <div class="wc-question-tabs" role="group" aria-label="Choose your Christmas snow question">
+    <button type="button" class="wc-question-tab" data-snow-question="falling" aria-pressed="true">Will snow fall on Christmas Day?</button>
+    <button type="button" class="wc-question-tab" data-snow-question="cover" aria-pressed="false">Will snow be on the ground?</button>
+  </div>
+  <div class="wc-question-answer" role="status" aria-live="polite">
+    <span class="wc-question-status" id="wc-question-status">Not forecastable yet</span>
+    <h3 id="wc-question-answer-heading">Christmas Day snowfall: too early for a reliable local forecast</h3>
+    <p id="wc-question-answer-detail">A storm on December 25 cannot be predicted reliably in October. Once Christmas enters the National Weather Service's short-range forecast window, a local snow-versus-rain forecast becomes useful. Until then, check your area's usual Christmas conditions without treating them as this year's snowfall forecast.</p>
+    <p class="wc-question-source">Evidence order: <strong id="wc-question-evidence">dated local forecast near Christmas → observed reports on the day</strong>. No national guess or invented percentage.</p>
+  </div>
+  <p class="wc-question-handoff"><a href="#local-odds-title">Check my location ↓</a> to see historical snow-cover odds, today's available evidence, and when a Christmas-week forecast can meaningfully replace the baseline.</p>
+</section>
 <div class="wc-support-callout wc-season-now" id="forecast-stage" data-wc-season-copy role="status" aria-live="polite"><strong>Christmas 2026 outlook:</strong> Check historical local snow-cover odds now. A reliable forecast of December 25 snowfall only becomes possible much closer to Christmas.</div>
 <div class="wc-locator" aria-labelledby="local-odds-title">
   <h2 id="local-odds-title">Check Christmas 2026 snow odds for your city</h2>
@@ -65,4 +97,25 @@
 <p><a href="/national-tools/white-christmas/cities/">Browse White Christmas city guides</a> · <a href="/national-tools/white-christmas/regions/">Compare U.S. snow regions</a> · <a href="/white-christmas-probability-map/">Historical U.S. probability map</a> · <a href="/white-christmas-michigan/">Michigan White Christmas guide</a></p>
 </div></section></main><footer class="footer"><div class="wrap">© 2026 <a href="/">Chris Izworski</a> · Historical odds, current snowpack and short-range forecasts stay separately labeled.</div></footer>
 <script src="/assets/white-christmas-season.js?v=20260925-growth1"></script>
+
+<script>
+(()=>{
+  const messages={
+    falling:{status:'Not forecastable yet',heading:'Christmas Day snowfall: too early for a reliable local forecast',detail:'A storm on December 25 cannot be predicted reliably in October. Once Christmas enters the National Weather Service’s short-range forecast window, a local snow-versus-rain forecast becomes useful. Until then, check your area’s usual Christmas conditions without treating them as this year’s snowfall forecast.',evidence:'dated local forecast near Christmas → observed reports on the day'},
+    cover:{status:'Historical baseline available',heading:'White Christmas: at least 1 inch on the ground',detail:'The local calculator reports how frequently at least 1 inch of snow covered the ground on December 25 in the 1991–2020 historical baseline. Existing snowpack and the Christmas-week weather forecast become useful closer to December 25. Historical odds are not the probability of snow falling on Christmas Day.',evidence:'1991–2020 snow-cover history → dated snowpack reports → Christmas-week NWS forecast'}
+  };
+  const buttons=[...document.querySelectorAll('[data-snow-question]')];
+  if(!buttons.length)return;
+  const fields={status:document.getElementById('wc-question-status'),heading:document.getElementById('wc-question-answer-heading'),detail:document.getElementById('wc-question-answer-detail'),evidence:document.getElementById('wc-question-evidence')};
+  function choose(which){
+    const selected=messages[which];if(!selected)return;
+    for(const b of buttons)b.setAttribute('aria-pressed',String(b.dataset.snowQuestion===which));
+    fields.status.textContent=selected.status;
+    fields.heading.textContent=selected.heading;
+    fields.detail.textContent=selected.detail;
+    fields.evidence.textContent=selected.evidence;
+  }
+  for(const b of buttons)b.addEventListener('click',()=>choose(b.dataset.snowQuestion));
+})();
+</script>
 </body></html>
