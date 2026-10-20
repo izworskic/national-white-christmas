@@ -46,7 +46,7 @@
   <div class="wc-question-answer" role="status" aria-live="polite">
     <span class="wc-question-status" id="wc-question-status">Not forecastable yet</span>
     <h3 id="wc-question-answer-heading">Christmas Day snowfall: too early for a reliable local forecast</h3>
-    <p id="wc-question-answer-detail">A storm on December 25 cannot be predicted reliably in October. Once Christmas enters the National Weather Service's short-range forecast window, a local snow-versus-rain forecast becomes useful. Until then, check your area's usual Christmas conditions without treating them as this year's snowfall forecast.</p>
+    <p id="wc-question-answer-detail">A storm on December 25 cannot be predicted reliably far in advance. Once Christmas enters the National Weather Service's short-range forecast window, a local snow-versus-rain forecast becomes useful. Until then, check your area's usual Christmas conditions without treating them as this year's snowfall forecast.</p>
     <p class="wc-question-source">Evidence order: <strong id="wc-question-evidence">dated local forecast near Christmas → observed reports on the day</strong>. No national guess or invented percentage.</p>
   </div>
   <p class="wc-question-handoff"><a href="#local-odds-title">Check my location ↓</a> to see historical snow-cover odds, today's available evidence, and when a Christmas-week forecast can meaningfully replace the baseline.</p>
@@ -101,14 +101,24 @@
 <script>
 (()=>{
   const messages={
-    falling:{status:'Not forecastable yet',heading:'Christmas Day snowfall: too early for a reliable local forecast',detail:'A storm on December 25 cannot be predicted reliably in October. Once Christmas enters the National Weather Service’s short-range forecast window, a local snow-versus-rain forecast becomes useful. Until then, check your area’s usual Christmas conditions without treating them as this year’s snowfall forecast.',evidence:'dated local forecast near Christmas → observed reports on the day'},
+    falling:{status:'Not forecastable yet',heading:'Christmas Day snowfall: too early for a reliable local forecast',detail:'A storm on December 25 cannot be predicted reliably far in advance. Once Christmas enters the National Weather Service’s short-range forecast window, a local snow-versus-rain forecast becomes useful. Until then, check your area’s usual Christmas conditions without treating them as this year’s snowfall forecast.',evidence:'dated local forecast near Christmas → observed reports on the day'},
     cover:{status:'Historical baseline available',heading:'White Christmas: at least 1 inch on the ground',detail:'The local calculator reports how frequently at least 1 inch of snow covered the ground on December 25 in the 1991–2020 historical baseline. Existing snowpack and the Christmas-week weather forecast become useful closer to December 25. Historical odds are not the probability of snow falling on Christmas Day.',evidence:'1991–2020 snow-cover history → dated snowpack reports → Christmas-week NWS forecast'}
   };
   const buttons=[...document.querySelectorAll('[data-snow-question]')];
   if(!buttons.length)return;
   const fields={status:document.getElementById('wc-question-status'),heading:document.getElementById('wc-question-answer-heading'),detail:document.getElementById('wc-question-answer-detail'),evidence:document.getElementById('wc-question-evidence')};
   function choose(which){
-    const selected=messages[which];if(!selected)return;
+    const selected={...messages[which]};if(!selected.heading)return;
+    const daysUntil=(new Date('2026-12-25T12:00:00Z').getTime()-Date.now())/86400000;
+    if(which==='falling'&&daysUntil>=0&&daysUntil<=7){
+      selected.status='Check current NWS forecast';
+      selected.heading='Christmas Day snowfall: a local forecast can now help';
+      selected.detail='Christmas is inside the short-range forecast window. Enter your location, review the dated National Weather Service forecast for snowfall versus rain, and keep checking as conditions change. A forecast is not an observed snowfall report.';
+    } else if(which==='falling'&&daysUntil<0){
+      selected.status='Christmas 2026 has passed';
+      selected.heading='Review observed Christmas Day snowfall';
+      selected.detail='Christmas 2026 is over. Use local observed weather reports to determine whether snow fell on December 25; historical White Christmas ground-cover odds do not establish observed snowfall.';
+    }
     for(const b of buttons)b.setAttribute('aria-pressed',String(b.dataset.snowQuestion===which));
     fields.status.textContent=selected.status;
     fields.heading.textContent=selected.heading;
