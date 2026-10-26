@@ -93,7 +93,10 @@ test("forecast page answers the rising Christmas 2026 intent on the page-one lan
   assert.match(forecast,/Check Christmas 2026 snow odds for your city/);
   assert.match(forecast,/at least 1 inch of snow on the ground/);
   assert.match(forecast,/It does not invent a months-ahead Christmas Day snowfall forecast/);
-  assert.match(forecast,/2026-10-14/);
+  assert.match(forecast,/2026-10-25/);
+  assert.match(forecast,/href="\/michigan-snow-totals\/"/);
+  assert.match(forecast,/href="\/michigan-snow-depth\/"/);
+  assert.match(forecast,/Neither is a December 25 forecast/);
   assert.match(forecast,/\/national-tools\/white-christmas\/cities\//);
   assert.match(forecast,/\/national-tools\/white-christmas\/regions\//);
   const title=forecast.match(/<title>([^<]+)<\/title>/)?.[1]||"";
