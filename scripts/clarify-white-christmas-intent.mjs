@@ -86,7 +86,7 @@ forecast = replaceRequired(
   '"name":"Will It Snow on Christmas 2026? Local Odds | Chris Izworski"',
   'forecast schema name',
 );
-forecast = replaceRequired(forecast, '"dateModified":"2026-10-14"', '"dateModified":"2026-10-25"', 'forecast revised winter evidence date');
+forecast = replaceRequired(forecast, '"dateModified":"2026-10-25"', '"dateModified":"2026-10-26"', 'forecast location-first revision date');
 forecast = replaceRequired(forecast, 'content="Check local White Christmas odds now and see when the actual Christmas-week forecast becomes useful."', 'content="Check historical Christmas snow-cover odds by city now, then see when a real Christmas-week forecast becomes useful."', 'forecast Twitter description');
 forecast = replaceRequired(
   forecast,
