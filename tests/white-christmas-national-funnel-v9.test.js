@@ -93,7 +93,10 @@ test("forecast page answers the rising Christmas 2026 intent on the page-one lan
   assert.match(forecast,/Check Christmas 2026 snow odds for your city/);
   assert.match(forecast,/at least 1 inch of snow on the ground/);
   assert.match(forecast,/It does not invent a months-ahead Christmas Day snowfall forecast/);
-  assert.match(forecast,/2026-10-25/);
+  assert.match(forecast,/2026-10-26/);
+  assert.ok(forecast.indexOf('<div class="wc-locator"')<forecast.indexOf('<section class="wc-snow-question"'),'City/ZIP decision must precede explanation');
+  assert.ok(forecast.indexOf('id="forecast-location"')>0);
+  assert.match(forecast,/name="q"/);
   assert.match(forecast,/href="\/michigan-snow-totals\/"/);
   assert.match(forecast,/href="\/michigan-snow-depth\/"/);
   assert.match(forecast,/Neither is a December 25 forecast/);
