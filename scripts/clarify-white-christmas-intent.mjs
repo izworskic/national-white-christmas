@@ -56,12 +56,17 @@ forecast = replaceRequired(
   '<title>Will It Snow on Christmas 2026? Local Odds | Chris Izworski</title>',
   'forecast title',
 );
-forecast = replaceRequired(
-  forecast,
-  '<meta name="description" content="Will it snow on Christmas 2026? Check local historical snow odds now, then follow snowpack and the Christmas-week forecast as December 25 approaches.">',
-  '<meta name="description" content="Will it snow on Christmas 2026 where you live? Enter your city or ZIP for historical 1-inch snow-cover odds, then follow the forecast as December 25 nears.">',
-  'forecast description',
-);
+const forecastDescription = '<meta name="description" content="Will it snow on Christmas 2026? Compare snowfall with snow on the ground, check odds by city or ZIP, and see when a real forecast becomes useful.">';
+if (!forecast.includes(forecastDescription)) {
+  const descriptionLegacy = [
+    '<meta name="description" content="Will it snow on Christmas 2026? Check local historical snow odds now, then follow snowpack and the Christmas-week forecast as December 25 approaches.">',
+    '<meta name="description" content="Will it snow on Christmas 2026 where you live? Enter your city or ZIP for historical 1-inch snow-cover odds, then follow the forecast as December 25 nears.">',
+  ];
+  const prior = descriptionLegacy.find(value => forecast.includes(value));
+  if (!prior) throw new Error('White Christmas intent pass: missing forecast description');
+  forecast = forecast.replaceAll(prior, forecastDescription);
+}
+
 forecast = replaceRequired(
   forecast,
   'content="Will It Snow on Christmas 2026? | Chris Izworski"',
