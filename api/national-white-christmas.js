@@ -142,6 +142,25 @@ function getCachedHistory(lat,lon){
   return {...hit.value,cache_status:"last-known-good"};
 }
 function putCachedHistory(lat,lon,value){if(value&&value.history)historyCache.set(historyCacheKey(lat,lon),{saved_at:Date.now(),value});}
+async function queryAcisRadius(lat,lon,radius,timeout=7500){
+  const box=bbox(lat,lon,radius).join(",");
+  try{
+    const metaPayload=await postAcis("https://data.rcc-acis.org/StnMeta",{bbox:box,sdate:"1991-12-25",edate:"2020-12-25",meta:["name","state","sids","ll","elev","uid"]},Math.min(3500,timeout));
+    const scored=(Array.isArray(metaPayload&&metaPayload.meta)?metaPayload.meta:[]).map(m=>{
+      const sids=Array.isArray(m&&m.sids)?m.sids:[];
+      const ghcn=sids.find(s=>/^US[WC][0-9A-Z]+\s+6$/.test(String(s)))||sids.find(s=>!/^US1/.test(String(s))&&/\s(2|6|9)$/.test(String(s)));
+      if(!ghcn)return null;
+      const ll=Array.isArray(m.ll)?m.ll:[null,null];
+      const d=miles(lat,lon,ll[1],ll[0]);
+      if(!Number.isFinite(d)||d>radius)return null;
+      return {sid:ghcn,score:(/^USW/.test(ghcn)?0:4)+d};
+    }).filter(Boolean).sort((a,b)=>a.score-b.score).slice(0,16);
+    if(scored.length){
+      return await postAcis(ACIS_MULTI,{sids:scored.map(x=>x.sid).join(","),sdate:"1991-12-25",edate:"2025-12-25",meta:["name","state","sids","ll","elev","uid"],elems:[{name:"snwd",interval:[1,0,0],duration:1}]},timeout);
+    }
+  }catch(_metaErr){/* fall back to bbox MultiStnData */}
+  return postAcis(ACIS_MULTI,{bbox:box,sdate:"1991-12-25",edate:"2025-12-25",meta:["name","state","sids","ll","elev","uid"],elems:[{name:"snwd",interval:[1,0,0],duration:1}]},timeout);
+}
 async function historicalClimatology(lat,lon){
   let lastError=null;
   const allCandidates=new Map();
@@ -149,7 +168,7 @@ async function historicalClimatology(lat,lon){
   for(const radius of HISTORY_SEARCH_RADII_MILES){
     searchedRadius=radius;
     try{
-      const payload=await postAcis(ACIS_MULTI,{bbox:bbox(lat,lon,radius).join(","),sdate:"1991-12-25",edate:"2025-12-25",meta:["name","state","sids","ll","elev","uid"],elems:[{name:"snwd",interval:[1,0,0],duration:1}]},7500);
+      const payload=await queryAcisRadius(lat,lon,radius,7500);
       const candidates=(Array.isArray(payload&&payload.data)?payload.data:[]).map(record=>candidateFromRecord(record,lat,lon,radius)).filter(Boolean);
       for(const candidate of candidates){
         const key=candidate.station.sid||`${candidate.station.name}|${candidate.station.latitude}|${candidate.station.longitude}`;
