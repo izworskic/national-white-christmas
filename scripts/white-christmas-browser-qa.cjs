@@ -23,7 +23,7 @@ const out = path.resolve('browser-qa-artifacts');
 fs.mkdirSync(out, { recursive: true });
 
 (async()=>{
-const browser = await chromium.launch({ headless: true, args: ['--no-sandbox'] });
+const browser = await chromium.launch({ headless: true, ...(process.env.WC_USE_SYSTEM_CHROME ? {channel:'chrome'} : {}), args: ['--no-sandbox'] });
 let passed = 0;
 const failures = [];
 async function check(label, fn) {
