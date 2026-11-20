@@ -33,6 +33,7 @@ test("rollover changes only campaign year, never normals or actual published dat
  assert.match(updated,/\s2026-10-26$/);
  assert.equal(rollSeasonMarkup(original,2026),original);
  assert.match(rollSeasonMarkup(original,2028),/Christmas 2028/);
+ assert.match(rollSeasonMarkup(original,2027,'2027-01-02'),/"dateModified":"2027-01-02"/);
  assert.throws(()=>rollSeasonMarkup(original,2025),RangeError);
 });
 
