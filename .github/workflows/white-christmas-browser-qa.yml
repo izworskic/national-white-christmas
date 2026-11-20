@@ -31,7 +31,7 @@ jobs:
         run: |
           npm install --ignore-scripts --no-audit --no-fund
           npm install --no-save playwright@1.56.1 --ignore-scripts --no-audit --no-fund
-          npx playwright install --with-deps chromium
+          google-chrome --version
       - name: Generate the owned White Christmas city and region pages
         run: npm run generate:cities
       - name: Apply current Christmas season to generated public pages
@@ -52,6 +52,8 @@ jobs:
           cat /tmp/white-christmas-local-http.log
           exit 1
       - name: Run real mobile and desktop browser acceptance
+        env:
+          WC_USE_SYSTEM_CHROME: '1'
         run: node scripts/white-christmas-browser-qa.cjs
       - name: Save browser screenshots and QA summary
         if: always()
