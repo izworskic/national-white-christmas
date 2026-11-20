@@ -70,7 +70,7 @@ test("seasonal browser script and forecast control do not have static year targe
  const season=get("public/assets/white-christmas-season.js");
  const forecast=get("public/national-tools/white-christmas/forecast/index.html");
  assert.doesNotMatch(season,/year\s*=\s*2026/);
- assert.match(season,/now\.getFullYear\(\)/);
+ assert.match(season,/getUTCFullYear\(\)/);
  assert.doesNotMatch(forecast,/new Date\('2026-12-25T12:00:00Z'\)/);
  assert.match(forecast,/Date\.UTC\(year,11,25,12\)/);
 });
