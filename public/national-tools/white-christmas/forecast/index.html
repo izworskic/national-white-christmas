@@ -119,7 +119,7 @@
   const fields={status:document.getElementById('wc-question-status'),heading:document.getElementById('wc-question-answer-heading'),detail:document.getElementById('wc-question-answer-detail'),evidence:document.getElementById('wc-question-evidence')};
   function choose(which){
     const selected={...messages[which]};if(!selected.heading)return;
-    const now=new Date();const year=now.getUTCFullYear()+(now.getTime()>Date.UTC(now.getUTCFullYear(),11,25,23,59,59,999)?1:0);
+    const now=new Date(Date.now());const year=now.getUTCFullYear()+(now.getTime()>Date.UTC(now.getUTCFullYear(),11,25,23,59,59,999)?1:0);
     const daysUntil=(Date.UTC(year,11,25,12)-now.getTime())/86400000;
     if(which==='falling'&&daysUntil>=0&&daysUntil<=7){
       selected.status='Check current NWS forecast';
