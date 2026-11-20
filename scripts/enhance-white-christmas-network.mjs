@@ -36,7 +36,9 @@ for(const c of data.cities){
   }
 
   const current=`<div class="wc-support-callout wc-season-now" data-wc-season-copy data-wc-place="${esc(c.city)}"><strong>Current phase:</strong> loading the Christmas 2026 signal hierarchy…</div>`;
-  html=html.replace(`<h2>What drives Christmas snow in ${esc(c.city)}?</h2>`,`${current}<h2>What drives Christmas snow in ${esc(c.city)}?</h2>`);
+  const driversHeading=`<h2 id="city-drivers">What drives Christmas snow in ${esc(c.city)}?</h2>`;
+  if(!html.includes(driversHeading)) throw new Error(`Missing generated drivers heading for ${c.slug}`);
+  html=html.replace(driversHeading,`${current}${driversHeading}`);
 
   const siblings=data.cities.filter(x=>x.regionSlug===c.regionSlug&&x.slug!==c.slug).slice(0,4);
   if(siblings.length){
