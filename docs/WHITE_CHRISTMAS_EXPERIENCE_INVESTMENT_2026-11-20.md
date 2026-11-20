@@ -41,6 +41,7 @@ Closest existing site comparisons: Michigan Snow Totals is a *reported-snowfall*
 
 ## Implementation and protection
 
+- `public/national-tools/white-christmas/index.html`: add a calculator-specific body class so the existing photographic first screen can lead into the location lookup earlier on narrow phones without moving result or source elements.
 - `public/white-christmas-probability-map/index.html`: map-specific class, primary map anchor, eager iframe, official NOAA fallback and live-calculator handoff.
 - `public/national-tools/white-christmas/forecast/index.html`: explicit snowfall-versus-ground-cover wording and scoped layout. Original city/ZIP-first ordering is preserved because it is an existing intentional regression rule.
 - `scripts/generate-white-christmas-city-pages.mjs`: city-specific local snow pattern from the *existing first factor*, linked to the complete three-factor section; applies to all 50 generated city pages at existing build time.
