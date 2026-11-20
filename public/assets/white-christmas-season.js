@@ -1,7 +1,7 @@
 (function(){
   const nodes=document.querySelectorAll("[data-wc-season-copy]");
   if(!nodes.length)return;
-  const now=new Date(),year=2026,target=new Date(year,11,25,12,0,0);
+  const now=new Date(),year=now.getFullYear()+(now.getMonth()===11&&now.getDate()>25?1:0),target=new Date(year,11,25,12,0,0);
   const nov1=new Date(year,10,1),dec10=new Date(year,11,10),dec19=new Date(year,11,19),dec25=new Date(year,11,25);
   const days=Math.max(0,Math.ceil((target-now)/86400000));
   let label,copy;
@@ -22,7 +22,7 @@
     copy="Use the latest observed snow depth and local forecast conditions for the final answer.";
   }else{
     label="Season complete";
-    copy="Christmas 2026 has passed. The live estimator will roll into the next Christmas cycle.";
+    copy="Christmas "+year+" has passed. Check local observations before planning the next Christmas cycle.";
   }
   nodes.forEach(node=>{
     const place=node.getAttribute("data-wc-place");
