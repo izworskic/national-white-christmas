@@ -1,0 +1,42 @@
+{
+  "about": "Historical White Christmas page claims to reconcile. Percentages are source claims, not approved station-level truth.",
+  "definition": "At least 1 inch snow depth on December 25",
+  "claims": [
+    {
+      "label": "Michigan Tools listing Marquette",
+      "place": "Marquette, Michigan",
+      "percent": 85,
+      "station_id": null,
+      "baseline_period": "1991-2020",
+      "threshold_inches": 1,
+      "source_url": "https://chrisizworski.com/tools/",
+      "status": "station_and_method_unverified"
+    },
+    {
+      "label": "White Christmas historical map Marquette",
+      "place": "Marquette, Michigan",
+      "percent": 96,
+      "station_id": null,
+      "baseline_period": "1991-2020",
+      "threshold_inches": 1,
+      "source_url": "https://chrisizworski.com/white-christmas-probability-map/",
+      "status": "station_and_method_unverified"
+    },
+    {
+      "label": "Michigan Christmas Escapes highland claim",
+      "place": "Marquette, Michigan",
+      "percent": 96,
+      "station_id": null,
+      "baseline_period": "1991-2020",
+      "threshold_inches": 1,
+      "source_url": "https://chrisizworski.com/michigan-white-christmas-escapes/",
+      "status": "highland_station_id_unverified"
+    }
+  ],
+  "reference_urls": [
+    "https://www.ncei.noaa.gov/news/white-christmas",
+    "https://docs.rcc-acis.org/acisws/"
+  ],
+  "checked_on": "2026-11-20",
+  "required_evidence": "Confirm NOAA NCEI station ID, baseline sample, elevation and whether each percentage refers to a highland station, city center or interpolated map cell. Do not overwrite until reconciled."
+}
