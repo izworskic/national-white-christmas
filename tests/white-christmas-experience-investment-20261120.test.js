@@ -13,6 +13,7 @@ test("historical atlas has the real map and an NOAA-hosted fallback, not a forec
   assert.match(map, /class="white-christmas-page wc-support-page wc-map-atlas"/);
   assert.match(map, /id="noaa-map"/);
   assert.match(map, /title="NOAA White Christmas probability map" loading="eager"/);
+  assert.match(map, /src="https:\/\/noaa\.maps\.arcgis\.com\/apps\/instant\/sidebar\/index\.html\?appid=b84e9ad7fa6d4c2da15001efc048c809"/);
   assert.match(map, /noaa\.maps\.arcgis\.com\/apps\/instant\/sidebar/);
   assert.match(map, /www\.ncei\.noaa\.gov\/news\/white-christmas/);
   assert.match(map, /Map not loading\?/);
