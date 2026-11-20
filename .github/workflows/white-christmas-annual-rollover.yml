@@ -44,7 +44,8 @@ jobs:
         if: steps.target.outputs.changed == 'true'
         run: |
           year="${{ steps.target.outputs.year }}"
-          printf '{\n  "year": %s\n}\n' "$year" > data/current-white-christmas-season.json
+          activated_on=$(date -u +%F)
+          printf '{\n  "year": %s,\n  "activated_on": "%s"\n}\n' "$year" "$activated_on" > data/current-white-christmas-season.json
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/current-white-christmas-season.json
