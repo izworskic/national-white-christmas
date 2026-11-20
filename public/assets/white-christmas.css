@@ -2252,7 +2252,7 @@
   border-left:4px solid #316658;
   color:#20362d;
 }
-.wc-city-lens-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;font-weight:800;color:#315448}
+.wc-city-lens-heading{display:flex;flex-direction:column;gap:.28rem;min-width:0}\n.wc-city-lens-heading strong{display:block;overflow-wrap:anywhere}\n.wc-city-lens-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;font-weight:800;color:#315448}
 .wc-city-lens strong{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:1.3rem;color:#173c31}
 .wc-city-lens p{margin:0;color:#405347;line-height:1.55}
 .wc-city-lens a{font-size:.85rem;font-weight:700;color:#0d4e43!important;text-underline-offset:3px}
