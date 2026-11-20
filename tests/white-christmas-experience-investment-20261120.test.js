@@ -64,3 +64,14 @@ test("scoped styles have responsive, reduced-motion and keyboard affordances wit
   assert.match(css, /@media\(max-width:430px\)/);
   assert.match(css, /@media\(prefers-reduced-motion:reduce\)/);
 });
+
+test("the flagship retains the source-traceable result and presents an early mobile lookup", () => {
+  const flagship = read("public/national-tools/white-christmas/index.html");
+  assert.match(flagship, /class="white-christmas-page wc-calculator"/);
+  assert.match(flagship, /id="wc-location"/);
+  assert.match(flagship, /id="probability"/);
+  assert.match(flagship, /id="confidence"/);
+  assert.match(flagship, /id="data-status"/);
+  assert.match(css, /\.wc-calculator \.wc-hero-inner/);
+  assert.match(css, /\.wc-calculator \.wc-search-row/);
+});
