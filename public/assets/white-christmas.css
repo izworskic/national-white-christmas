@@ -2282,3 +2282,12 @@
 @media(prefers-reduced-motion:reduce){
   .wc-map-atlas .wc-map-exit a,.wc-city-lens a{transition:none!important}
 }
+
+/* Keep the calculator's existing photographed scene while exposing lookup sooner on a phone. */
+@media(max-width:430px){
+  .wc-calculator .wc-hero{min-height:0!important}
+  .wc-calculator .wc-hero-inner{padding-top:11rem!important;padding-bottom:2.3rem!important}
+  .wc-calculator .wc-hero h1{font-size:2.4rem!important;line-height:1.02!important}
+  .wc-calculator .wc-hero .lede{font-size:.94rem!important;line-height:1.43}
+  .wc-calculator .wc-search-row{margin-top:-34px!important}
+}
