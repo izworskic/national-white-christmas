@@ -2291,3 +2291,15 @@
   .wc-calculator .wc-hero .lede{font-size:.94rem!important;line-height:1.43}
   .wc-calculator .wc-search-row{margin-top:-34px!important}
 }
+
+/* Michigan: answer a home-location question or choose a possible winter getaway. */
+.wc-michigan-guide .wc-support-hero{min-height:195px}
+.wc-michigan-guide .wc-support-hero h1{font-size:clamp(2rem,4vw,3.4rem)}
+.wc-michigan-guide main>.section{padding-top:1rem}
+.wc-mi-decisions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;margin:0 0 1rem}
+.wc-mi-decision{display:block;padding:1rem 1.2rem;background:#e6ede7;border-left:4px solid #357162;color:#163c32!important;text-decoration:none!important}
+.wc-mi-decision strong{display:block;font:400 clamp(1.05rem,2vw,1.34rem)/1.2 Georgia,"Times New Roman",serif;color:#173c31}
+.wc-mi-decision span{display:block;margin-top:.4rem;font-size:.91rem;line-height:1.5;color:#385047}
+.wc-mi-decision:hover,.wc-mi-decision:focus-visible{background:#f0f4ee}
+.wc-mi-decision:focus-visible{outline:3px solid #a66e26;outline-offset:3px}
+@media(max-width:620px){.wc-mi-decisions{grid-template-columns:1fr}.wc-michigan-guide .wc-support-hero{min-height:0}.wc-michigan-guide .wc-support-hero .wrap{padding-top:1rem;padding-bottom:1rem}}
