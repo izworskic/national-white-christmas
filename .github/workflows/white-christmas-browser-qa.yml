@@ -34,6 +34,8 @@ jobs:
           npx playwright install --with-deps chromium
       - name: Generate the owned White Christmas city and region pages
         run: npm run generate:cities
+      - name: Apply current Christmas season to generated public pages
+        run: node scripts/roll-white-christmas-season.mjs
       - name: Load the shared public site styles and location helper
         run: |
           curl --fail --location --silent --show-error --retry 3 https://chrisizworski.com/assets/national-tools.css -o public/assets/national-tools.css
