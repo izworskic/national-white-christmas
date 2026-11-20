@@ -76,3 +76,14 @@ test("the flagship retains the source-traceable result and presents an early mob
   assert.match(css, /\.wc-calculator \.wc-hero-inner/);
   assert.match(css, /\.wc-calculator \.wc-search-row/);
 });
+
+test("Michigan overview answers local-versus-travel decisions before historical station comparisons", () => {
+  const michigan = read("public/white-christmas-michigan/index.html");
+  assert.match(michigan, /wc-michigan-guide/);
+  assert.match(michigan, /wc-mi-decisions/);
+  assert.match(michigan, /Will my Michigan town have snow\?/);
+  assert.match(michigan, /Where could we find a snowier Christmas\?/);
+  assert.ok(michigan.indexOf("wc-mi-decisions") < michigan.indexOf("34.7% historical probability"));
+  assert.match(michigan, /href="\/michigan-white-christmas-escapes\/"/);
+  assert.match(css, /\.wc-mi-decision:focus-visible/);
+});
