@@ -22,6 +22,7 @@ const routes = [
 const out = path.resolve('browser-qa-artifacts');
 fs.mkdirSync(out, { recursive: true });
 
+(async()=>{
 const browser = await chromium.launch({ headless: true, args: ['--no-sandbox'] });
 let passed = 0;
 const failures = [];
@@ -121,3 +122,5 @@ try {
 fs.writeFileSync(path.join(out,'summary.json'),JSON.stringify({passed,failed:failures.length,failures},null,2)+'\n');
 process.stdout.write('\nBrowser QA: '+passed+' passed, '+failures.length+' failed\n');
 if(failures.length){for(const f of failures)process.stderr.write(f.label+'\n'+f.error+'\n');process.exitCode=1;}
+
+})().catch(e=>{console.error(e);process.exitCode=1;});
