@@ -1,0 +1,61 @@
+name: White Christmas Chromium acceptance
+
+on:
+  pull_request:
+    paths:
+      - "public/**"
+      - "scripts/**"
+      - "data/**"
+      - ".github/workflows/white-christmas-browser-qa.yml"
+  push:
+    branches: [main]
+    paths:
+      - "public/**"
+      - "scripts/**"
+      - "data/**"
+      - ".github/workflows/white-christmas-browser-qa.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  browser-qa:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install repository dependencies and Chromium
+        run: |
+          npm install --ignore-scripts --no-audit --no-fund
+          npm install --no-save playwright@1.56.1 --ignore-scripts --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Generate the owned White Christmas city and region pages
+        run: npm run generate:cities
+      - name: Load the shared public site styles and location helper
+        run: |
+          curl --fail --location --silent --show-error --retry 3 https://chrisizworski.com/assets/national-tools.css -o public/assets/national-tools.css
+          curl --fail --location --silent --show-error --retry 3 https://chrisizworski.com/assets/national-tools.js -o public/assets/national-tools.js
+          test -s public/assets/national-tools.css
+          test -s public/assets/national-tools.js
+      - name: Start static visitor site
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 --directory public >/tmp/white-christmas-local-http.log 2>&1 &
+          for attempt in $(seq 1 20); do
+            if curl --fail --silent http://127.0.0.1:4173/national-tools/white-christmas/ >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/white-christmas-local-http.log
+          exit 1
+      - name: Run real mobile and desktop browser acceptance
+        run: node scripts/white-christmas-browser-qa.cjs
+      - name: Save browser screenshots and QA summary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: white-christmas-browser-qa
+          path: browser-qa-artifacts/
+          if-no-files-found: warn
+          retention-days: 14

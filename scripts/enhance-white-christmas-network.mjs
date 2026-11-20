@@ -36,7 +36,9 @@ for(const c of data.cities){
   }
 
   const current=`<div class="wc-support-callout wc-season-now" data-wc-season-copy data-wc-place="${esc(c.city)}"><strong>Current phase:</strong> loading the Christmas 2026 signal hierarchy…</div>`;
-  html=html.replace(`<h2>What drives Christmas snow in ${esc(c.city)}?</h2>`,`${current}<h2>What drives Christmas snow in ${esc(c.city)}?</h2>`);
+  const driversHeading=`<h2 id="city-drivers">What drives Christmas snow in ${esc(c.city)}?</h2>`;
+  if(!html.includes(driversHeading)) throw new Error(`Missing generated drivers heading for ${c.slug}`);
+  html=html.replace(driversHeading,`${current}${driversHeading}`);
 
   const siblings=data.cities.filter(x=>x.regionSlug===c.regionSlug&&x.slug!==c.slug).slice(0,4);
   if(siblings.length){
@@ -63,7 +65,7 @@ const hub=`<!doctype html>
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://chrisizworski.com/assets/white-christmas-hero-final.webp">
 <link rel="preload" as="image" href="/assets/white-christmas-hero-final.webp" type="image/webp"><link rel="stylesheet" href="/assets/national-tools.css?v=20260902-placebar1"><link rel="stylesheet" href="/assets/white-christmas.css?v=20260903-city11">
 <script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://chrisizworski.com/#person","name":"Chris Izworski","url":"https://chrisizworski.com/"},{"@type":"CollectionPage","url":"https://chrisizworski.com/national-tools/white-christmas/cities/","name":"White Christmas City Guides 2026","dateModified":"2026-09-25","author":{"@id":"https://chrisizworski.com/#person"}}]}).replaceAll("<","\u003c")}</script>
-</head><body class="white-christmas-page wc-support-page"><header class="site-head wc-masthead"><div class="wrap head-in"><a class="wc-tool-mark" href="/national-tools/white-christmas/"><span class="wc-tool-mark-icon" aria-hidden="true"></span><strong>White Christmas</strong></a><nav class="nav" aria-label="Primary"><a href="/national-tools/white-christmas/regions/">U.S. regions</a><a href="/national-tools/white-christmas/forecast/">2026 forecast</a><a href="/national-tools/white-christmas/">Check my odds</a></nav></div></header>
+</head><body class="white-christmas-page wc-support-page wc-city-directory"><header class="site-head wc-masthead"><div class="wrap head-in"><a class="wc-tool-mark" href="/national-tools/white-christmas/"><span class="wc-tool-mark-icon" aria-hidden="true"></span><strong>White Christmas</strong></a><nav class="nav" aria-label="Primary"><a href="/national-tools/white-christmas/regions/">U.S. regions</a><a href="/national-tools/white-christmas/forecast/">2026 forecast</a><a href="/national-tools/white-christmas/">Check my odds</a></nav></div></header>
 <main><section class="wc-support-hero"><picture class="wc-hero-media" aria-hidden="true"><img src="/assets/white-christmas-hero-final.webp" alt="" fetchpriority="high" decoding="async"></picture><div class="wrap"><div class="eyebrow">50 local guides · Christmas 2026</div><h1>White Christmas city guides</h1><p>Start with the city or winter destination people actually search for, understand its local snow regime, then jump into the live 2026 estimate. The network stays selective: strong snow markets, major metros and Christmas destinations rather than thin pages for every U.S. city.</p></div></section>
 <section class="wc-support-main"><div class="wrap">
 <div class="wc-support-callout wc-season-now" data-wc-season-copy><strong>Current phase:</strong> loading the Christmas 2026 signal hierarchy…</div>
@@ -77,6 +79,8 @@ for(const [,cities] of groups){
   const regionSlug=cities[0].regionSlug;
   const file=path.join(root,"public/national-tools/white-christmas/regions",regionSlug,"index.html");
   let html=await readFile(file,"utf8");
+  html=html.replace('<body class="white-christmas-page wc-support-page">','<body class="white-christmas-page wc-support-page wc-region-guide">');
+  html=html.replace('<h2>Check cities and destinations</h2>','<h2 id="region-cities">Check cities and destinations</h2>');
   html=html.replace(/<section data-wc-region-city-guides>[\s\S]*?<\/section>/g,"");
   html=html.replace(/<div class="wc-support-callout wc-season-now"[\s\S]*?<\/div>/g,"");
   html=html.replaceAll(seasonAsset,"");
