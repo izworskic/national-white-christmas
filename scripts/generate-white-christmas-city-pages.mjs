@@ -14,7 +14,7 @@ function cityPage(c){
  const title=titleFor(c),description=descriptionFor(c);
  const factors=c.factors.map(([h,p])=>`<article class="wc-region-fact"><strong>${esc(h)}</strong><p>${esc(p)}</p></article>`).join("");
  const nearby=c.nearby.map(([label,query,reason])=>`<article class="wc-support-panel"><h3><a href="/national-tools/white-christmas/?q=${q(query)}">${esc(label)}</a></h3><p>${esc(reason)}</p></article>`).join("");
- const localLens=`<aside class="wc-city-lens" aria-label="${esc(c.city)} snow pattern"><div class="wc-city-lens-label">The local snow pattern</div><strong>${esc(c.factors[0][0])}</strong><p>${esc(c.factors[0][1])}</p><a href="#city-drivers">Explore the three local factors</a></aside>`;
+ const localLens=`<aside class="wc-city-lens" aria-label="${esc(c.city)} snow pattern"><div class="wc-city-lens-heading"><span class="wc-city-lens-label">The local snow pattern</span><strong>${esc(c.factors[0][0])}</strong></div><p>${esc(c.factors[0][1])}</p><a href="#city-drivers">Explore the three local factors</a></aside>`;
  const faq=[
    {q:`Will ${c.city} have a White Christmas in 2026?`,a:`The 2026 answer changes as Christmas approaches. The live ${c.city} estimate starts with local historical Christmas snow-depth odds, then adds current snowpack and short-range forecast evidence only when those inputs become meaningful.`},
    {q:"What counts as a White Christmas?",a:"The standard used here is at least 1 inch of snow on the ground on December 25. Snow can fall before Christmas and still count if enough remains on the ground."},
