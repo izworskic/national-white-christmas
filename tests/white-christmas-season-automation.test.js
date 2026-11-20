@@ -48,7 +48,8 @@ test("2027 and 2028 previews preserve all published URLs and city-specific conte
    assert.match(actual2027,/chrisizworski\.com\/#person/,r.route);
    assert.ok(!/[\s>"]Christmas 2026\b/.test(actual2027),r.route+" stale season");
    assert.ok(!/[\s>"]Christmas 2027\b/.test(actual2028),r.route+" stale next season");
-   assert.ok(actual2027.includes('1991-2020')||actual2027.includes('1991–2020'),r.route+" lost climate normal period");
+   if(source.includes('1991-2020'))assert.ok(actual2027.includes('1991-2020'),r.route+" lost hyphenated climate normal period");
+   if(source.includes('1991–2020'))assert.ok(actual2027.includes('1991–2020'),r.route+" lost climate normal period");
    if(r.kind==="city"){
      assert.match(actual2027, /Have a White Christmas in 2027\?/);
      assert.match(actual2027,/data-wc-season-copy/);
