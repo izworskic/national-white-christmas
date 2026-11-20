@@ -16,7 +16,7 @@ Production/source and previous page state were inspected using the repository an
 
 ## Source evidence and editorial boundary
 
-- NOAA Climate.gov, historical White Christmas map: https://www.climate.gov/news-features/understanding-climate/interactive-map-are-you-dreaming-white-christmas
+- NOAA-hosted historical White Christmas map: https://noaa.maps.arcgis.com/apps/instant/sidebar/index.html?appid=b84e9ad7fa6d4c2da15001efc048c809
 - NOAA/NCEI explanation: https://www.ncei.noaa.gov/news/white-christmas
 - NWS Northern Indiana, one-inch snow-depth definition: https://www.weather.gov/iwx/whitechristmas
 - Comparative current data view: https://nationalstorms.com/white-christmas/
@@ -42,6 +42,7 @@ Closest existing site comparisons: Michigan Snow Totals is a *reported-snowfall*
 ## Implementation and protection
 
 - `public/national-tools/white-christmas/index.html`: add a calculator-specific body class so the existing photographic first screen can lead into the location lookup earlier on narrow phones without moving result or source elements.
+- `public/white-christmas-michigan/index.html`: two immediate visitor journeys, a local city/ZIP check or Michigan Christmas travel alternatives, ahead of unchanged station numbers.
 - `public/white-christmas-probability-map/index.html`: map-specific class, primary map anchor, eager iframe, official NOAA fallback and live-calculator handoff.
 - `public/national-tools/white-christmas/forecast/index.html`: explicit snowfall-versus-ground-cover wording and scoped layout. Original city/ZIP-first ordering is preserved because it is an existing intentional regression rule.
 - `scripts/generate-white-christmas-city-pages.mjs`: city-specific local snow pattern from the *existing first factor*, linked to the complete three-factor section; applies to all 50 generated city pages at existing build time.
