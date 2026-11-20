@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "private": false,
   "scripts": {
-    "vercel-build": "node scripts/generate-white-christmas-city-pages.mjs && node scripts/enhance-white-christmas-network.mjs && node scripts/clarify-white-christmas-intent.mjs && node scripts/inject-creator-attribution.mjs && node scripts/inject-ga4.mjs",
+    "vercel-build": "node scripts/generate-white-christmas-city-pages.mjs && node scripts/enhance-white-christmas-network.mjs && node scripts/clarify-white-christmas-intent.mjs && node scripts/inject-creator-attribution.mjs && node scripts/inject-ga4.mjs && node scripts/roll-white-christmas-season.mjs",
     "test": "node scripts/generate-white-christmas-city-pages.mjs && node scripts/enhance-white-christmas-network.mjs && node scripts/clarify-white-christmas-intent.mjs && node scripts/inject-creator-attribution.mjs && node --test tests/*.test.js",
     "test:live": "node --test tests/live/*.test.js",
-    "generate:cities": "node scripts/generate-white-christmas-city-pages.mjs && node scripts/enhance-white-christmas-network.mjs && node scripts/clarify-white-christmas-intent.mjs && node scripts/inject-creator-attribution.mjs"
+    "generate:cities": "node scripts/generate-white-christmas-city-pages.mjs && node scripts/enhance-white-christmas-network.mjs && node scripts/clarify-white-christmas-intent.mjs && node scripts/inject-creator-attribution.mjs",
+    "test:season": "node --test tests/white-christmas-season-automation.test.js"
   },
   "engines": {
     "node": "22.x"

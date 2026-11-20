@@ -119,15 +119,16 @@
   const fields={status:document.getElementById('wc-question-status'),heading:document.getElementById('wc-question-answer-heading'),detail:document.getElementById('wc-question-answer-detail'),evidence:document.getElementById('wc-question-evidence')};
   function choose(which){
     const selected={...messages[which]};if(!selected.heading)return;
-    const daysUntil=(new Date('2026-12-25T12:00:00Z').getTime()-Date.now())/86400000;
+    const now=new Date(Date.now());const year=now.getUTCFullYear()+(now.getTime()>Date.UTC(now.getUTCFullYear(),11,25,23,59,59,999)?1:0);
+    const daysUntil=(Date.UTC(year,11,25,12)-now.getTime())/86400000;
     if(which==='falling'&&daysUntil>=0&&daysUntil<=7){
       selected.status='Check current NWS forecast';
       selected.heading='Christmas Day snowfall: a local forecast can now help';
       selected.detail='Christmas is inside the short-range forecast window. Enter your location, review the dated National Weather Service forecast for snowfall versus rain, and keep checking as conditions change. A forecast is not an observed snowfall report.';
     } else if(which==='falling'&&daysUntil<0){
-      selected.status='Christmas 2026 has passed';
+      selected.status='Christmas '+year+' has passed';
       selected.heading='Review observed Christmas Day snowfall';
-      selected.detail='Christmas 2026 is over. Use local observed weather reports to determine whether snow fell on December 25; historical White Christmas ground-cover odds do not establish observed snowfall.';
+      selected.detail='Christmas '+year+' is over. Use local observed weather reports to determine whether snow fell on December 25; historical White Christmas ground-cover odds do not establish observed snowfall.';
     }
     for(const b of buttons)b.setAttribute('aria-pressed',String(b.dataset.snowQuestion===which));
     fields.status.textContent=selected.status;

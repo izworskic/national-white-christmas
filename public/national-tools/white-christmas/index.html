@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded",function(){
   let current=null,requestSeq=0;
   const TREND_PREFIX="ci-white-christmas-trend-v1|";
   function sign(v){return v>0?"+"+v:String(v)}
-  function christmasCountdown(now=new Date()){const year=now.getFullYear(),target=new Date(year,11,25,12),after=now>new Date(year,11,25,23,59,59),x=after?new Date(year+1,11,25,12):target,days=Math.max(0,Math.ceil((x-now)/86400000));return {days,year:x.getFullYear()}}
+  function christmasCountdown(now=new Date(Date.now())){const year=now.getUTCFullYear(),target=new Date(Date.UTC(year,11,25,12)),after=now>new Date(Date.UTC(year,11,25,23,59,59,999)),x=after?new Date(Date.UTC(year+1,11,25,12)):target,days=Math.max(0,Math.ceil((x-now)/86400000));return {days,year:x.getUTCFullYear()}}
   function renderHeroCountdown(now=new Date()){const x=christmasCountdown(now);if(heroCountdown)heroCountdown.textContent=x.days===0?"25":String(x.days);if(heroCountdownLabel)heroCountdownLabel.textContent=x.days===0?"Christmas Day":"Days to Christmas";if(heroCountdownUpdated)heroCountdownUpdated.textContent=x.days===0?"Merry Christmas":"Christmas "+x.year}
   function safeText(id,value){const el=document.getElementById(id);if(el)el.textContent=value==null?"":String(value)}
   function bandFor(p){if(p==null)return "Unavailable";if(p<=10)return "Very unlikely";if(p<=30)return "Unlikely";if(p<=45)return "Leaning no";if(p<=54)return "Toss-up";if(p<=69)return "Leaning yes";if(p<=89)return "Likely";return "Very likely"}
