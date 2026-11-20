@@ -1,0 +1,53 @@
+name: Roll White Christmas season after December 25
+
+on:
+  schedule:
+    - cron: "15 11 26 12 *"
+    - cron: "15 11 2 1 *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: white-christmas-annual-season
+  cancel-in-progress: false
+
+jobs:
+  season-roll:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check target year
+        id: target
+        run: |
+          year=$(node --input-type=module -e 'import {christmasSeasonYear} from "./scripts/white-christmas-season-year.mjs"; console.log(christmasSeasonYear())')
+          saved=$(node -p 'require("./data/current-white-christmas-season.json").year')
+          echo "year=$year" >> "$GITHUB_OUTPUT"
+          if [ "$year" -gt "$saved" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Validate seasonal generation before publishing
+        if: steps.target.outputs.changed == 'true'
+        run: |
+          npm install --ignore-scripts --no-audit --no-fund
+          npm test
+          node scripts/roll-white-christmas-season.mjs --year=${{ steps.target.outputs.year }} --dry-run
+      - name: Commit new public season and let Vercel Git integration deploy
+        if: steps.target.outputs.changed == 'true'
+        run: |
+          year="${{ steps.target.outputs.year }}"
+          printf '{\n  "year": %s\n}\n' "$year" > data/current-white-christmas-season.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/current-white-christmas-season.json
+          git commit -m "Advance White Christmas season to $year"
+          git pull --rebase origin main
+          git push origin HEAD:main
