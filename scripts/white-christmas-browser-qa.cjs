@@ -76,6 +76,7 @@ try {
       });
       if (width===390||width===1280) {
         await check(width+'px '+id+' screenshot', async () => {
+          if(id==='atlas') await page.waitForTimeout(4500);
           await page.screenshot({path:path.join(out,id+'-'+width+'.png'),animations:'disabled',timeout:30000});
         });
       }
@@ -86,6 +87,7 @@ try {
         const a=page.locator('[data-snow-question="falling"]'),b=page.locator('[data-snow-question="cover"]');
         assert.equal(await a.getAttribute('aria-pressed'),'true');
         await b.click();
+        await page.screenshot({path:path.join(out,'forecast-cover-'+width+'.png'),animations:'disabled'});
         assert.equal(await b.getAttribute('aria-pressed'),'true');
         assert.equal(await a.getAttribute('aria-pressed'),'false');
         assert.match(await page.locator('#wc-question-answer-heading').innerText(),/White Christmas/);
@@ -99,7 +101,7 @@ try {
   }
   await check('map embed network failure leaves official links',async()=>{
     const context = await browser.newContext({viewport:{width:390,height:850}});
-    await context.route('**/www.arcgis.com/**',route=>route.abort('failed'));
+    await context.route('**/noaa.maps.arcgis.com/**',route=>route.abort('failed'));
     const page=await context.newPage();
     await page.goto(root+'/white-christmas-probability-map/',{waitUntil:'domcontentloaded'});
     assert.ok(await page.locator('.wc-map-exit').isVisible());
