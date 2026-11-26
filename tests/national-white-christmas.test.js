@@ -137,3 +137,37 @@ test("White Christmas API is keyless and keeps source families distinct",()=>{
   assert.match(src,/national-snow/);
   assert.doesNotMatch(src,/API_KEY|apiKey|Authorization|Bearer/);
 });
+
+test("Christmas history never counts duplicate or conflicting winters twice",()=>{
+  const rows=Array.from({length:30},(_,i)=>({year:1991+i,value:i%2===0?1:0}));
+  rows.push({year:1991,value:1},{year:1992,value:2},{year:1993,value:null});
+  const s=T.historicalSummary(rows);
+  assert.equal(s.valid_years,28);
+  assert.equal(s.white_years,14);
+  assert.equal(s.coverage_ratio,0.933);
+  assert.equal(s.probability,50);
+  assert.equal(T.historicalSummary(Array.from({length:30},()=>({year:2000,value:1}))),null);
+});
+test("ACIS dated input rejects wrong dates, mixed rows and invalid snow depths",()=>{
+  const rows=T.annualSnowRows({data:[["1991-12-25"," "],["1992-12-25",-9999],["1993-12-25","T"],["1994-12-25","0.0"],["1995-12-24",99],["1996-12-25","1.5"],[8],["1997-12-25",true],["1998-12-25","Infinity"],["2026-12-25",9]]});
+  assert.deepEqual(rows,[{year:1991,value:null},{year:1992,value:null},{year:1993,value:0},{year:1994,value:0},{year:1996,value:1.5},{year:1997,value:null},{year:1998,value:null}]);
+});
+test("positional annual records must cover the entire requested interval",()=>{
+  const rows=Array.from({length:35},()=>["1"]);
+  assert.equal(T.annualSnowRows({data:rows}).length,35);
+  assert.equal(T.annualSnowRows({data:rows.slice(1)}).length,0);
+  const result=T.historicalSummary(T.annualSnowRows({data:rows}));
+  assert.equal(result.valid_years,30);
+  assert.equal(result.recent_valid_years,10);
+});
+test("invalid depth sentinels and booleans do not inflate coverage",()=>{
+  const rows=Array.from({length:30},(_,i)=>({year:1991+i,value:i<14?1:i%2===0?-9999:true}));
+  assert.equal(T.historicalSummary(rows),null);
+});
+test("primary and fallback results distinguish evidence quality from calibrated accuracy",()=>{
+  const page=fs.readFileSync(path.join(__dirname,"../public/national-tools/white-christmas/index.html"),"utf8");
+  assert.match(page,/Local estimate, not a calibrated forecast/);
+  assert.match(page,/Evidence confidence/);
+  assert.match(page,/Evidence quality, not measured forecast accuracy/);
+  assert.match(page,/Evidence rating, not measured forecast accuracy/);
+});
