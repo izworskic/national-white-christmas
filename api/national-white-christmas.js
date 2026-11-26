@@ -57,22 +57,45 @@ function stationRows(payload){
     return {name:row.name||"Climate station",state:row.state||null,longitude:finite(ll[0],-180,180),latitude:finite(ll[1],-90,90),elevation_ft:finite(row.elev),sid:sidFor(row),valid_daterange:row.valid_daterange||null};
   }).filter(row=>row.sid&&row.latitude!=null&&row.longitude!=null);
 }
-function annualSnowRows(payload,startYear=1991){
+// Positional records are meaningful only for the complete requested interval.
+function snowDepth(raw){
+  if(raw==="T")return 0;
+  if(typeof raw!=="number"&&typeof raw!=="string")return null;
+  if(typeof raw==="string"&&!/^\d+(?:\.\d+)?$/.test(raw.trim()))return null;
+  const v=Number(raw);
+  return Number.isFinite(v)&&v>=0?v:null;
+}
+function annualSnowRows(payload,startYear=1991,endYear=2025){
   const data=Array.isArray(payload&&payload.data)?payload.data:[];
-  return data.map((row,index)=>{
-    const first=Array.isArray(row)?row[0]:null;
-    const dated=/^\d{4}-/.test(String(first||""));
-    const year=dated?Number(String(first).slice(0,4)):startYear+index;
-    const raw=dated?(Array.isArray(row)?row[1]:null):first;
-    let value=null;
-    if(raw==="T")value=0;
-    else if(raw!==null&&raw!=="M"&&raw!==""&&Number.isFinite(Number(raw)))value=Number(raw);
-    return {year,value};
-  }).filter(row=>Number.isFinite(row.year));
+  const looksDated=row=>Array.isArray(row)&&typeof row[0]==="string"&&/^\d{4}-/.test(row[0]);
+  const dated=data.some(looksDated);
+  if(!dated&&data.length!==endYear-startYear+1)return [];
+  return data.flatMap((row,index)=>{
+    if(!Array.isArray(row))return [];
+    if(dated){
+      if(!looksDated(row)||!/^\d{4}-12-25$/.test(row[0]))return [];
+      const year=Number(row[0].slice(0,4));
+      if(year<startYear||year>endYear)return [];
+      return [{year,value:snowDepth(row[1])}];
+    }
+    return [{year:startYear+index,value:snowDepth(row[0])}];
+  });
+}
+function uniqueChristmasYears(rows){
+  const byYear=new Map();
+  for(const row of rows){
+    if(!row||!Number.isInteger(row.year)||row.year<1991||row.year>2025)continue;
+    const value=snowDepth(row.value);
+    if(!byYear.has(row.year))byYear.set(row.year,new Set());
+    byYear.get(row.year).add(value);
+  }
+  // Repeated identical reports count once; conflicting reports are ambiguous.
+  return [...byYear].filter(([,values])=>values.size===1&&!values.has(null)).map(([year,values])=>({year,value:[...values][0]}));
 }
 function historicalSummary(rows,minYears=HISTORY_MIN_USABLE_YEARS){
-  const baseline=rows.filter(r=>r.year>=1991&&r.year<=2020&&r.value!=null);
-  const recent=rows.filter(r=>r.year>=2016&&r.year<=2025&&r.value!=null);
+  const unique=uniqueChristmasYears(rows);
+  const baseline=unique.filter(r=>r.year>=1991&&r.year<=2020);
+  const recent=unique.filter(r=>r.year>=2016&&r.year<=2025);
   const white=baseline.filter(r=>r.value>=1).length;
   const recentWhite=recent.filter(r=>r.value>=1).length;
   if(baseline.length<minYears)return null;
@@ -257,7 +280,7 @@ module.exports=async function handler(req,res){
   const climatology=base[0].status==="fulfilled"?base[0].value:null,cpc=base[1].status==="fulfilled"?base[1].value:{temperature:null,precipitation:null,mode:null,degraded:true},nohrsc=packSettled[0]&&packSettled[0].status==="fulfilled"?packSettled[0].value:null,snotel=packSettled[1]&&packSettled[1].status==="fulfilled"?packSettled[1].value:null,pack=packBasis(nohrsc,snotel),forecast=forecastSettled[0]&&forecastSettled[0].status==="fulfilled"?forecastSettled[0].value:null;
   const historyConfidence=historicalConfidence(climatology),model=probabilityModel({history:climatology&&climatology.history,cpc,pack,forecast,target,now,historyConfidence}),resultVerdict=verdict(model),degraded=base.some(x=>x.status==="rejected")||Boolean(cpc.degraded)||packSettled.some&&packSettled.some(x=>x.status==="rejected")||(d<=8&&forecastSettled[0]&&forecastSettled[0].status==="rejected"),reason=historyReason(climatology);
   const sources=[sourceMeta({name:"RCC-ACIS / NCEI-NWS station history",url:"https://www.rcc-acis.org/",updatedAt:null,staleAfterMinutes:null,available:Boolean(climatology),status:climatology?(climatology.cache_status==="last-known-good"?"cached-historical":"historical"):"unavailable"}),sourceMeta({name:"NOAA/NWS Climate Prediction Center outlooks",url:"https://www.cpc.ncep.noaa.gov/",updatedAt:null,staleAfterMinutes:43200,available:Boolean(cpc.temperature||cpc.precipitation),status:cpc.temperature||cpc.precipitation?"outlook":"unavailable"}),sourceMeta({name:"NOAA/NOHRSC + USDA NRCS current snowpack",url:"https://www.nohrsc.noaa.gov/nsa/",updatedAt:nohrsc&&[nohrsc.depth&&nohrsc.depth.observed_at,nohrsc.swe&&nohrsc.swe.observed_at].filter(Boolean).sort().at(-1)||null,staleAfterMinutes:1440,available:Boolean(pack),status:d<=45?(pack?"provisional-observation":"unavailable"):"not-yet-seasonally-weighted"}),sourceMeta({name:"NOAA/NWS short-range forecast",url:forecast&&forecast.forecast_url||"https://api.weather.gov/",updatedAt:forecast&&forecast.updated_at||null,staleAfterMinutes:360,available:Boolean(forecast&&forecast.available),status:d<=8?(forecast&&forecast.available?"forecast":"unavailable"):"outside-short-range-window"})];
-  return res.status(200).json({retrieved_at:now.toISOString(),target_date:target.toISOString().slice(0,10),location:{latitude:lat,longitude:lon,stateCode:/^[A-Z]{2}$/.test(state)?state:null},degraded:Boolean(degraded),definition:"At least 1 inch of snow on the ground on December 25.",estimate:model,verdict:resultVerdict,climatology,confidence_basis:{historical:historyConfidence,reason_code:reason.code,reason_message:reason.message,search_radii_miles:HISTORY_SEARCH_RADII_MILES},cpc,current_snowpack:{basis:pack,nohrsc,snotel,weighted:d<=45},christmas_forecast:forecast,imagery:{historical_probability_map:"https://www.arcgis.com/apps/mapviewer/index.html?webmap=f0ad5d4bb3fa4176ad2134cafbbf8cfd",current_snow_analysis:"https://www.nohrsc.noaa.gov/nsa/?region=National&units=e&var=snowdepth"},sources,limitations:["The displayed percentage is a ChrisIzworski.com blended estimate, not an official NOAA probability forecast for this year's Christmas.","Historical climatology searches outward in stages and prefers a strong nearby single-station record; when needed, it can use a transparent weighted blend of nearby stations instead of declaring the location unavailable.","A single-station baseline may use 20-24 valid normal-period years at moderate confidence; regional blending may use stations with at least 15 valid years and reports lower confidence when records disagree.","NOAA's historical White Christmas definition is at least 1 inch of snow depth on December 25.","CPC monthly or seasonal outlooks describe broad temperature and precipitation categories, not Christmas Day weather, so their influence is deliberately capped.","Current NOHRSC/SNOTEL snowpack begins influencing the estimate only inside 45 days and only within the Snowpack tool's 60-mile local decision boundary.","NWS short-range forecast becomes a major factor only when Christmas enters the normal forecast window.","No source can guarantee snow at a house, neighborhood or exact Christmas-morning observation time."]});
+  return res.status(200).json({retrieved_at:now.toISOString(),target_date:target.toISOString().slice(0,10),location:{latitude:lat,longitude:lon,stateCode:/^[A-Z]{2}$/.test(state)?state:null},degraded:Boolean(degraded),definition:"At least 1 inch of snow on the ground on December 25.",estimate:model,verdict:resultVerdict,climatology,confidence_basis:{historical:historyConfidence,reason_code:reason.code,reason_message:reason.message,search_radii_miles:HISTORY_SEARCH_RADII_MILES},cpc,current_snowpack:{basis:pack,nohrsc,snotel,weighted:d<=45},christmas_forecast:forecast,imagery:{historical_probability_map:"https://www.arcgis.com/apps/mapviewer/index.html?webmap=f0ad5d4bb3fa4176ad2134cafbbf8cfd",current_snow_analysis:"https://www.nohrsc.noaa.gov/nsa/?region=National&units=e&var=snowdepth"},sources,limitations:["The displayed percentage is a ChrisIzworski.com blended estimate, not an official NOAA probability forecast for this year's Christmas. The adjustments and evidence-confidence categories are not calibrated forecast probabilities.","Historical climatology searches outward in stages and prefers a strong nearby single-station record; when needed, it can use a transparent weighted blend of nearby stations instead of declaring the location unavailable.","A single-station baseline may use 20-24 valid normal-period years at moderate confidence; regional blending may use stations with at least 15 valid years and reports lower confidence when records disagree.","NOAA's historical White Christmas definition is at least 1 inch of snow depth on December 25.","CPC monthly or seasonal outlooks describe broad temperature and precipitation categories, not Christmas Day weather, so their influence is deliberately capped.","Current NOHRSC/SNOTEL snowpack begins influencing the estimate only inside 45 days and only within the Snowpack tool's 60-mile local decision boundary.","NWS short-range forecast becomes a major factor only when Christmas enters the normal forecast window.","No source can guarantee snow at a house, neighborhood or exact Christmas-morning observation time."]});
 };
 
 module.exports._test={annualSnowRows,bbox,chooseDecemberOutlook,christmasTarget,containsDecember,cpcPair,decemberPriority,historicalClimatology,historicalSummary,historicalConfidence,historyReason,HISTORY_RADIUS_MILES,HISTORY_SEARCH_RADII_MILES,identifyUrl,normalizeOutlookResult,nwsChristmasForecast,outlookAdjustment,probabilityModel,stationRows,stationQuality,chooseSingleStation,weightedBlend,verdict};
